@@ -16,9 +16,6 @@ export class WorkflowComponent implements OnInit {
 
   }
 
-  // onScroll(event) {
-
-  // }
   @HostListener('window:scroll', ['$event'])
   onWindowScroll(event) {
     var full=100;
@@ -26,16 +23,11 @@ export class WorkflowComponent implements OnInit {
     console.log('winscroll: '+winScroll);
     var scrolling = window.pageYOffset;
     // var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-    var height = 1513; 
+    var height = 1486; 
     console.log('scrolling: '+scrolling);
     var scrolled = ((winScroll -187)/ height) * 100;
     console.log('scrolled: '+scrolled);
-    // if (winScroll = 1513){
-    //   document.getElementById("myBar").style.height = 100+"%";
-
-    // }else{
       document.getElementById("myBar").style.height = scrolled + "%";
-    // }
   }
 
 

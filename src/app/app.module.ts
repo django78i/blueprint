@@ -48,6 +48,7 @@ import {MatSelectModule} from '@angular/material/select';
 import {MatAutocompleteModule} from '@angular/material/autocomplete'; 
 import {MatDatepickerModule, } from '@angular/material/datepicker'; 
 import { MatNativeDateModule } from '@angular/material/core';
+import { ServicesPageComponent } from './services-page/services-page.component';
 
 export function playerFactory() {
   return player;
@@ -68,7 +69,8 @@ export function playerFactory() {
     MatNavHeaderComponent,
     ParallaxDirective,
     WorkflowPageComponent,
-    CarouselHomeComponent
+    CarouselHomeComponent,
+    ServicesPageComponent
   ],
   imports: [
     BrowserModule,

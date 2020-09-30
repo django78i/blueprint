@@ -29,9 +29,9 @@
     <div class="slider">
         <div class="slide">
             <div class="image">
-                <img @fadeIn class="photo" *ngIf='slides==1' src="../assets/images/product_coqueRbagX_blue.png" alt="">
-                <img @fadeIn class="photo" *ngIf='slides==2' src="../assets/images/product_coqueRbagX_blue.png" alt="">
-                <img @fadeIn class="photo" *ngIf='slides==3' src="../assets/images/product_coqueRbagX_blue.png" alt="">
+                <img [@fadeIn]='state' class="photo" *ngIf='slides==1' src="../assets/images/flag_outsider.png" alt="">
+                <img [@fadeIn]='state' class="photo" *ngIf='slides==2' src="../assets/images/flag_outsider.png" alt="">
+                <img [@fadeIn]='state' class="photo" *ngIf='slides==3' src="../assets/images/flag_outsider.png" alt="">
             </div>
             <div class="text">
                 <div [@fade]='state' *ngIf='slides==1' class="textInner">

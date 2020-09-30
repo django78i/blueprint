@@ -24,6 +24,8 @@ import { trigger, transition, style,animate, state, query } from '@angular/anima
 
 export class GetInTouchComponent extends CdkStepper  {
 
+  etapes = ['cadre intervention', 'limites'];
+
   onClick(index: number): void {
     console.log('etape: '+index);
     this.selectedIndex = index+1;

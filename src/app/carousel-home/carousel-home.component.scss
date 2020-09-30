@@ -79,9 +79,12 @@
 
 .image{
     flex: 2;
-    background:plum;
+    background:white;
     margin-top: -100px;
     overflow: hidden;
+    // padding:10px;
+    box-sizing: border-box;
+    border:10px solid white;
 }
 
 

@@ -65,6 +65,17 @@
     justify-content: space-between;
 }
 
+
+.ligne2{
+    margin-top: 100px;
+    height: 30px;
+    width: 4px;
+    background: blue;
+    position: absolute;
+    margin-left: -3.5px;
+}
+
+
 .container {
     display: flex;
     flex-direction: column;
@@ -147,5 +158,9 @@
 
     h1{
         font-size: 1.5rem !important;
+    }
+
+    .title{
+        padding: 30px;
     }
 }

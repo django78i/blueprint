@@ -8,10 +8,13 @@
         <div @fadeIn [style.display]="selected ? 'flex' : 'none'" style="width: 70%;">
             <ng-container @fadeIn [ngTemplateOutlet]="selected.content"></ng-container>
         </div>
-        <div *ngFor="let step of steps; let i = index;" [ngClass]="{'active': selectedIndex === i}"
+        <div *ngFor="let step of steps ; let i = index" [ngClass]="{'active': selectedIndex === i}"
             (click)="onClick(i)">
             <div class="step" *ngIf="selectedIndex === i && selectedIndex < 2" [@fadeIn]>
-                <p>0{{i + 2}}</p>
+                <p style="font-size: 194px;">0{{i + 2}}</p>
+                <p *ngIf="i == 0">cadre intervention<span style="color: white;margin-left: 20px;">&rarr;</span></p>
+                <p *ngIf="i == 1">limites<span style="color: white;margin-left: 20px;">&rarr;</span></p>
+                
             </div>
         </div>
     </div>

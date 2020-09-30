@@ -21,8 +21,14 @@ import { GuardsCheckEnd } from '@angular/router';
       ])
     ]),
     trigger('fadeIn',[
-      transition('*<=>*', [
-        style({ opacity: '0' }),
+      state('gauche', style({ opacity:'1' })),
+      state('droite', style({ opacity:'1' })),
+      transition('*=>gauche', [
+        style({ opacity: '0',transform: 'translateX(-300px)' }),
+        animate('1500ms ease')
+      ]),
+      transition('*=>droite', [
+        style({ opacity: '0',transform: 'translateX(300px)' }),
         animate('1500ms ease')
       ])
     ]),

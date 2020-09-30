@@ -1,5 +1,6 @@
 
 
-<app-navigation-header></app-navigation-header>
 <!-- <app-mat-nav-header></app-mat-nav-header>  -->
-            <!-- <router-outlet></router-outlet> -->
+            <router-outlet (activate)="onActivate($event)">
+                <app-navigation-header></app-navigation-header>
+            </router-outlet>

@@ -58,6 +58,7 @@ section{
         background: blue;
         position: absolute;
         margin-left: -3.5px;
+        top:-35px;
     }
 }
 
@@ -72,8 +73,12 @@ section.titre .menu, section.domaines .menu, section .menu {
 }
 
 .bt{
-    width: 306px;
+    width: 226px;
     cursor: pointer;
+    height: 35px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 .progress{
@@ -144,7 +149,7 @@ section.domaines .container{
 
 .tableau{
     height: 580px;
-    width: 75%;
+    width: 100%;
     display: flex;
     flex-wrap: wrap;
 
@@ -177,7 +182,7 @@ section.domaines .container{
         height: 50%;
         justify-content: space-between;
         padding: 42px;
-    
+        cursor: pointer;
     }
         
     .bas{
@@ -198,13 +203,30 @@ section.domaines .container{
         display: flex;
         justify-content: space-between;
         width: 100%;
+        align-items: center;
+
+        .postHautText{
+            display: flex;
+            align-content: center;
+            color: white;
+        }
     }
-    
+
     .sousTitre{
         font-size: 14px;
         color: #bebfc2;
     }
 }
+
+.articleHaut{
+    align-self:flex-start ;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    align-items: center;
+    padding: 34px;
+}   
+
 
 
 .articles{
@@ -217,10 +239,15 @@ section.domaines .container{
         flex-direction: column;
         flex:1;
         color: white;
+        justify-content: space-between;
+    }
+
+    .titreArticles .bt{
+        margin-bottom: 21px;
     }
 
     .ariclesItem{
-        flex:1;
+        flex:2;
         display: flex;
         justify-content: space-between;
     }
@@ -300,11 +327,18 @@ section.domaines .container{
     .articles{
         flex-direction: column;
 
-        .ariclesItem{
-            flex: 2;
-        }
     }
 
+    .postHautText p{
+        font-size: 0.8rem;
+    }
+
+
+    .articleHaut{
+        padding: 24px;
+        transform: scale(0.8);
+
+    }
 
 }
 
@@ -317,7 +351,7 @@ section.domaines .container{
 
 
 ::ng-deep .mat-form-field-appearance-legacy .mat-form-field-underline{
-    background-color: white;
+    background-color: #484848;
 }
 
 
@@ -339,3 +373,6 @@ section.domaines .container{
     color: white;
 }
 
+mat-label{
+    color: #484848;
+}

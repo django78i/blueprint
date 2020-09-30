@@ -1,0 +1,175 @@
+*{
+    padding:0;
+    box-sizing: border-box;
+    margin: 0;
+}
+
+.title{
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: white;
+}
+
+
+.titlecontent{
+    color: white;
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+}
+
+#content{
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    width: 75%;
+}
+
+
+.fond2 .row{
+    height: 2904px;
+    margin: 0;
+}
+
+.fond2{
+    z-index: -1;
+    background: #0E0E34;
+    width: 100%;
+    position: absolute;
+}
+
+.fondBorder2{
+    border-right: 1px solid rgba(243, 238, 238, 0.24);
+    padding: 0px;
+}
+
+.panneau{
+    height: 60px;
+    z-index: 3;
+    width: 60%;
+    align-self: center;
+    display: flex;
+    color: white;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    margin-top: 80px;
+    .icon{
+        cursor: pointer;
+        min-width: 80px !important;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+    }
+    
+    .icon p{
+        font-size: 15px;
+    
+    }
+}
+
+.service{
+    position: relative;
+    width: 500px;
+    margin-bottom: 100px;
+}
+
+.numService{
+    position: absolute;
+    font-size: 200px;
+    z-index: 1;
+    right: 119px;
+    top: -107px;
+    font-weight: 700;
+    color: #101039;
+
+}
+
+.numService p {
+    text-shadow: 0px 10px 20px rgba(0, 0, 0, 0.4);
+}
+
+.textService{
+    position: relative;
+    width: 80%;
+    z-index: 2;
+}
+
+.textService p {
+    color: #7E7F95;
+}
+
+.textService h2, .textService h4{
+    color: white;
+}
+
+.contenu{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+#service2{
+    align-self: center;
+}
+#service3{
+    align-self: flex-start;
+}
+#service4{
+    align-self: flex-end;
+}
+
+.ligne{
+    margin-top: 100px;
+    height: 30px;
+    width: 4px;
+    background: blue;
+    position: absolute;
+    margin-left: -3.5px;
+}
+
+
+
+@media screen and (max-width: 400px) {
+
+
+    #content{
+        width: 100%;
+    }
+    .titre p{
+        font-size: 0.7 em;
+    }
+
+    h1{
+        font-size: 1.5rem !important;
+    }
+
+    .service{
+        width: 380px;
+    }
+
+    .contenu{
+        align-self: center;
+        padding-left: 30px;
+    }
+
+    .panneau{
+        width: 100%;
+    }
+
+    .titlecontent{
+        align-self: center;
+    }
+
+    #service2,#service3,#service4{
+        align-self: flex-start;
+    }
+}
