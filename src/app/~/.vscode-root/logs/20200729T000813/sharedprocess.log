@@ -1,0 +1,3 @@
+[2020-07-29 00:08:17.279] [sharedprocess] [info] main {"machineId":"3d03cb420509cad698f37933913dd23e69cef63ed47cc691ea2c95fc4958bcf6","windowId":2}
+[2020-07-29 00:08:17.347] [sharedprocess] [error] [File Watcher (node.js)] Error: ENOENT: no such file or directory, stat '/home/diakite/Documents/ITPmarketing/frontend/ITPmarketing/src/app/~/.vscode-root/User/snippets'
+[2020-07-29 00:08:57.305] [sharedprocess] [info] Starting to clean up unused language packs.

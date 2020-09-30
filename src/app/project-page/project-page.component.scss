@@ -1,0 +1,62 @@
+  .titre{
+    background-position: center;
+  }
+
+  body{
+    background-color: red;
+  }
+  .banniere{
+    display:flex;
+    height: 300px;
+    background-position: auto;
+    align-items: center;
+    flex-direction: column;
+    background-color: #4465D5;
+    color: #EDEFF5;
+    padding-top: 10px;
+  }
+
+.titre{
+  display: flex;
+  justify-content: center;
+  width: 40%;
+  margin: auto;
+}
+
+.icones{
+  display: flex;
+  justify-content: space-between;
+  width: 150px;
+}
+
+.category{
+  display: flex;
+  width: 40%;
+  justify-content: center;
+}
+
+.infos{
+  display: flex;
+  max-width: 500px;
+  min-width: 300px;
+  justify-content: space-between;
+}
+
+.atouts{
+  margin: 0px 5px 0px 5px;
+}
+
+.poids{
+  margin: 0px 5px 0px 5px;
+}
+
+.role{
+  margin: 0px 5px 0px 5px;
+
+}
+
+.explore{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}

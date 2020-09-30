@@ -1,0 +1,32 @@
+Looking for git in: git
+Using git 2.25.1 from git
+> git rev-parse --show-toplevel
+fatal: not a git repository (or any of the parent directories): .git
+> git rev-parse --show-toplevel
+fatal: not a git repository (or any of the parent directories): .git
+> git rev-parse --show-toplevel
+fatal: not a git repository (or any of the parent directories): .git
+> git rev-parse --show-toplevel
+fatal: not a git repository (or any of the parent directories): .git
+> git rev-parse --show-toplevel
+> git rev-parse --git-dir
+Open repository: /home/diakite/Documents/CoursJs/CoursNode/Open/front/frontend
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse master
+> git rev-parse --symbolic-full-name master@{u}
+> git rev-list --left-right master...refs/remotes/origin/master
+> git for-each-ref --sort -committerdate --format %(refname) %(objectname)
+> git remote --verbose
+Warning: Failed to watch ref '/home/diakite/Documents/CoursJs/CoursNode/Open/front/frontend/.git/refs/remotes/origin/master', is most likely packed.
+> git config --get commit.template
+> git show --textconv :src/app/part-three/part-three.component.html
+> git ls-files --stage -- /home/diakite/Documents/CoursJs/CoursNode/Open/front/frontend/src/app/part-three/part-three.component.html
+> git cat-file -s 1e157542a676000642a2a0d17eda16eb0c85cc41
+> git check-ignore -v -z --stdin
+> git check-ignore -v -z --stdin
+> git check-ignore -v -z --stdin
+> git check-ignore -v -z --stdin
+> git show --textconv :src/app/part-one/modify-thing/modify-thing.component.html
+> git ls-files --stage -- /home/diakite/Documents/CoursJs/CoursNode/Open/front/frontend/src/app/part-one/modify-thing/modify-thing.component.html
+> git cat-file -s d58f36cbc43404ce1d67a76984cad7373f114f93

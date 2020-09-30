@@ -1,0 +1,105 @@
+<div class="carousel">
+    <div class="gauche">
+        <div class="textBoutton">
+            <div [@fadeBoutton]='state2' *ngIf='slides==1' class="textInnerDroit">
+                <h1 style="color: #FFFFFF;opacity:  0.22;">P5</h1>
+                <p style="font-weight: 700;color: white;"><strong>Prism</strong></p>
+                <div style="height: 2px;background:#EB5A50; width: 20px;"></div>
+                <p style="color: white;text-align: right;">Identité visuelle<br>2015</p>
+            </div>
+            <div [@fadeBoutton]='state2' *ngIf='slides==2' class="textInnerDroit">
+                <h1 style="color: #FFFFFF;opacity:  0.22;">07</h1>
+                <p style="font-weight: 700;color: white;"><strong>Outsider Mob</strong></p>
+                <div style="height: 2px;background:#EB5A50; width: 20px;"></div>
+                <p style="color: white;text-align: right;">Identité visuelle 2020</p>
+            </div>
+            <div [@fadeBoutton]='state2' *ngIf='slides==3' class="textInnerDroit">
+                <h1 style="color: #FFFFFF;opacity:  0.22;">Y4</h1>
+                <p style="font-weight: 700;color: white;"><strong>Yvel Fluides</strong></p>
+                <div style="height: 2px;background:#EB5A50; width: 20px;"></div>
+                <p style="color: white;text-align: right;">DXP<br>2019</p>
+            </div>
+        </div>
+        <div class="left" (click)="gauche()" style="margin-left: 50px;">
+            <span class="material-icons" style=" font-size: 48px;">
+                arrow_left
+            </span>
+        </div>
+    </div>
+    <div class="slider">
+        <div class="slide">
+            <div class="image">
+                <img @fadeIn class="photo" *ngIf='slides==1' src="../assets/images/product_coqueRbagX_blue.png" alt="">
+                <img @fadeIn class="photo" *ngIf='slides==2' src="../assets/images/product_coqueRbagX_blue.png" alt="">
+                <img @fadeIn class="photo" *ngIf='slides==3' src="../assets/images/product_coqueRbagX_blue.png" alt="">
+            </div>
+            <div class="text">
+                <div [@fade]='state' *ngIf='slides==1' class="textInner">
+                    <div class="init">
+                        <h1 style="color: #FFFFFF;opacity:  0.22;">07</h1>
+                    </div>
+                    <div class="textuelle">
+                        <p style="font-weight: 700;color: white;"><strong>Outsider Mob</strong></p>
+                        <div style="height: 2px;background:#EB5A50; width: 20px;"></div>
+                        <p style="color: white;text-align: right;">Identité visuelle<br>2020</p>
+                    </div>
+                </div>
+                <div [@fade]='state' *ngIf='slides==2' class="textInner">
+                    <div class="init">
+                        <h1 style="color: #FFFFFF;opacity:  0.22;">Y4</h1>
+                    </div>
+                    <div class="textuelle">
+                        <p style="font-weight: 700;color: white;"><strong>Yvel Fluides</strong></p>
+                        <div style="height: 2px;background:#EB5A50; width: 20px;"></div>
+                        <p style="color: white;text-align: right;">DXP<br>2019</p>
+                    </div>
+                </div>
+                <div [@fade]='state' *ngIf='slides==3' class="textInner">
+                    <div class="init">
+                        <h1 style="color: #FFFFFF;opacity:  0.22;">P5</h1>
+                    </div>
+                    <div class="textuelle">
+                        <p style="font-weight: 700;color: white;"><strong>Prism</strong></p>
+                        <div style="height: 2px;background:#EB5A50; width: 20px;"></div>
+                        <p style="color: white;text-align: right;">Identité visuelle<br>2015</p>
+                    </div>
+                </div>
+                <div class="bt">
+                    <p style="display: flex;justify-content: space-between;color: white;">explorer
+                        <span class="material-icons" style="color: white;">arrow_forward</span>
+                    </p>
+                    <div class="progress">
+                        <div class="bar"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="droite">
+        <div class="textBoutton">
+            <div [@fadeBoutton]='state2' *ngIf='slides==1' class="textInnerDroit">
+                <h1 style="color: #FFFFFF;opacity:  0.22;">Y4</h1>
+                <p style="font-weight: 700;color: white;"><strong>Yvel Fluides</strong></p>
+                <div style="height: 2px;background:#EB5A50; width: 20px;"></div>
+                <p style="color: white;text-align: right;">DXP<br>2019</p>
+            </div>
+            <div [@fadeBoutton]='state2' *ngIf='slides==2' class="textInnerDroit">
+                <h1 style="color: #FFFFFF;opacity:  0.22;">P5</h1>
+                <p style="font-weight: 700;color: white;"><strong>Prism</strong></p>
+                <div style="height: 2px;background:#EB5A50; width: 20px;"></div>
+                <p style="color: white;text-align: right;">Identité visuelle<br>2015</p>
+            </div>
+            <div [@fadeBoutton]='state2' *ngIf='slides==3' class="textInnerDroit">
+                <h1 style="color: #FFFFFF;opacity:  0.22;">07</h1>
+                <p style="font-weight: 700;color: white;"><strong>Outsider Mob</strong></p>
+                <div style="height: 2px;background:#EB5A50; width: 20px;"></div>
+                <p style="color: white;text-align: right; display: block;">Identité visuelle<br>2020</p>
+            </div>
+        </div>
+        <div class="right" (click)="droite()">
+            <span class="material-icons" style=" font-size: 48px;">
+                arrow_right
+            </span>
+        </div>
+    </div>
+</div>

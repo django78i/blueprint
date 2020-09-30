@@ -1,0 +1,22 @@
+[2020-07-29 01:37:17.088] [exthost] [info] extension host started
+[2020-07-29 01:37:17.130] [exthost] [info] ExtensionService#_doActivateExtension vscode.debug-auto-launch {"startup":true,"extensionId":{"value":"vscode.debug-auto-launch","_lower":"vscode.debug-auto-launch"},"activationEvent":"*"}
+[2020-07-29 01:37:17.130] [exthost] [info] ExtensionService#loadCommonJSModule file:///snap/code/39/usr/share/code/resources/app/extensions/debug-auto-launch/dist/extension
+[2020-07-29 01:37:17.134] [exthost] [info] ExtensionService#_doActivateExtension vscode.emmet {"startup":true,"extensionId":{"value":"vscode.emmet","_lower":"vscode.emmet"},"activationEvent":"*"}
+[2020-07-29 01:37:17.135] [exthost] [info] ExtensionService#loadCommonJSModule file:///snap/code/39/usr/share/code/resources/app/extensions/emmet/dist/extension
+[2020-07-29 01:37:17.149] [exthost] [info] ExtensionService#_doActivateExtension vscode.git {"startup":true,"extensionId":{"value":"vscode.github","_lower":"vscode.github"},"activationEvent":"*"}
+[2020-07-29 01:37:17.149] [exthost] [info] ExtensionService#loadCommonJSModule file:///snap/code/39/usr/share/code/resources/app/extensions/git/dist/main
+[2020-07-29 01:37:17.171] [exthost] [info] ExtensionService#_doActivateExtension vscode.github-authentication {"startup":true,"extensionId":{"value":"vscode.github-authentication","_lower":"vscode.github-authentication"},"activationEvent":"*"}
+[2020-07-29 01:37:17.171] [exthost] [info] ExtensionService#loadCommonJSModule file:///snap/code/39/usr/share/code/resources/app/extensions/github-authentication/dist/extension.js
+[2020-07-29 01:37:17.177] [exthost] [info] ExtensionService#_doActivateExtension vscode.merge-conflict {"startup":true,"extensionId":{"value":"vscode.merge-conflict","_lower":"vscode.merge-conflict"},"activationEvent":"*"}
+[2020-07-29 01:37:17.177] [exthost] [info] ExtensionService#loadCommonJSModule file:///snap/code/39/usr/share/code/resources/app/extensions/merge-conflict/dist/mergeConflictMain
+[2020-07-29 01:37:17.180] [exthost] [info] ExtensionService#_doActivateExtension vscode.microsoft-authentication {"startup":true,"extensionId":{"value":"vscode.microsoft-authentication","_lower":"vscode.microsoft-authentication"},"activationEvent":"*"}
+[2020-07-29 01:37:17.180] [exthost] [info] ExtensionService#loadCommonJSModule file:///snap/code/39/usr/share/code/resources/app/extensions/microsoft-authentication/dist/extension.js
+[2020-07-29 01:37:17.184] [exthost] [info] ExtensionService#_doActivateExtension vscode.search-result {"startup":true,"extensionId":{"value":"vscode.search-result","_lower":"vscode.search-result"},"activationEvent":"*"}
+[2020-07-29 01:37:17.185] [exthost] [info] ExtensionService#loadCommonJSModule file:///snap/code/39/usr/share/code/resources/app/extensions/search-result/dist/extension.js
+[2020-07-29 01:37:17.189] [exthost] [info] ExtensionService#_doActivateExtension vscode.npm {"startup":true,"extensionId":{"value":"vscode.npm","_lower":"vscode.npm"},"activationEvent":"workspaceContains:package.json"}
+[2020-07-29 01:37:17.189] [exthost] [info] ExtensionService#loadCommonJSModule file:///snap/code/39/usr/share/code/resources/app/extensions/npm/dist/npmMain
+[2020-07-29 01:37:17.409] [exthost] [info] ExtensionService#_doActivateExtension vscode.github {"startup":true,"extensionId":{"value":"vscode.github","_lower":"vscode.github"},"activationEvent":"*"}
+[2020-07-29 01:37:17.409] [exthost] [info] ExtensionService#loadCommonJSModule file:///snap/code/39/usr/share/code/resources/app/extensions/github/dist/extension.js
+[2020-07-29 01:37:17.478] [exthost] [info] eager extensions activated
+[2020-07-29 01:37:28.725] [exthost] [info] ExtensionService#_doActivateExtension vscode.typescript-language-features {"startup":false,"extensionId":{"value":"vscode.typescript-language-features","_lower":"vscode.typescript-language-features"},"activationEvent":"onLanguage:javascript"}
+[2020-07-29 01:37:28.725] [exthost] [info] ExtensionService#loadCommonJSModule file:///snap/code/39/usr/share/code/resources/app/extensions/typescript-language-features/dist/extension

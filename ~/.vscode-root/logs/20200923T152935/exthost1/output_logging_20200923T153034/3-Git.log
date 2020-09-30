@@ -1,0 +1,136 @@
+Looking for git in: git
+Using git 2.25.1 from git
+> git rev-parse --git-dir
+Open repository: /home/diakite/Documents/ITPmarketing/frontend/ITPmarketing
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse master
+fatal: ambiguous argument 'master': unknown revision or path not in the working tree.
+Use '--' to separate paths from revisions, like this:
+'git <command> [<revision>...] -- [<file>...]'
+> git for-each-ref --sort -committerdate --format %(refname) %(objectname)
+> git remote --verbose
+> git config --get commit.template
+> git check-ignore -v -z --stdin
+> git check-ignore -v -z --stdin
+> git check-ignore -v -z --stdin
+> git check-ignore -v -z --stdin
+> git show --textconv :src/app/get-in-touch/get-in-touch.component.ts
+> git ls-files --stage -- /home/diakite/Documents/ITPmarketing/frontend/ITPmarketing/src/app/get-in-touch/get-in-touch.component.ts
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse master
+fatal: ambiguous argument 'master': unknown revision or path not in the working tree.
+Use '--' to separate paths from revisions, like this:
+'git <command> [<revision>...] -- [<file>...]'
+> git for-each-ref --sort -committerdate --format %(refname) %(objectname)
+> git remote --verbose
+> git config --get commit.template
+> git show --textconv :src/app/get-in-touch/get-in-touch.component.html
+> git ls-files --stage -- /home/diakite/Documents/ITPmarketing/frontend/ITPmarketing/src/app/get-in-touch/get-in-touch.component.html
+> git show --textconv :src/app/get-in-touch/get-in-touch.component.scss
+> git ls-files --stage -- /home/diakite/Documents/ITPmarketing/frontend/ITPmarketing/src/app/get-in-touch/get-in-touch.component.scss
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse master
+fatal: ambiguous argument 'master': unknown revision or path not in the working tree.
+Use '--' to separate paths from revisions, like this:
+'git <command> [<revision>...] -- [<file>...]'
+> git for-each-ref --sort -committerdate --format %(refname) %(objectname)
+> git remote --verbose
+> git config --get commit.template
+> git show --textconv :src/app/get-in-touch/get-in-touch.component.html
+> git ls-files --stage -- /home/diakite/Documents/ITPmarketing/frontend/ITPmarketing/src/app/get-in-touch/get-in-touch.component.html
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse master
+fatal: ambiguous argument 'master': unknown revision or path not in the working tree.
+Use '--' to separate paths from revisions, like this:
+'git <command> [<revision>...] -- [<file>...]'
+> git for-each-ref --sort -committerdate --format %(refname) %(objectname)
+> git remote --verbose
+> git config --get commit.template
+> git show --textconv :src/app/get-in-touch/get-in-touch.component.scss
+> git ls-files --stage -- /home/diakite/Documents/ITPmarketing/frontend/ITPmarketing/src/app/get-in-touch/get-in-touch.component.scss
+> git show --textconv :src/app/get-in-touch/get-in-touch.component.ts
+> git ls-files --stage -- /home/diakite/Documents/ITPmarketing/frontend/ITPmarketing/src/app/get-in-touch/get-in-touch.component.ts
+> git check-ignore -v -z --stdin
+> git show --textconv :src/app/app.module.ts
+> git ls-files --stage -- /home/diakite/Documents/ITPmarketing/frontend/ITPmarketing/src/app/app.module.ts
+> git cat-file -s 2c3ba2995c8510c02ca812f90280146738f162cf
+> git show --textconv :src/app/get-in-touch/get-in-touch.component.ts
+> git ls-files --stage -- /home/diakite/Documents/ITPmarketing/frontend/ITPmarketing/src/app/get-in-touch/get-in-touch.component.ts
+> git show --textconv :src/app/app.module.ts
+> git ls-files --stage -- /home/diakite/Documents/ITPmarketing/frontend/ITPmarketing/src/app/app.module.ts
+> git cat-file -s 2c3ba2995c8510c02ca812f90280146738f162cf
+> git show --textconv :src/app/get-in-touch/get-in-touch.component.ts
+> git ls-files --stage -- /home/diakite/Documents/ITPmarketing/frontend/ITPmarketing/src/app/get-in-touch/get-in-touch.component.ts
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse master
+fatal: ambiguous argument 'master': unknown revision or path not in the working tree.
+Use '--' to separate paths from revisions, like this:
+'git <command> [<revision>...] -- [<file>...]'
+> git for-each-ref --sort -committerdate --format %(refname) %(objectname)
+> git remote --verbose
+> git config --get commit.template
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse master
+fatal: ambiguous argument 'master': unknown revision or path not in the working tree.
+Use '--' to separate paths from revisions, like this:
+'git <command> [<revision>...] -- [<file>...]'
+> git for-each-ref --sort -committerdate --format %(refname) %(objectname)
+> git remote --verbose
+> git config --get commit.template
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse master
+fatal: ambiguous argument 'master': unknown revision or path not in the working tree.
+Use '--' to separate paths from revisions, like this:
+'git <command> [<revision>...] -- [<file>...]'
+> git for-each-ref --sort -committerdate --format %(refname) %(objectname)
+> git remote --verbose
+> git config --get commit.template
+> git show --textconv :src/app/get-in-touch/get-in-touch.component.html
+> git ls-files --stage -- /home/diakite/Documents/ITPmarketing/frontend/ITPmarketing/src/app/get-in-touch/get-in-touch.component.html
+> git show --textconv :src/app/get-in-touch/get-in-touch.component.ts
+> git ls-files --stage -- /home/diakite/Documents/ITPmarketing/frontend/ITPmarketing/src/app/get-in-touch/get-in-touch.component.ts
+> git check-ignore -v -z --stdin
+> git show --textconv :src/app/portfolio-view/portfolio-view.component.html
+> git ls-files --stage -- /home/diakite/Documents/ITPmarketing/frontend/ITPmarketing/src/app/portfolio-view/portfolio-view.component.html
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse master
+fatal: ambiguous argument 'master': unknown revision or path not in the working tree.
+Use '--' to separate paths from revisions, like this:
+'git <command> [<revision>...] -- [<file>...]'
+> git for-each-ref --sort -committerdate --format %(refname) %(objectname)
+> git remote --verbose
+> git config --get commit.template
+> git show --textconv :src/app/get-in-touch/get-in-touch.component.html
+> git ls-files --stage -- /home/diakite/Documents/ITPmarketing/frontend/ITPmarketing/src/app/get-in-touch/get-in-touch.component.html
+> git show --textconv :src/app/get-in-touch/get-in-touch.component.ts
+> git ls-files --stage -- /home/diakite/Documents/ITPmarketing/frontend/ITPmarketing/src/app/get-in-touch/get-in-touch.component.ts
+> git show --textconv :src/app/portfolio-view/portfolio-view.component.html
+> git ls-files --stage -- /home/diakite/Documents/ITPmarketing/frontend/ITPmarketing/src/app/portfolio-view/portfolio-view.component.html
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse master
+fatal: ambiguous argument 'master': unknown revision or path not in the working tree.
+Use '--' to separate paths from revisions, like this:
+'git <command> [<revision>...] -- [<file>...]'
+> git for-each-ref --sort -committerdate --format %(refname) %(objectname)
+> git remote --verbose
+> git config --get commit.template
+> git show --textconv :src/app/get-in-touch/get-in-touch.component.html
+> git ls-files --stage -- /home/diakite/Documents/ITPmarketing/frontend/ITPmarketing/src/app/get-in-touch/get-in-touch.component.html
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse master
+fatal: ambiguous argument 'master': unknown revision or path not in the working tree.
+Use '--' to separate paths from revisions, like this:
+'git <command> [<revision>...] -- [<file>...]'
+> git for-each-ref --sort -committerdate --format %(refname) %(objectname)
+> git remote --verbose
+> git config --get commit.template

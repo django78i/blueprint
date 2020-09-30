@@ -1,0 +1,39 @@
+<section>
+    <header class="titreStep">
+        <p class="contact">nous contacter</p>
+        <h1 class="step1"> 0{{selectedIndex + 1}}</h1>
+        <h1 class="step2">0{{steps.length}}</h1>
+    </header>
+    <div [@fadeIn] class="contenu">
+        <div @fadeIn [style.display]="selected ? 'flex' : 'none'" style="width: 70%;">
+            <ng-container @fadeIn [ngTemplateOutlet]="selected.content"></ng-container>
+        </div>
+        <div *ngFor="let step of steps; let i = index;" [ngClass]="{'active': selectedIndex === i}"
+            (click)="onClick(i)">
+            <div class="step" *ngIf="selectedIndex === i && selectedIndex < 2" [@fadeIn]>
+                <p>0{{i + 2}}</p>
+            </div>
+        </div>
+    </div>
+    <footer class="step-navigation-bar">
+        <div class="btContent">
+            <button class="nav-button" *ngIf="selectedIndex > 0" cdkStepperPrevious style="position: absolute;left: 0px;top:0px; margin: 0px;">
+                <p style="display: flex;justify-content: space-between;color: white;"><span
+                        style="color: white;">&larr;</span>
+                    étape précédente
+                </p>
+                <div class="progress">
+                    <div class="bar"></div>
+                </div>
+            </button>
+            <button class="nav-button" *ngIf="selectedIndex < 2" cdkStepperNext style="position: absolute;right: 0px;top:0px; margin: 0px;">
+                <p style="display: flex;justify-content: space-between;color: white;">étape suivante
+                    <span style="color: white;">&rarr;</span>
+                </p>
+                <div class="progress">
+                    <div class="bar"></div>
+                </div>
+            </button>
+        </div>
+    </footer>
+</section>

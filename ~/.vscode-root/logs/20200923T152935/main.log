@@ -1,0 +1,4 @@
+[2020-09-23 15:29:35.334] [main] [error] [File Watcher (node.js)] Error: ENOENT: no such file or directory, stat '/home/diakite/Documents/ITPmarketing/frontend/ITPmarketing/~/.vscode-root/User'
+[2020-09-23 15:29:35.500] [main] [info] update#setState idle
+[2020-09-23 15:30:05.518] [main] [info] update#setState checking for updates
+[2020-09-23 15:30:05.524] [main] [info] update#setState idle

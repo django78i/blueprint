@@ -1,0 +1,75 @@
+.torsion{
+  //width: 150%;
+  height: 8vw;
+  transform: skew(0deg, -2deg);
+  z-index: 1 !important;
+  margin-bottom: -25px;
+  margin-top: 50px;
+}
+
+.torsionDown{
+  height: 12vw;
+  transform: skew(0deg, -2deg);
+  z-index: 1 !important;
+  margin-top: -50px;
+}
+
+.wrapper{
+    align-content: center;
+    display: flex;
+    z-index: 5!important;
+  //  transform: skew(30deg);
+  }
+  
+
+.media{
+  width: 50%;
+  // border: 1px solid black;
+}
+
+#text{
+    justify-content: center;
+}
+
+.image{
+  display: flex;
+  margin-top: 30px;
+ // width: 100%;
+}
+
+.imagePos{
+ margin: auto;
+ min-width: 300px;
+//  max-width: 400px;
+ overflow: hidden;
+  //flex: 1;
+}
+
+.contenuText{
+  display: flex;
+  margin-top: 30px;
+  flex-direction: column;
+}
+
+.text-content{
+  margin: auto;
+}
+
+body *{
+  font-family: 'Avenir';
+}
+
+.stats{
+  z-index: 5;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.statDesc{
+  z-index: 6!important;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  align-items: center;
+}

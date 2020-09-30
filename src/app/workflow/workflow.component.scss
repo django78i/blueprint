@@ -1,0 +1,151 @@
+*{
+    padding:0;
+    box-sizing: border-box;
+}
+
+.title{
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: white;
+}
+
+
+.titlecontent{
+    color: white;
+    // width: 554px;
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+}
+
+.titleBoutton{
+    display: flex;
+    justify-content: space-between;
+    width: 65%;
+}
+
+.boutton{
+
+    padding: 10px 10px 10px 10px;
+    color: white;
+    border-radius: 10px;
+}
+.primary{
+    background-color: #3B6EF8;
+    border: none;
+}
+
+.secondary{
+    background-color: rgba(0,0,0,0);
+    border: 1px solid #3B6EF8;
+
+}
+
+.progress-container {
+    position: absolute;
+    width: 3px;
+    height: 90%;
+    background: #ccc;
+    z-index: 3;
+   align-self: center;
+   overflow: hidden;
+  }
+  
+  .progress-bar {
+    height: 0%;
+    background: #180db1;
+    width: 3px;
+  }
+
+
+.ligne{
+    display: flex;
+    justify-content: space-between;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+}
+
+#content{
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    width: 75%;
+}
+
+.gauche, .droite{
+    flex: 1;
+    padding: 30px;
+}
+
+
+.titre{
+    color: white;
+}
+
+.sousTitre{
+    color:#bebfc2;
+}
+
+.bt{
+    width: 306px;
+    cursor: pointer;
+    // flex: 1;
+}
+
+.progress{
+    height: 2px;
+    width: 100%;
+    background: #ccc;
+}
+
+.progress .bar{
+    height: 2px;
+    width: 10%;
+    background: #3B6EF8 ;
+}
+
+.bt:hover{
+    .progress .bar{
+        transition: 0.2s ease;
+        width: 100%;
+    }
+}
+
+.fond2 .row{
+    height: 2904px;
+    margin: 0;
+}
+
+.fond2{
+    z-index: -1;
+    background: #0E0E34;
+    width: 100%;
+    position: absolute;
+}
+
+.fondBorder2{
+    border-right: 1px solid rgba(243, 238, 238, 0.24);
+    padding: 0px;
+}
+
+
+
+
+@media screen and (max-width: 400px) {
+
+    #content{
+        width: 100%;
+    }
+    .titre p{
+        font-size: 0.7 em;
+    }
+
+    h1{
+        font-size: 1.5rem !important;
+    }
+}

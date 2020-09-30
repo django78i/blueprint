@@ -1,0 +1,18 @@
+<p>portfolio-form works!</p>
+<div class="col-sm-8 col-sm-offset-2">
+    <form [formGroup]="portfolioForm" (ngSubmit)="onSubmit()">
+      <div class="form-group">
+        <label for="name">Nom</label>
+        <input type="text" id="name" class="form-control" formControlName="name">
+      </div>
+      <div class="form-group">
+        <label for="status">Status</label>
+        <input type="text" id="status" class="form-control" formControlName="status">
+      </div>
+      <section class="example-section">
+        <mat-checkbox class="example-margin" id="favoris" class="form-control"formControlName="favoris"
+                      >Check me!</mat-checkbox>
+      </section>
+      <button type="submit" class="btn btn-primary">Soumettre</button>
+    </form>
+  </div>

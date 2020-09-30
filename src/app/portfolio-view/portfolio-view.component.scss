@@ -1,0 +1,341 @@
+*{
+    box-sizing: border-box;
+    padding:0;
+    margin:0px;
+}
+
+.wrapper{
+    width: 100%;
+    margin: 0;
+    overflow: hidden;
+}
+
+
+section.titre {
+    position: relative;
+    display: flex;
+    color: white;
+    height: 100vh;
+    .fond{
+        z-index: -1;
+        background: #0E0E34;
+        width: 100%;
+        position: absolute;
+    }
+    .fondBorder{
+        border-right: 2px solid rgba(243, 238, 238, 0.24);
+        height: 110vh;
+    }    
+
+}
+
+
+
+.row{
+    margin: 0px;
+}
+
+section{
+    position: relative;
+    padding-top: 50px;
+}
+
+.fond2{
+    z-index: -1;
+    background: black;
+    width: 100%;
+    position: absolute;
+
+    .fondBorder2{
+        border-right: 1px solid rgba(243, 238, 238, 0.24);
+        padding: 0px;
+    }
+
+
+    .ligne{
+        height: 30px;
+        width: 4px;
+        background: blue;
+        position: absolute;
+        margin-left: -3.5px;
+    }
+}
+
+
+section.titre .menu, section.domaines .menu, section .menu {
+    position: absolute;
+    margin-top: 150px;
+    text-align: center;
+    transform: rotate(90deg);
+    margin-left: -47px;
+    color: white;
+}
+
+.bt{
+    width: 306px;
+    cursor: pointer;
+}
+
+.progress{
+    height: 2px;
+    width: 100%;
+    background: #ccc;
+}
+
+.progress .bar{
+    height: 2px;
+    width: 10%;
+    background: #3B6EF8 ;
+}
+
+.bt:hover{
+    .progress .bar{
+        transition: 0.2s ease;
+        width: 100%;
+    }
+}
+
+
+
+.container {
+    position: relative;
+    padding: 0px;
+    margin: auto;
+}
+
+.contact{
+    font-size: 120px; 
+    font-weight: 700; 
+    color: white;
+  }
+  
+
+
+section.domaines .container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.panneau{
+    height: 100px;
+    z-index: 3;
+    width: 60%;
+    display: flex;
+    color: white;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+
+    .icon{
+        cursor: pointer;
+        min-width: 80px !important;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+    }
+    
+    .icon p{
+        font-size: 15px;
+    
+    }
+}
+
+
+.tableau{
+    height: 580px;
+    width: 75%;
+    display: flex;
+    flex-wrap: wrap;
+
+    .gauche{
+        flex: 1;
+        background: linear-gradient(134deg, #3B6EF8 0%, #1E377C 100%);
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        justify-content: space-between;
+        color: white;
+        min-width: 350px;
+        padding: 42px;
+    }
+    
+    .droite{
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        min-width: 350px;
+    }
+    
+    .haut{
+        color: white;
+        flex: 1;
+        background: linear-gradient(110deg, #202062 0%, #151548 100%);
+        display: flex;
+        flex-direction: column;
+        height: 50%;
+        justify-content: space-between;
+        padding: 42px;
+    
+    }
+        
+    .bas{
+        color: white;
+        flex: 1;
+        background:linear-gradient(112deg, #0F1527 0%, #080B12 100%);
+        display: flex;
+        flex-direction: column;
+        height: 50%;
+        justify-content: space-between;
+        cursor: pointer;
+        padding: 42px;
+    
+    }
+    
+    .posTabHaut{
+        align-self:flex-start ;
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+    }
+    
+    .sousTitre{
+        font-size: 14px;
+        color: #bebfc2;
+    }
+}
+
+
+.articles{
+    display: flex;
+    justify-content: space-between;
+    height: 500px;
+
+    .titreArticles{
+        display: flex;
+        flex-direction: column;
+        flex:1;
+        color: white;
+    }
+
+    .ariclesItem{
+        flex:1;
+        display: flex;
+        justify-content: space-between;
+    }
+    
+    .item{
+        width: 49%;
+        background: linear-gradient(35deg, #1B1C1D 0%, #1C252E 100%);
+        border-radius: 15px;
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .articleTitre{
+        display: flex;
+    }
+    
+    .photoArticle{
+        height: 40px;
+        width: 40px;
+        border-radius: 100%;
+        background: white;
+        margin-left: 20px;
+    }
+
+}
+
+
+
+
+
+@media screen and (max-width: 768px) {
+
+    .panneau{
+        height: 100px;
+        z-index: 3;
+        width: 100%;
+        display: flex;
+        color: white;
+        flex-wrap: nowrap;
+        justify-content: space-between;
+    }
+    
+    .gauche{
+        height: 35%;
+    }
+    .droite{
+        height: 65%;
+    }
+
+    .tableau{
+        margin-top: 0px;
+        height: 80%;
+        width: 100%;
+    }
+
+    .bt{
+        width: 150px;
+        cursor: pointer;
+    }
+    
+
+}
+
+
+@media screen and (max-width: 400px) { 
+    .menu{
+        display: none;
+    }
+    .container{
+        padding: 10px;
+    }
+
+    .bt{
+        font-size: 0.8em
+    }
+
+    .articles{
+        flex-direction: column;
+
+        .ariclesItem{
+            flex: 2;
+        }
+    }
+
+
+}
+
+.contenu .fond2 .row{
+    height: 2904px;
+
+}
+
+
+
+
+::ng-deep .mat-form-field-appearance-legacy .mat-form-field-underline{
+    background-color: white;
+}
+
+
+.mat-form-field{
+    margin-right: 10px;
+}
+
+.mat-select{
+    background-color: black;
+    border: none;
+}
+
+::ng-deep  .mat-select-arrow,::ng-deep  .mat-select-arrow-wrapper {
+    background: white;
+}
+
+
+::ng-deep .mat-datepicker-toggle-default-icon {
+    color: white;
+}
+

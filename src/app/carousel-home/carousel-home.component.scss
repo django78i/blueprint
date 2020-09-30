@@ -1,0 +1,174 @@
+.bt{
+    width: 70%;
+    cursor: pointer;
+    margin-left: 40px;
+    margin-bottom: 30px;
+}
+
+.progress{
+    height: 2px;
+    width: 100%;
+    background: #1D44B1;
+}
+
+.progress .bar{
+    height: 2px;
+    width: 10%;
+    background: #EB5A50 ;
+}
+
+.bt:hover{
+    .progress .bar{
+        transition: 0.2s ease;
+        width: 200px;
+    }
+}
+
+.carousel{
+    display: flex;
+    width: 100%;
+    height: 500px;
+}
+
+
+.slider{
+    // width: 580px;
+    flex: 2;
+    height: 100%;
+    overflow: hidden;
+    display: flex;
+}
+
+.slide{
+    width: 100%;
+    height: 300px;
+    background: #1D44B1;
+    align-self: flex-end;
+    padding-left: 20px;
+    display: flex;
+}
+
+
+
+.left, .right{
+    width: 75px;
+    height: 75px;
+    align-self: flex-end;
+     margin-top: 38px;
+    border-radius: 10px;
+    border: 1px solid white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.left{
+    margin-right: 105px;
+}
+
+.right{
+    margin-right: 75px;
+}
+
+
+.photo{
+    width: 100%;
+    height: 100%;
+}
+
+.image{
+    flex: 2;
+    background:plum;
+    margin-top: -100px;
+    overflow: hidden;
+}
+
+
+.text{
+    flex: 1;
+     overflow: hidden;
+     display: flex;
+     flex-direction: column;
+     justify-content: space-between;
+}
+
+
+.textInner{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 20px;
+    flex: 1;
+}
+
+.textInnerDroit{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+
+.gauche, .droite{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    flex: 1;
+    overflow: hidden;
+    height: 300px;
+    align-self: flex-end;
+    justify-content: space-between;
+}
+
+.textBoutton{
+    height: 150px;
+    width: 100%;
+    justify-content: center;
+}
+
+
+@media screen and (max-width: 980px) {
+    .left{
+        margin-right: 50px;
+    }
+}
+
+@media screen and (max-width: 760px) {
+    .slide{
+        display: flex;
+        flex-direction: column;
+        padding-bottom: 0px;
+        padding-left: 0px;
+    }
+
+    .textInnerDroit{
+        p {
+            font-size: 0.7em;
+        }
+    }
+
+    .left{
+        margin-right: 0px;
+    }
+
+    .right{
+        margin-right:10px ;
+    }
+
+    .textInner{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+
+        p{
+            font-size: 0.7em;
+        }
+    }
+    
+}
+
+
+
+

@@ -1,0 +1,22 @@
+<div class="container">
+    <div class="categList">
+        <mat-chip-list aria-label="Fish selection" style="height: auto;">
+            <mat-chip *ngFor="let category of categories">{{category}}</mat-chip>
+        </mat-chip-list>
+    </div>
+    <div class="imgPos">
+        <img [src]="imageMiniature" style="width: 50%;height:100%;" (click)="onViewPage(id)">
+    </div>
+    <div class="SousTitre">
+        <div class="title" >
+            <ul>
+                <h4>
+                    {{titre}}
+                </h4>
+                <h5>
+                    {{sousTitre}}
+                </h5>
+            </ul>
+        </div>
+    </div>
+</div>
