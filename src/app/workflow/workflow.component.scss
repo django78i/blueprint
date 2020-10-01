@@ -14,7 +14,6 @@
 
 .titlecontent{
     color: white;
-    // width: 554px;
     width: 40%;
     display: flex;
     flex-direction: column;
@@ -22,7 +21,7 @@
 
 .titleBoutton{
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     width: 65%;
 }
 
@@ -32,23 +31,13 @@
     color: white;
     border-radius: 10px;
 }
-.primary{
-    background-color: #3B6EF8;
-    border: none;
-}
-
-.secondary{
-    background-color: rgba(0,0,0,0);
-    border: 1px solid #3B6EF8;
-
-}
 
 .progress-container {
     position: absolute;
     width: 3px;
     height: 90%;
     background: #ccc;
-    z-index: 3;
+    z-index: 1;
    align-self: center;
    overflow: hidden;
   }
@@ -57,12 +46,15 @@
     height: 0%;
     background: #180db1;
     width: 3px;
+    position: relative;
+    z-index: 3;
   }
 
 
 .ligne{
     display: flex;
     justify-content: space-between;
+    width: 100%;
 }
 
 
@@ -85,13 +77,59 @@
     display: flex;
     flex-direction: column;
     position: relative;
-    width: 75%;
+    align-items: center;
+    width: 100%;
+    align-self: center;
 }
 
 .gauche, .droite{
     flex: 1;
     padding: 30px;
+    position: relative;
+    text-align: center;
 }
+
+.numDroit{
+    position: absolute;
+    top:0;
+    left: 30px;
+    color: #EFF1F7;
+
+}
+
+.numGauche{
+    position: absolute;
+    top:0;
+    right: 30px;
+    color: #EFF1F7;
+}
+
+.cercleDroit{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    border: 1px solid blue;
+    z-index: 3;
+    margin-left: -7px;
+    background: #0E0E34;
+}
+
+.cercleGauche{
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    border: 1px solid blue;
+    z-index: 3;
+    margin-right: -7px;
+    background: #0E0E34;
+}
+
 
 
 .titre{
@@ -103,9 +141,9 @@
 }
 
 .bt{
-    width: 306px;
+    // width: 306px;
     cursor: pointer;
-    // flex: 1;
+    flex: 1;
 }
 
 .progress{
@@ -160,7 +198,28 @@
         font-size: 1.5rem !important;
     }
 
-    .title{
-        padding: 30px;
+    .fin{
+        position: relative;
+        z-index: 2;
+        background: #0E0E34;
     }
+    .titleBoutton{
+        flex-direction: column;
+    }
+}
+
+@media screen and (max-width: 560px) {
+
+    .progress-container {
+        height: 89%;
+    }
+
+    .title{
+        margin: 30px;
+    }
+
+    .titleBoutton{
+        width: 100%;
+    }
+
 }

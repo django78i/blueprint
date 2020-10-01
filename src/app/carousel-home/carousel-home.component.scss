@@ -2,7 +2,7 @@
     width: 70%;
     cursor: pointer;
     margin-left: 40px;
-    margin-bottom: 30px;
+    margin-bottom: 17px;
 }
 
 .progress{
@@ -32,7 +32,6 @@
 
 
 .slider{
-    // width: 580px;
     flex: 2;
     height: 100%;
     overflow: hidden;
@@ -53,22 +52,14 @@
 .left, .right{
     width: 75px;
     height: 75px;
-    align-self: flex-end;
-     margin-top: 38px;
+    align-self: center;
+    margin-top: 38px;
     border-radius: 10px;
     border: 1px solid white;
     display: flex;
     justify-content: center;
     align-items: center;
     cursor: pointer;
-}
-
-.left{
-    margin-right: 105px;
-}
-
-.right{
-    margin-right: 75px;
 }
 
 
@@ -82,7 +73,6 @@
     background:white;
     margin-top: -100px;
     overflow: hidden;
-    // padding:10px;
     box-sizing: border-box;
     border:10px solid white;
 }
@@ -113,6 +103,17 @@
     text-align: center;
 }
 
+.textInnerDroit h1{
+    font-size: 92px;
+    font-weight: 700;
+    color: white;
+}
+
+.init h1{
+    font-size: 92px;
+    font-weight: 700;
+    color: white;
+}
 
 .gauche, .droite{
     display: flex;
@@ -123,6 +124,7 @@
     height: 300px;
     align-self: flex-end;
     justify-content: space-between;
+    padding-top: 20px;
 }
 
 .textBoutton{
@@ -131,14 +133,15 @@
     justify-content: center;
 }
 
-
-@media screen and (max-width: 980px) {
-    .left{
-        margin-right: 50px;
-    }
+.textuelle{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
-@media screen and (max-width: 760px) {
+
+
+@media screen and (max-width: 560px) {
     .slide{
         display: flex;
         flex-direction: column;
@@ -152,14 +155,6 @@
         }
     }
 
-    .left{
-        margin-right: 0px;
-    }
-
-    .right{
-        margin-right:10px ;
-    }
-
     .textInner{
         display: flex;
         flex-direction: row;
@@ -168,6 +163,10 @@
         p{
             font-size: 0.7em;
         }
+    }
+
+    .init h1{
+        font-size: 47px;
     }
     
 }

@@ -23,7 +23,7 @@ export class WorkflowComponent implements OnInit {
     console.log('winscroll: '+winScroll);
     var scrolling = window.pageYOffset;
     // var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-    var height = 1486; 
+    var height = 1400; 
     console.log('scrolling: '+scrolling);
     var scrolled = ((winScroll -187)/ height) * 100;
     console.log('scrolled: '+scrolled);

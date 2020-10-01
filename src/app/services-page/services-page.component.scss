@@ -138,7 +138,7 @@
 
 
 
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 560px) {
 
 
     #content{
@@ -163,13 +163,14 @@
 
     .panneau{
         width: 100%;
+        padding: 0px 20px 0px 20px;
     }
 
     .titlecontent{
         align-self: center;
     }
 
-    #service2,#service3,#service4{
-        align-self: flex-start;
+    #service1,#service2,#service3,#service4{
+        align-self: center;
     }
 }
