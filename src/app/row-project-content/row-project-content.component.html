@@ -1,33 +1,45 @@
-<div class="torsion" [ngStyle]="{'backgroundColor': row.couleurRow}"></div>
-<div class="wrapper" *ngIf="row.contenu == 1" [ngStyle]="{'backgroundColor': row.couleurRow}">
-    <div class="text-content" [ngStyle]="{'order': textPos(row.position)}">
-        <h1>{{row.textTitre1}}</h1>
-        <h1>{{row.textTitre2}}</h1>
-        <h3>{{row.textTitre3}}</h3>
-        <div id="text" [innerHTML]="row.editor">
+<section *ngIf="row.contenu == 1" [ngStyle]="{'backgroundColor': row.couleurRow}">
+    <div class="container">
+        <div class="text-content" [ngStyle]="{'order': textPos(row.position)}">
+            <h1>{{row.textTitre1}}</h1>
+            <h1 class="sousTitle">{{row.textTitre2}}</h1>
+            <h3>{{row.textTitre3}}</h3>
+            <div id="text" [innerHTML]="row.editor">
+            </div>
+        </div>
+        <div class="media" [ngStyle]="{'order': mediaPos(row.position)}">
+            <img [src]="row.imageUrl" style="width: 100%;">
         </div>
     </div>
-    <div class="media" [ngStyle]="{'order': mediaPos(row.position)}">
-        <img [src]="row.imageUrl" style="width: 100%;">
+</section>
+<section *ngIf="row.contenu == 3" class="image" [ngStyle]="{'backgroundColor': row.couleurRow}">
+    <div class="container">
+        <div class="imagePos">
+            <img [src]="row.imageUrl" style="width: 100%;">
+        </div>
     </div>
-</div>
-<div *ngIf="row.contenu == 3" class="image" [ngStyle]="{'backgroundColor': row.couleurRow}">
-    <div class="imagePos">
-        <img [src]="row.imageUrl" style="width: 100%;">
-    </div>
-</div>
-<div *ngIf="row.contenu == 4" class="contenuText"
+</section>
+<section class="texUnique" *ngIf="row.contenu == 4"
     [ngStyle]="{'align-items': positionText(row.position), 'backgroundColor': row.couleurRow}">
-    <h1>{{row.textTitre1}}</h1>
-    <h2>{{row.textTitre2}}</h2>
-    <h3>{{row.textTitre3}}</h3>
-    <p id="text" [innerHTML]="row.editor">
-    </p>
-</div>
+    <div class="container" [ngStyle]="{'align-items': positionText(row.position)}">
+        <h1>{{row.textTitre1}}</h1>
+        <h2 class="sousTitle">{{row.textTitre2}}</h2>
+        <h3>{{row.textTitre3}}</h3>
+        <p id="text" [innerHTML]="row.editor"> </p>
+    </div>
+</section>
+<section *ngIf="row.contenu == 2" [ngStyle]="{'backgroundColor': row.couleurRow}">
+    <div class="container">
+        <div *ngFor="let stat of row.stats" class="statDesc">
+            <h1>{{stat.stat}}</h1>
+            <h2>{{stat.description}}</h2>
+        </div>
+    </div>
+</section>
+<!-- 
 <div *ngIf="row.contenu == 2" class="stats" [ngStyle]="{'backgroundColor': row.couleurRow}">
     <div *ngFor="let stat of row.stats" class="statDesc">
         <h1>{{stat.stat}}</h1>
         <h2>{{stat.description}}</h2>
     </div>
-</div>
-<div class="torsionDown" [ngStyle]="{'backgroundColor': row.couleurRow}"></div>
+</div> -->

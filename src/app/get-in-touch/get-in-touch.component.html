@@ -1,42 +1,52 @@
-<section>
-    <header class="titreStep">
-        <p class="contact">nous contacter</p>
-        <h1 class="step1"> 0{{selectedIndex + 1}}</h1>
-        <h1 class="step2">0{{steps.length}}</h1>
-    </header>
-    <div [@fadeIn] class="contenu">
-        <div @fadeIn [style.display]="selected ? 'flex' : 'none'" style="width: 70%;">
-            <ng-container @fadeIn [ngTemplateOutlet]="selected.content"></ng-container>
-        </div>
-        <div *ngFor="let step of steps ; let i = index" [ngClass]="{'active': selectedIndex === i}"
-            (click)="onClick(i)">
-            <div class="step" *ngIf="selectedIndex === i && selectedIndex < 2" [@fadeIn]>
-                <p style="font-size: 194px;">0{{i + 2}}</p>
-                <p *ngIf="i == 0">cadre intervention<span style="color: white;margin-left: 20px;">&rarr;</span></p>
-                <p *ngIf="i == 1">limites<span style="color: white;margin-left: 20px;">&rarr;</span></p>
-                
+<section class="formulaire">
+    <div class="formContent">
+        <header class="titreStep">
+            <h1 class="title">nous contacter</h1>
+            <h1 class="numberTitle"> 0{{selectedIndex + 1}}</h1>
+            <h2 id="numberSub">0{{steps.length}}</h2>
+        </header>
+        <div [@fadeIn] class="contenu">
+            <p [@fadeIn] class="stepNumb textTitle" *ngIf="selectedIndex == 0">Commençons par le commencement</p>
+            <p [@fadeIn] class="stepNumb textTitle" *ngIf="selectedIndex == 1">Quel est votre besoin?</p>
+            <p [@fadeIn] class="stepNumb textTitle" *ngIf="selectedIndex == 2">Quelques informations pour finir?</p>
+            <div @fadeIn [style.display]="selected ? 'flex' : 'none'" class="formZone">
+                <ng-container @fadeIn [ngTemplateOutlet]="selected.content"></ng-container>
+            </div>
+            <div *ngFor="let step of steps ; let i = index" [ngClass]="{'active': selectedIndex === i}"
+                (click)="onClick(i)">
+                <div class="step" *ngIf="selectedIndex === i && selectedIndex < 2" [@fadeIn]>
+                    <p class="numberTitle">0{{i + 2}}</p>
+                    <p *ngIf="i == 0">cadre intervention<span style="color: white;margin-left: 20px;">&rarr;</span></p>
+                    <p *ngIf="i == 1">limites<span style="color: white;margin-left: 20px;">&rarr;</span></p>
+
+                </div>
             </div>
         </div>
+        <footer class="step-navigation-bar">
+            <div class="btContent">
+                <!-- <button class="nav-button" *ngIf="selectedIndex > 0" cdkStepperPrevious style="position: absolute;left: 0px;top:0px; margin: 0px;"> -->
+                <button class="nav-button" id="precedent" *ngIf="selectedIndex > 0" cdkStepperPrevious>
+                    <div class="divContenuBontton">
+                        <p class="boutonContenu"><span style="color: white;">&larr;</span>
+                            précédent
+                        </p>
+                    </div>
+                    <div class="progress">
+                        <div class="bar"></div>
+                    </div>
+                </button>
+                <button class="nav-button" id="suivant" *ngIf="selectedIndex < 2" cdkStepperNext>
+                    <!-- <button class="nav-button" *ngIf="selectedIndex < 2" cdkStepperNext style="position: absolute;right: 0px;top:0px; margin: 0px;"> -->
+                    <div class="divContenuBontton">
+                        <p class="boutonContenu"> suivant
+                            <span style="color: white;">&rarr;</span>
+                        </p>
+                    </div>
+                    <div class="progress">
+                        <div class="bar"></div>
+                    </div>
+                </button>
+            </div>
+        </footer>
     </div>
-    <footer class="step-navigation-bar">
-        <div class="btContent">
-            <button class="nav-button" *ngIf="selectedIndex > 0" cdkStepperPrevious style="position: absolute;left: 0px;top:0px; margin: 0px;">
-                <p style="display: flex;justify-content: space-between;color: white;"><span
-                        style="color: white;">&larr;</span>
-                    étape précédente
-                </p>
-                <div class="progress">
-                    <div class="bar"></div>
-                </div>
-            </button>
-            <button class="nav-button" *ngIf="selectedIndex < 2" cdkStepperNext style="position: absolute;right: 0px;top:0px; margin: 0px;">
-                <p style="display: flex;justify-content: space-between;color: white;">étape suivante
-                    <span style="color: white;">&rarr;</span>
-                </p>
-                <div class="progress">
-                    <div class="bar"></div>
-                </div>
-            </button>
-        </div>
-    </footer>
 </section>

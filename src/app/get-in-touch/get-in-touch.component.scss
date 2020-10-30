@@ -1,5 +1,15 @@
+.formulaire{
+  height: 402px;
+}
+
+.formContent{
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
 .container{
-  // height: 100vh;
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -7,58 +17,104 @@
 }
 
 .titreStep{
+  margin-top: 40px;
   display: flex;
   justify-content: space-between;
   color: white;
   width: 70%;
 }
 
-.bt{
-  margin-top: 30px;
+.numberTitle{
+  align-self: flex-start;
+}
+
+header.titreStep h1.numberTitle{
+  align-self: flex-end;
+}
+
+
+.formZone{
   width: 70%;
-  cursor: pointer;
-  margin-left: 40px;
+  align-items: center;
 }
 
-.progress{
-  height: 2px;
-  width: 100%;
-  background: #1D44B1;
-}
 
-.progress .bar{
-  height: 2px;
-  width: 10%;
-  background: #EB5A50 ;
-}
 
-.nav-button:hover{
-  .progress .bar{
-      transition: 0.2s ease;
-      width: 222px;
+.btContent{
+  position: relative;
+  width: 70%;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  #suivant{
+    justify-self: flex-end;
+    position: absolute;
+    right: 5px;
   }
+  // justify-content: space-between;
+  .nav-button{
+    width: 222px;
+    background: none;
+    border: none;
+    // margin-left: 40px;
+    position: relative;
+    padding:0;
+    &:hover{
+      .progress .bar {
+          transition: 0.2s ease;
+          width: 222px;
+      }
+    }
+
+    .progress{
+      height: 2px;
+      width: 222px;
+      background: #1D44B1;
+
+      display: flex;
+      align-items: center;
+      // position: absolute;
+    }
+    
+   .progress .bar{
+      height: 4px;
+      width: 10%;
+      background: #EB5A50 ;
+      position: relative;
+    }
+    
+  }
+
+  .boutonContenu {
+    display: flex;
+    justify-content: space-between;
+    color: white;
+  }
+
+  
 }
+
+.stepNumb{
+  position: absolute;
+  top:-25px;
+  font-weight: 800;
+  color: white;
+}
+
 
 .mat-drawer-content{
     overflow: unset;
 }
 
 
-
-.nav-button{
-  margin-top: 30px;
-  width: 222px;
-  background: none;
-  border: none;
-  margin-left: 40px;
-}
-
 .contenu{
+  // height: 100px;
   display: flex;
   width: 100%;
   flex-wrap: nowrap;
   justify-content: space-between;
   position: relative;
+  flex-direction: column;
 }
 
 .step{
@@ -68,46 +124,24 @@
   height: 400px;
   width: 25%;
   background: #1D44B1;
-  margin-top: -230px;
+  margin-top: -310px;
   cursor: pointer;
-  padding: 20px;
+  padding-top: 14px;
 }
 
-
-.step1{
-  font-size: 195px
-}
-.step2{
-  color: #3D3F41;
-  font-size: 105px
-}
-
-.contact{
-  font-size: 120px; 
-  font-weight: 700; 
-  color: white;
-  line-height: 112px;
-}
-
-.btContent{
-  // display: flex;
-  position: relative;
-  // justify-content: space-between;
-  width: 70%;
-  height: 50px;
-}
-
-section{
-  padding-left:56px;
-}
 
 
 @media screen and (max-width: 560px) {
 
   section{
+    height: 430px;
     padding:10px;
   }
   
+  .formulaire{
+    height: 455px;
+  }
+
   .step{
    display: none;
   }
@@ -117,20 +151,46 @@ section{
   .step2{
     font-size: 45px;
   }
-
-  .nav-button{
-    width: 150px;
-    padding: 0px;
-  }
-
+  
   .btContent{
     width: 100%;
   }
 
-  .contact{
-    font-size: 47px;
-    line-height:50px;
+  .boutonContenu {
+    width: 124px;
   }
+  .btContent .nav-button{
+    width: 124px;
+    padding: 0px;
+  }
+
+  .btContent .nav-button .progress{
+    width: 124px !important;
+
+    .progress .bar {
+      width: 124px !important;
+    }
+  }
+
+  
+
+  // .btContent{
+  //   width: ;
+  // }
+
+  .title{
+    font-size: 29px;
+    line-height: 46px;
+  }
+
+  .formZone{
+    width: 100%;
+  }
+
+  .footer{
+    height: 150px;
+  }
+
 
 
 }

@@ -1,0 +1,44 @@
+<section class="listPage">
+    <div class="container" style="z-index: -1;">
+        <div class="fond">
+            <div class="row">
+                <div class="col-md-3 col-xs-3 fondBorder"></div>
+                <div class="col-md-3 col-xs-3 fondBorder">
+                    <div @fadeIn appParallax [ratio]="-1" class="ligne"></div>
+                </div>
+                <div class="col-md-3 col-xs-3 fondBorder">
+                    <div @fadeIn appParallax [ratio]="-1" class="ligne"></div>
+                </div>
+                <div class="col-md-3 col-xs-3 fondBorder">
+                    <div @fadeIn appParallax [ratio]="-1" class="ligne"></div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <div appParallax [ratio]="-1" class="menu" >
+        <p class="texPrec" routerLink="/home">home<span class="prec" >></span></p>
+        <p><strong class="enCours">O2.</strong> nos services</p>
+    </div>
+    <section class="titre">
+        <div class="container">
+            <div class="titleContent">
+                <div class="left">
+                    <h1 class="title animate__animated animate__fadeInDown">nos réalisations</h1>
+                    <p class="animate__animated animate__fadeIn animate__delay-1s">Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo deserunt repellendus dolore ea
+                        voluptatem enim harum iure omnis veritatis fugiat!</p>
+                </div>
+                <div class="right">
+                    <ng-lottie [options]="options" (animationCreated)="animationCreated($event)">
+                    </ng-lottie>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="contenu">
+        <div class="container">
+            <app-best-portfolios class="folio" (mouseenter)="best(projet, i)" (mouseleave)="bestLeave(projet, i)" style="margin-top: 20px;margin-right: 20px;" [projet]="projet" *ngFor="let projet of this.portfolioService.projetsList | async; let i = index">
+            </app-best-portfolios>
+        </div>
+    </section>
+</section>

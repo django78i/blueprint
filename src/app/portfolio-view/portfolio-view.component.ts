@@ -1,4 +1,5 @@
-import { Component, OnInit, ComponentFactoryResolver, NgZone, HostListener, ElementRef, ViewChild } from '@angular/core';
+import { element } from 'protractor';
+import { Component, OnInit, AfterViewInit, ComponentFactoryResolver, NgZone, HostListener, ElementRef, ViewChild } from '@angular/core';
 import { PortfolioService } from '../services/portfolio.service';
 import { FormulaireService } from '../services/formulaire.service';
 import { Subscription, Observable } from 'rxjs';
@@ -13,6 +14,8 @@ import { MatChipInputEvent } from '@angular/material/chips';
 import { map, startWith } from 'rxjs/operators';
 import { COMMA, ENTER } from '@angular/cdk/keycodes';
 import { Formulaire } from '../models/form.model';
+import { AotSummaryResolver } from '@angular/compiler';
+import AOS from 'aos';
 
 interface Taille {
     value: string;
@@ -25,36 +28,55 @@ interface Taille {
     templateUrl: './portfolio-view.component.html',
     styleUrls: ['./portfolio-view.component.scss'],
     animations: [
-        trigger('fade', [
-            //  state('fadeGauch', style({opacity: 0, transform: 'translateX(30%)'})),
-
-            transition('*=>*', [
-                style({ opacity: 0, transform: 'translateX(30%)' }),
-                animate('1000ms ease', style({ opacity: 1, transform: 'translateX(0%)' }))
-            ])
-        ]),
-        trigger('fadeGauche', [
-            transition('*=>*', [
-                style({ opacity: 0, transform: 'translateX(-30%)' }),
-                animate('1000ms ease', style({ opacity: 1, transform: 'translateX(0%)' }))
-            ])
+        trigger('fadeUp', [
+            state('haut', style({ opacity: '1' })),
+            transition(':enter', [
+                style({ opacity: '0', transform: 'translateY(30px)' }),
+                animate('1000ms ease')
+            ]),
+            transition(':leave', [
+                animate('1000ms ease', style({ opacity: '0', transform: 'translateY(-30px)' }))
+            ]),
         ]),
         trigger('fadeIn', [
             transition('*<=>void', [
-                style({ opacity: '0' }),
+                style({ opacity: '0', transform: 'translateY(-300px)' }),
+                animate('1500ms ease')
+            ])
+        ]),
+        trigger('fadeDown', [
+            transition('*<=>void', [
+                style({ opacity: '0', transform: 'translateY(300px)' }),
                 animate('1500ms ease')
             ])
         ])
 
+
     ]
 })
-export class PortfolioViewComponent implements OnInit {
+export class PortfolioViewComponent implements OnInit, AfterViewInit {
+
+
+    //titreText
+    titleText = ['digitales', 'humaines', 'bluePrint'];
+
+    //Lottie
+    options: AnimationOptions = {
+        path: '../assets/images/blprntLoaderV2.json',
+    };
+
+    animationItem: any;
+
+
+    //animation Texte
+    textChange: string = 'humaines';
 
     portfolios: Projet[];
     bestPorfolios: any[] = [];
     portfolioSubscription: Subscription;
 
 
+    //Formulaire
     selectedValue: string;
 
     tailles: Taille[] = [
@@ -68,9 +90,9 @@ export class PortfolioViewComponent implements OnInit {
     selectable = true;
     removable = true;
     separatorKeysCodes: number[] = [ENTER, COMMA];
-     featuresCtrl = new FormControl();
+    featuresCtrl = new FormControl();
     filteredFeatures: Observable<string[]>;
-    features: string[] = ['Website'];
+    features: string[] = [];
     allFeatures: string[] = ['Website', 'Vidéo', 'Animation', 'Infographie et logo', 'Autre'];
 
     @ViewChild('fruitInput') fruitInput: ElementRef<HTMLInputElement>;
@@ -82,17 +104,35 @@ export class PortfolioViewComponent implements OnInit {
 
 
     constructor(private formBuilder: FormBuilder, public portfolioService: PortfolioService,
-         private router: Router, private ngZone: NgZone, private formulaireService: FormulaireService) {
+        private router: Router, private ngZone: NgZone, private formulaireService: FormulaireService,
+        private elem: ElementRef) {
         this.filteredFeatures = this.featuresCtrl.valueChanges.pipe(
             startWith(<string>null),
             map((fruit: string | null) => fruit ? this._filter(fruit) : this.allFeatures.slice()));
     }
 
     ngOnInit(): void {
+
+        AOS.init();
         this.initForm();
-        this.portfolioService.getProjets();
+        setInterval(() => {
+            this.textContent();
+        }, 3000);
+
+        var scroll = document.documentElement.scrollHeight;
+        scroll += 200;
+        console.log(scroll);
+        var fond = this.elem.nativeElement.querySelectorAll('.fondBorder');
+        fond.forEach((element) => {
+            element.style.height = scroll + 'px';
+        });
+
     }
 
+    ngAfterViewInit() {
+        // window.location.reload();
+
+    }
 
 
     initForm() {
@@ -108,24 +148,26 @@ export class PortfolioViewComponent implements OnInit {
         })
 
         this.thirdform = this.formBuilder.group({
-            date: ''
+            date: '',
+            budget: ''
         })
 
 
     }
 
-    submitForm(){
+    submitForm() {
         const formValue = this.firstform.value;
         const formValue2 = this.secondform.value;
         const formValue3 = this.thirdform.value;
 
         var newForm = new Formulaire(
+            formValue['nom'],
+            formValue['mail'],
             formValue['secteur'],
-            formValue['lieu'],
-            formValue['taille'],
             formValue['siteInternet'],
-            formValue2['features'],
             formValue3['date'],
+            formValue3['budget'],
+            formValue2['features']
         )
         console.log(newForm);
 
@@ -133,67 +175,62 @@ export class PortfolioViewComponent implements OnInit {
 
     }
 
+    animationCreated(animationItem: AnimationItem): void {
+        this.animationItem = animationItem;
+        this.animationItem.autoplay = true;
+    }
 
-
-    // onContainerScroll($event){
-    //     this.play();
-    // }
-
-
-    // onScroll(){
-    //   console.log(scroll);
-    // }
-
-    // animationCreated(animationItem: AnimationItem): void {
-    //   console.log(animationItem);
-    //   this.animationItem = animationItem;
-    //   this.animationItem.autoplay = false; 
-    // }
-
-
-    // stop(): void {
-    //   this.ngZone.runOutsideAngular(() => this.animationItem.pause());
-    // }
-    // play(): void {
-    //   this.ngZone.runOutsideAngular(() => this.animationItem.play());
-    // }
 
     add(event: MatChipInputEvent): void {
         const input = event.input;
         const value = event.value;
-    
+
         // Add our fruit
         if ((value || '').trim()) {
-          this.features.push(value.trim());
+            this.features.push(value.trim());
         }
-    
+
         // Reset the input value
         if (input) {
-          input.value = '';
+            input.value = '';
         }
-    
+
         this.featuresCtrl.setValue(null);
-      }
-    
-      remove(fruit: string): void {
+    }
+
+    remove(fruit: string): void {
         const index = this.features.indexOf(fruit);
-    
+
         if (index >= 0) {
-          this.features.splice(index, 1);
+            this.features.splice(index, 1);
         }
-      }
-    
-      selected(event: MatAutocompleteSelectedEvent): void {
+    }
+
+    selected(event: MatAutocompleteSelectedEvent): void {
         this.features.push(event.option.viewValue);
         this.fruitInput.nativeElement.value = '';
         this.featuresCtrl.setValue(null);
-      }
-    
-      private _filter(value: string): string[] {
+    }
+
+    private _filter(value: string): string[] {
         const filterValue = value.toLowerCase();
-    
+
         return this.allFeatures.filter(fruit => fruit.toLowerCase().indexOf(filterValue) === 0);
-      }
+    }
+
+    textContent() {
+        switch (this.textChange) {
+            case 'humaines':
+                this.textChange = 'bluePrint';
+                break;
+            case 'bluePrint':
+                this.textChange = 'digitales';
+                break;
+            case 'digitales':
+                this.textChange = 'humaines';
+                break;
+        }
+    }
 
 
 }

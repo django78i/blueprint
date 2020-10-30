@@ -4,7 +4,7 @@
     margin: 0;
 }
 
-.title{
+.titre{
     height: 100vh;
     display: flex;
     flex-direction: column;
@@ -15,9 +15,21 @@
 
 .titlecontent{
     color: white;
-    width: 40%;
+    flex: 1;
     display: flex;
     flex-direction: column;
+    align-self: center;
+}
+
+.titleZone{
+    align-self: center;
+    width: 100%;
+    display: flex;
+}
+
+
+.iconTitle{
+    flex:1;
 }
 
 .container {
@@ -31,6 +43,25 @@
     flex-direction: column;
     position: relative;
     width: 75%;
+}
+.fond{
+    z-index: 2;
+    background: #0E0E34;
+    width: 100%;
+    position: absolute;
+    transform: translateY(-100px);
+}
+.fondBorder{
+    border-right: 2px solid rgba(243, 238, 238, 0.24);
+    height: 3100px;
+}    
+
+.fond .row {
+    margin: 0px;
+}
+
+.fond .row:first-child{
+    border-left: 2px solid rgba(243, 238, 238, 0.24);
 }
 
 
@@ -52,50 +83,55 @@
 }
 
 .panneau{
-    height: 60px;
+    height: 100px;
     z-index: 3;
-    width: 60%;
-    align-self: center;
+    width: 100%;
     display: flex;
     color: white;
     flex-wrap: nowrap;
-    justify-content: space-between;
+    justify-content: space-around;
     margin-top: 80px;
+
+    cursor: pointer;
     .icon{
         cursor: pointer;
-        min-width: 80px !important;
+        min-width: 69px !important;
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: space-between;
+        text-align: center;
     }
     
     .icon p{
-        font-size: 15px;
+        margin-top: 10px;
     
     }
 }
+
 
 .service{
     position: relative;
     width: 500px;
     margin-bottom: 100px;
+    margin-top: 200px;
 }
 
 .numService{
     position: absolute;
-    font-size: 200px;
+    // font-size: 200px;
     z-index: 1;
-    right: 119px;
-    top: -107px;
+    right: -13px;
+    top: -304px;
     font-weight: 700;
     color: #101039;
 
 }
 
-.numService p {
-    text-shadow: 0px 10px 20px rgba(0, 0, 0, 0.4);
-}
+// .numService p {
+//     font-size: 200px;
+//     text-shadow: 0px 10px 20px rgba(0, 0, 0, 0.4);
+// }
 
 .textService{
     position: relative;
@@ -136,6 +172,30 @@
     margin-left: -3.5px;
 }
 
+.menu{
+    position: absolute;
+    margin-top: 250px;
+    text-align: center;
+    transform: rotate(270deg);
+    margin-left: -84px;
+    display: flex;
+    justify-content: space-between;
+    color: white;
+    z-index: 4;
+}
+
+.menu .enCours{
+    color: blue;
+    margin-left: 20px;
+}
+
+.menu .prec{
+    margin-left: 20px;
+}
+.menu .texPrec{
+    cursor: pointer;
+}
+
 
 
 @media screen and (max-width: 560px) {
@@ -144,33 +204,41 @@
     #content{
         width: 100%;
     }
-    .titre p{
-        font-size: 0.7 em;
-    }
 
     h1{
         font-size: 1.5rem !important;
     }
 
     .service{
-        width: 380px;
+        width: 100%;
+        left: 38px;
     }
 
     .contenu{
         align-self: center;
-        padding-left: 30px;
+        margin-top: 50px;
     }
 
     .panneau{
         width: 100%;
         padding: 0px 20px 0px 20px;
+        margin-top: 50px;
     }
 
-    .titlecontent{
-        align-self: center;
-    }
 
     #service1,#service2,#service3,#service4{
         align-self: center;
+    }
+
+    .container {
+        padding: 16px;
+    }
+
+    .icon p {
+        font-size: 0.7em;
+    }
+
+    .numService{
+        right: 28px;
     }
 }

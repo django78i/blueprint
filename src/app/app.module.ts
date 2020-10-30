@@ -18,6 +18,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { PortfolioViewComponent } from './portfolio-view/portfolio-view.component';
 import { PortfolioService} from './services/portfolio.service';
+import { MenuService } from './services/menu.service';
 import { PortfolioThumbComponent } from './portfolio-thumb/portfolio-thumb.component';
 import { PortfolioFormComponent } from './portfolio-form/portfolio-form.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -49,6 +50,10 @@ import {MatAutocompleteModule} from '@angular/material/autocomplete';
 import {MatDatepickerModule, } from '@angular/material/datepicker'; 
 import { MatNativeDateModule } from '@angular/material/core';
 import { ServicesPageComponent } from './services-page/services-page.component';
+import { ArticlesliderComponent } from './articleslider/articleslider.component';
+import { NgxUsefulSwiperModule } from 'ngx-useful-swiper';
+import { FooterComponent } from './footer/footer.component';
+import { ProjectListPageComponent } from './project-list-page/project-list-page.component';
 
 export function playerFactory() {
   return player;
@@ -70,7 +75,10 @@ export function playerFactory() {
     ParallaxDirective,
     WorkflowPageComponent,
     CarouselHomeComponent,
-    ServicesPageComponent
+    ServicesPageComponent,
+    ArticlesliderComponent,
+    FooterComponent,
+    ProjectListPageComponent
   ],
   imports: [
     BrowserModule,
@@ -104,12 +112,14 @@ export function playerFactory() {
     MatSelectModule,
     MatAutocompleteModule,
     MatDatepickerModule,
-    MatNativeDateModule
+    MatNativeDateModule,
+    NgxUsefulSwiperModule
   ],
   providers: [
     PortfolioService,
     { provide: REGION, useValue: 'europe-west6' },
-    MatDatepickerModule
+    MatDatepickerModule,
+    MenuService
   ],
   bootstrap: [AppComponent]
   

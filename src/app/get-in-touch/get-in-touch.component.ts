@@ -11,7 +11,7 @@ import { trigger, transition, style,animate, state, query } from '@angular/anima
   animations: [
     trigger('fadeIn',[
       transition('*=>void', [
-        animate('1000ms ease', style({ opacity: '0' }))
+        animate('0.3s ease', style({ opacity: '0' }))
       ]),
       transition('void=>*', [
         style({ opacity: '0' }),

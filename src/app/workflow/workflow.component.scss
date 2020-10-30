@@ -1,28 +1,74 @@
 *{
     padding:0;
     box-sizing: border-box;
+    outline: none;
 }
 
-.title{
+.titleHeader{
     height: 100vh;
+    display: flex;
+    // flex-direction: column;
+    // justify-content: center;
+    color: white;
+    flex-wrap: wrap;
+}
+
+.rightTitle{
     display: flex;
     flex-direction: column;
     justify-content: center;
-    color: white;
+    flex: 1;
 }
+
+.leftTitle{
+    flex:1;
+}
+
+a{
+    
+}
+
+
+.menu{
+    position: absolute;
+    margin-top: 250px;
+    text-align: center;
+    transform: rotate(270deg);
+    margin-left: -84px;
+    display: flex;
+    justify-content: space-between;
+    color: white;
+    z-index: 4;
+    outline:none;
+}
+
+.menu .enCours{
+    color: blue;
+    margin-left: 20px;
+}
+
+.menu .prec{
+    margin-left: 20px;
+}
+.menu .texPrec{
+    outline: none;
+    cursor: pointer;
+}
+
 
 
 .titlecontent{
     color: white;
-    width: 40%;
+    // width: 40%;
     display: flex;
     flex-direction: column;
+
 }
 
 .titleBoutton{
     display: flex;
     justify-content: space-around;
-    width: 65%;
+    flex-direction: column;
 }
 
 .boutton{
@@ -141,9 +187,8 @@
 }
 
 .bt{
-    // width: 306px;
     cursor: pointer;
-    flex: 1;
+    width: 300px;
 }
 
 .progress{
@@ -190,12 +235,8 @@
     #content{
         width: 100%;
     }
-    .titre p{
-        font-size: 0.7 em;
-    }
-
-    h1{
-        font-size: 1.5rem !important;
+    .ligne p, .ligne h1{
+        font-size: 0.8em;
     }
 
     .fin{
@@ -214,12 +255,17 @@
         height: 89%;
     }
 
-    .title{
+    .titleHeader{
         margin: 30px;
     }
 
     .titleBoutton{
         width: 100%;
     }
+
+    .ligne p, .ligne h1{
+        font-size: 0.8em;
+    }
+
 
 }

@@ -1,17 +1,48 @@
-  .titre{
-    background-position: center;
-  }
+*{
+  margin: 0;
+}  
+  
+
+  section.banniere .menu{
+    position: absolute;
+    margin-top: 250px;
+    text-align: center;
+    transform: rotate(270deg);
+    left: 10px;
+    margin-left: -185px;
+    align-self: start;
+    display: flex;
+    justify-content: space-between;
+    color: white;
+    z-index: 4;
+}
+
+  .menu .enCours{
+    color: blue;
+    margin-left: 20px;
+
+}
+
+.menu .prec{
+    margin-left: 20px;
+    cursor: pointer;
+}
+.menu .texPrec{
+    cursor: pointer;
+}
+
 
   body{
     background-color: red;
   }
   .banniere{
+    position: relative;
     display:flex;
-    height: 300px;
+    height: 100vh;
     background-position: auto;
-    align-items: center;
+    justify-content: center;
     flex-direction: column;
-    background-color: #4465D5;
+    align-items: center;
     color: #EDEFF5;
     padding-top: 10px;
   }
@@ -20,13 +51,20 @@
   display: flex;
   justify-content: center;
   width: 40%;
-  margin: auto;
+  margin-bottom: 20px;
+}
+
+.texTitle{
+  margin-bottom: 50px;
+  width: 37%;
+  text-align: center;
 }
 
 .icones{
   display: flex;
   justify-content: space-between;
   width: 150px;
+  margin-left : 20px;
 }
 
 .category{
@@ -35,23 +73,29 @@
   justify-content: center;
 }
 
+.lottie{
+  width: 23px;
+}
+
 .infos{
   display: flex;
-  max-width: 500px;
+  // max-width: 630px;
   min-width: 300px;
   justify-content: space-between;
 }
 
 .atouts{
-  margin: 0px 5px 0px 5px;
+  margin: 0px 21px 0px 22px;
+  text-align: center;
 }
 
 .poids{
-  margin: 0px 5px 0px 5px;
+  margin: 0px 15px 0px 5px;
 }
 
 .role{
-  margin: 0px 5px 0px 5px;
+  margin: 0px 20px 0px 21px;
+  text-align: center;
 
 }
 
@@ -59,4 +103,6 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  color: white;
+  margin-top: 200px;
 }

@@ -1,22 +1,20 @@
-<div class="container">
-    <div class="categList">
-        <mat-chip-list aria-label="Fish selection" style="height: auto;">
-            <mat-chip *ngFor="let category of categories">{{category}}</mat-chip>
-        </mat-chip-list>
-    </div>
-    <div class="imgPos">
-        <img [src]="imageMiniature" style="width: 50%;height:100%;" (click)="onViewPage(id)">
-    </div>
-    <div class="SousTitre">
-        <div class="title" >
-            <ul>
-                <h4>
-                    {{titre}}
-                </h4>
-                <h5>
-                    {{sousTitre}}
-                </h5>
-            </ul>
+<section style="height: 100%;width:100%;" (click)="onViewPage(projet.titre)">
+    <div class="block" [ngStyle]="{'background-image': 'url(' + projet.imageMiniature + ')'}">
+        <div class="haut">
+            <div class="categList">
+                <mat-chip-list aria-label="Fish selection" style="height: auto;">
+                    <mat-chip *ngFor="let category of projet.categories">{{category}}</mat-chip>
+                </mat-chip-list>
+            </div>
+        </div>
+        <div class="bas">
+            <div class="gauche">
+                <h1 class="tabletitle" >{{projet.titre}}</h1>
+                <p>{{projet.sousTitre}}</p>
+            </div>
+            <div class="droit">
+                <span>&rarr;</span>
+            </div>
         </div>
     </div>
-</div>
+</section>

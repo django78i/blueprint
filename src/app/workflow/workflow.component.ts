@@ -1,4 +1,7 @@
 import { Component, OnInit, HostListener } from '@angular/core';
+import { AnimationItem } from 'lottie-web';
+import { AnimationOptions } from 'ngx-lottie';
+
 
 @Component({
   selector: 'app-workflow',
@@ -8,7 +11,13 @@ import { Component, OnInit, HostListener } from '@angular/core';
 export class WorkflowComponent implements OnInit {
 
 
-
+	    //Lottie
+      options: AnimationOptions = {
+        path: '../assets/images/blprntLoaderV2.json',
+      };
+    
+      animationItem: any;
+  
 
   constructor() { }
 
@@ -30,6 +39,12 @@ export class WorkflowComponent implements OnInit {
       document.getElementById("myBar").style.height = scrolled + "%";
   }
 
+  animationCreated(animationItem: AnimationItem): void {
+    this.animationItem = animationItem;
+    this.animationItem.autoplay = true;
+    this.animationItem.loop = false;
+  }
+  
 
 
 }

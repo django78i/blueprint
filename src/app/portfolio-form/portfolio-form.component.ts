@@ -41,7 +41,7 @@ export class PortfolioFormComponent implements OnInit {
     portfolio.name = this.portfolioForm.get('name').value;
     portfolio.status = this.portfolioForm.get('status').value;
     portfolio.favoris = this.portfolioForm.get('favoris').value;
-      this.portfolioService.savePortfolioToServer(portfolio);
+      // this.portfolioService.savePortfolioToServer(portfolio);
   }
 
 }

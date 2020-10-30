@@ -1,15 +1,25 @@
-<section *ngIf="pages" class="banniere">
-    <div class="category">
-        <mat-chip-list aria-label="categories-List">
-            <mat-chip *ngFor="let categ of pages.categories">{{categ}}</mat-chip>
-        </mat-chip-list>
+<section class="banniere" [ngStyle]="{'background-color': (PortfolioList|async)?.couleurProjet}">
+    <div appParallax [ratio]="-1" class="menu">
+        <p class="texPrec" routerLink="/home">home<span class="prec">></span></p>
+        <p routerLink="/listProjet"><strong style="margin-left: 20px; cursor: pointer;">O2. nos
+                réalisation</strong><span class="prec">></span></p>
+        <p class="enCours">{{(PortfolioList|async)?.titre}}</p>
     </div>
-    <div class="titre">
-        <h1>{{pages.titre}}</h1>
+
+    <div class="animate__animated animate__fadeIn titre" *ngIf="(PortfolioList|async)">
+        <h1 class="title">{{(PortfolioList|async)?.titre}}</h1>
     </div>
-    <div class="infos">
+    <p class="animate__animated animate__fadeIn animate__delay-1s texTitle">Lorem Ipsum is simply dummy text of the
+        printing and typesetting
+        industry.
+        Lorem Ipsum has been the
+        industry’s standard dummy.
+    </p>
+
+    <div class="animate__animated animate__fadeIn infos" *ngIf="(PortfolioList|async)">
         <div class="poids">
-            <h1>{{pages.taille}}<span>MB</span></h1>
+            <h1 style="color: #4465D5;font-weight: 700;display: flex;">{{(PortfolioList|async)?.taille}}<span
+                    style="display: flex;align-items: flex-start;font-size: 20px;margin-left: 6px;">MB</span></h1>
         </div>
         <svg xmlns="http://www.w3.org/2000/svg" width="1" height="42.682" viewBox="0 0 1 42.682">
             <defs>
@@ -29,7 +39,7 @@
         </svg>
         <div class="atouts">
             <p>atout principal</p>
-            <p>{{pages.domaine}}</p>
+            <p style="color: white;">{{(PortfolioList|async)?.domaine}}</p>
         </div>
         <svg xmlns="http://www.w3.org/2000/svg" width="1" height="42.682" viewBox="0 0 1 42.682">
             <defs>
@@ -49,7 +59,123 @@
         </svg>
         <div class="role">
             <p>rôle joué</p>
-            <p>{{pages.role}}</p>
+            <p style="color: white;">{{(PortfolioList|async)?.role}}</p>
+        </div>
+        <svg xmlns="http://www.w3.org/2000/svg" width="1" height="42.682" viewBox="0 0 1 42.682">
+            <defs>
+                <style>
+                    .a {
+                        fill: none;
+                        stroke: #8287a0;
+                        opacity: 0.365;
+                    }
+                </style>
+            </defs>
+            <g transform="translate(0.5)">
+                <path class="a" d="M236.505,655.1v42.205" transform="translate(-236.505 -655.1)" />
+                <path class="a" d="M236.505,655.1v2.682" transform="translate(-236.505 -615.1)" />
+                <path class="a" d="M236.505,655.1v2.682" transform="translate(-236.505 -655.1)" />
+            </g>
+        </svg>
+        <div class="icones">
+            <svg xmlns="http://www.w3.org/2000/svg" width="29.756" height="29.756" viewBox="0 0 29.756 29.756">
+                <defs>
+                    <style>
+                        .a {
+                            fill: #8287a0;
+                        }
+                    </style>
+                </defs>
+                <path class="a"
+                    d="M10.2,4v8.679H7.72A3.739,3.739,0,0,0,4,16.4V28.8h6.2v4.959H27.557V28.8h6.2V16.4a3.739,3.739,0,0,0-3.72-3.72h-2.48V4Zm2.48,2.48h12.4v6.2h-12.4ZM7.72,15.159H30.037a1.218,1.218,0,0,1,1.24,1.24v9.919h-3.72V21.358H10.2v4.959H6.48V16.4A1.218,1.218,0,0,1,7.72,15.159Zm1.24,1.24a1.24,1.24,0,1,0,1.24,1.24A1.242,1.242,0,0,0,8.959,16.4Zm3.72,7.439h12.4v7.439h-12.4Z"
+                    transform="translate(-4 -4)" />
+            </svg>
+            <svg xmlns="http://www.w3.org/2000/svg" width="39.675" height="24.797" viewBox="0 0 39.675 24.797">
+                <defs>
+                    <style>
+                        .a {
+                            fill: #8287a0;
+                        }
+                    </style>
+                </defs>
+                <path class="a"
+                    d="M2.48,6V22.97l-1.9,2.906v.039A3.309,3.309,0,0,0,0,27.7a3.1,3.1,0,0,0,3.1,3.1H37.2a2.387,2.387,0,0,0,2.48-2.48v-12.4a2.387,2.387,0,0,0-2.48-2.48H29.756V6Zm2.48,2.48H27.276v4.959H19.837a2.387,2.387,0,0,0-2.48,2.48v6.2H4.959Zm14.878,7.439H37.2v12.4H19.837ZM4.417,24.6H17.358v3.72H3.1a.751.751,0,0,1-.62-.62.712.712,0,0,1,.155-.426Zm21.62,0v2.48H31V24.6Z"
+                    transform="translate(0 -6)" />
+            </svg>
+            <svg xmlns="http://www.w3.org/2000/svg" width="30.002" height="30.764" viewBox="0 0 30.002 30.764">
+                <defs>
+                    <style>
+                        .a {
+                            fill: #8287a0;
+                        }
+                    </style>
+                </defs>
+                <path class="a"
+                    d="M13.127,3.281,11.377,5.07l2.217,2.217L5,15.882A3.812,3.812,0,0,0,5,21.25l.078.078,7.9,7.856a3.812,3.812,0,0,0,5.367,0l9.451-9.451.895-.856-12.1-12.1L15.616,5.77l-.272-.233Zm2.256,5.8,9.8,9.8-8.6,8.556a1.312,1.312,0,0,1-1.867,0L6.787,19.461a1.266,1.266,0,0,1,0-1.828ZM30.162,23.155l-1.011,1.478s-.671.938-1.322,2.061a17.957,17.957,0,0,0-.895,1.75,4.425,4.425,0,0,0-.506,1.867,3.734,3.734,0,0,0,7.467,0,4.425,4.425,0,0,0-.506-1.867,17.959,17.959,0,0,0-.895-1.75c-.651-1.123-1.322-2.061-1.322-2.061Zm0,4.512c.083.136.073.126.156.272a16.961,16.961,0,0,1,.817,1.517,4.878,4.878,0,0,1,.272.856,1.245,1.245,0,0,1-2.489,0,4.878,4.878,0,0,1,.272-.856,16.962,16.962,0,0,1,.817-1.517C30.089,27.793,30.079,27.8,30.162,27.667Z"
+                    transform="translate(-3.894 -3.281)" />
+            </svg>
+        </div>
+    </div>
+    <div class="animate__animated animate__fadeInUp animate__delay-1s explore">
+        <p style="  color: white;margin-bottom: 30px;">explorer</p>
+        <ng-lottie class="lottie" [options]="options" (animationCreated)="animationCreated($event)">
+        </ng-lottie>
+    </div>
+</section>
+<section *ngIf="PortfolioList|async" [ngStyle]="{'background-color': (PortfolioList|async)?.couleurProjet}"
+    style="padding-top: 10px;padding-bottom: 50px;">
+    <app-row-project-content *ngFor="let row of (PortfolioList|async)?.rows" [rows]="row"></app-row-project-content>
+</section>
+
+<!--Bas de Page : Projet suivant-->
+<!-- <section class="banniere" [ngStyle]="{'background-color': (projetSuivant|async)?.couleurProjet}">
+<section class="banniere" style="background: red;">
+    <div class="titre" *ngIf="(projetSuivant|async)">
+        <h1>{{(projetSuivant|async)?.titre}}</h1>
+    </div>
+    <div class="infos" *ngIf="(projetSuivant|async)">
+        <div class="poids">
+            <h1>{{(projetSuivant|async)?.taille}}<span>MB</span></h1>
+        </div>
+        <svg xmlns="http://www.w3.org/2000/svg" width="1" height="42.682" viewBox="0 0 1 42.682">
+            <defs>
+                <style>
+                    .a {
+                        fill: none;
+                        stroke: #8287a0;
+                        opacity: 0.365;
+                    }
+                </style>
+            </defs>
+            <g transform="translate(0.5)">
+                <path class="a" d="M236.505,655.1v42.205" transform="translate(-236.505 -655.1)" />
+                <path class="a" d="M236.505,655.1v2.682" transform="translate(-236.505 -615.1)" />
+                <path class="a" d="M236.505,655.1v2.682" transform="translate(-236.505 -655.1)" />
+            </g>
+        </svg>
+        <div class="atouts">
+            <p>atout principal</p>
+            <p>{{(projetSuivant|async)?.domaine}}</p>
+        </div>
+        <svg xmlns="http://www.w3.org/2000/svg" width="1" height="42.682" viewBox="0 0 1 42.682">
+            <defs>
+                <style>
+                    .a {
+                        fill: none;
+                        stroke: #8287a0;
+                        opacity: 0.365;
+                    }
+                </style>
+            </defs>
+            <g transform="translate(0.5)">
+                <path class="a" d="M236.505,655.1v42.205" transform="translate(-236.505 -655.1)" />
+                <path class="a" d="M236.505,655.1v2.682" transform="translate(-236.505 -615.1)" />
+                <path class="a" d="M236.505,655.1v2.682" transform="translate(-236.505 -655.1)" />
+            </g>
+        </svg>
+        <div class="role">
+            <p>rôle joué</p>
+            <p>{{(projetSuivant|async)?.role}}</p>
         </div>
         <svg xmlns="http://www.w3.org/2000/svg" width="1" height="42.682" viewBox="0 0 1 42.682">
             <defs>
@@ -155,6 +281,4 @@
         </svg>
     </div>
 </section>
-<section *ngIf="pages" [ngStyle]="{'background-color': pages.couleurProjet}" style="padding-top: 10px;padding-bottom: 50px;">
-    <app-row-project-content *ngFor="let row of rows" [rows]="row"></app-row-project-content>
-</section>
+ -->

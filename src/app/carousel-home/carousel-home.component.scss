@@ -1,8 +1,9 @@
 .bt{
     width: 70%;
     cursor: pointer;
-    margin-left: 40px;
-    margin-bottom: 17px;
+    // margin-left: 40px;
+    position: absolute;
+    bottom: 17px;
 }
 
 .progress{
@@ -30,18 +31,45 @@
     height: 500px;
 }
 
+.panneau{
+    height: 100px;
+    z-index: 3;
+    width: 100%;
+    display: flex;
+    color: white;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+    cursor: pointer;
+    .icon{
+        cursor: pointer;
+        min-width: 69px !important;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        text-align: center;
+        opacity: 0.4;
+    }
+    
+    .icon p{
+        margin-top: 10px;
+    
+    }
+}
+
 
 .slider{
     flex: 2;
     height: 100%;
     overflow: hidden;
     display: flex;
+    // border-bottom: 20px solid #1D44B1;
 }
 
 .slide{
     width: 100%;
     height: 300px;
-    background: #1D44B1;
+    background: #2B50B5;
     align-self: flex-end;
     padding-left: 20px;
     display: flex;
@@ -49,23 +77,39 @@
 
 
 
-.left, .right{
-    width: 75px;
-    height: 75px;
-    align-self: center;
-    margin-top: 38px;
-    border-radius: 10px;
-    border: 1px solid white;
+.slideSvg{
+    position: relative;
     display: flex;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
+    justify-content: space-between;
 }
 
+.patterns{
+    width: 204px;
+    height: 80px;
+    opacity: 0.4;
+}
+
+.point{
+    position: absolute;
+    width: 194px;
+    height: 123px;
+    top: -20px;
+    right: 0;
+    z-index: 0;
+    opacity: 0.4;
+}
+
+.btnSlide{
+    cursor: pointer;
+}
 
 .photo{
     width: 100%;
     height: 100%;
+    position: absolute;
+    background-position: center;
+    z-index: 100;
+    background-repeat: no-repeat;
 }
 
 .image{
@@ -75,6 +119,8 @@
     overflow: hidden;
     box-sizing: border-box;
     border:10px solid white;
+    position: relative;
+    bottom: 20px;
 }
 
 
@@ -84,23 +130,73 @@
      display: flex;
      flex-direction: column;
      justify-content: space-between;
+     align-items: center;
+     position: relative;
 }
 
 
 .textInner{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
     padding-top: 20px;
-    flex: 1;
+    width: 100%;
+    position: absolute;
+
+    .innerCenter{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-around;
+        flex: 1;
+        opacity: 0.5;
+    }
+
+    .description{
+        color: rgba(255, 255, 255, 0.507);
+    }
+    
+    .trait{
+        height: 2px;
+        background:#eb5a5075;
+         width: 20px;
+    }
+    
+    .projetName{
+        font-weight: 700;
+        color: rgba(255, 255, 255, 0.507);
+    }
+
+    .numberTitle{
+        color: white;
+    }
+}
+
+.description{
+    color: white;
+}
+
+.trait{
+    height: 2px;
+    background:#EB5A50;
+     width: 20px;
+     margin-bottom: 5px;
+}
+
+.projetName{
+    font-weight: 700;
+    color: white;
+    margin-bottom: 5px;
 }
 
 .textInnerDroit{
+    position: absolute;
+}
+
+.Inner{
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     text-align: center;
+
 }
 
 .textInnerDroit h1{
@@ -108,6 +204,17 @@
     font-weight: 700;
     color: white;
 }
+
+.centerContent{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    align-self: center;
+}
+
+.init{
+    align-self: flex-end;
+} 
 
 .init h1{
     font-size: 92px;
@@ -128,20 +235,29 @@
 }
 
 .textBoutton{
-    height: 150px;
     width: 100%;
     justify-content: center;
+    position: relative;
+    display: flex;
 }
 
 .textuelle{
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: flex-end;
 }
 
 
 
 @media screen and (max-width: 560px) {
+
+    .image{
+        flex: 1.5;
+    }
+
+    .bt{
+        bottom: 7px;
+    }
     .slide{
         display: flex;
         flex-direction: column;
@@ -156,10 +272,17 @@
     }
 
     .textInner{
-        display: flex;
-        flex-direction: row;
-        justify-content: space-around;
-
+        padding-top: 20px;
+        .innerCenter{
+            flex-direction: row;
+            justify-content: space-around;
+            display: flex;
+            .centerContent{
+                flex-direction: row;
+                justify-content: space-around;
+    
+            }
+        }
         p{
             font-size: 0.7em;
         }
@@ -168,7 +291,26 @@
     .init h1{
         font-size: 47px;
     }
+
+    .patterns{
+        display: none;
+    }
+
+    .slideSvg{
+        justify-content: center;
+    }
     
+    .icon p {
+        font-size: 0.7em;
+    }
+
+    .numberTitle{
+        font-size: 67px !important;
+    }
+
+    .btnSlide{
+        height: 60px;
+    }
 }
 
 

@@ -12,25 +12,36 @@
             </div>
         </div>
     </div>
+    <div appParallax [ratio]="-1" class="menu">
+        <p routerLink="/home" class="texPrec">home<span class="prec">></span></p>
+        <p><strong class="enCours">O2.</strong> workflow</p>
+    </div>
+
     <div class="container">
-        <div class="title">
-            <div class="titlecontent">
-                <h1 style="width: 120px;">digital workflow</h1>
-            </div>
-            <div class="titleBoutton">
-                <p style="flex: 2;">Lorem Ipsum is simply dummy text of the printing and typesetting
-                    industry.
-                    Lorem Ipsum has been the
-                    industry’s standard dummy.
-                </p>
-                <div class="bt">
-                    <p style="display: flex;justify-content: space-between;font-weight: 700;">télécharger le PDF
-                        <span class="material-icons">arrow_forward</span>
+        <div class="titleHeader">
+            <div class="rightTitle">
+                <div class="titlecontent">
+                    <h1 class="title animate__animated animate__fadeInDown">digital workflow</h1>
+                </div>
+                <div class="titleBoutton">
+                    <p class="animate__animated animate__fadeIn animate__delay-1s">Lorem Ipsum is simply dummy text of the printing and typesetting
+                        industry.
+                        Lorem Ipsum has been the
+                        industry’s standard dummy.
                     </p>
-                    <div class="progress">
-                        <div class="bar"></div>
+                    <div class="bt">
+                        <p style="display: flex;justify-content: space-between;font-weight: 700;">télécharger le PDF
+                            <span class="material-icons">arrow_forward</span>
+                        </p>
+                        <div class="progress">
+                            <div class="bar"></div>
+                        </div>
                     </div>
                 </div>
+            </div>
+            <div class="leftTitle">
+                <ng-lottie [options]="options" (animationCreated)="animationCreated($event)">
+                </ng-lottie>
             </div>
         </div>
         <div id="content">
@@ -78,7 +89,7 @@
             </div>
             <div class="ligne">
                 <div class="gauche"> </div>
-                <div class="droite">
+                <div class="droite" id="production">
                     <p class="numDroit">05</p>
                     <div class="cercleDroit"></div>
                     <h1 class="titre">Productions</h1>
@@ -104,10 +115,10 @@
                 </div>
             </div>
             <div class="ligne">
-                <div class="gauche">
+                <div class="gauche" id="maintenance">
                     <p class="numGauche">08</p>
                     <div class="cercleGauche"></div>
-                    <h1 class="titre">Maintenance et SEO</h1>
+                    <h1 class="titre">Maintenance & SEO</h1>
                     <p class="sousTitre">Maintenance Correction des bugs Optimisation des contenus, SEO</p>
                 </div>
                 <div class="droite"> </div>

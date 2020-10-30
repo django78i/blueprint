@@ -1,0 +1,54 @@
+<div class="articles">
+    <div class="titreArticles">
+        <div class="titleArticlesIn">
+            <h1 class="title">derniers <br>articles</h1>
+            <div class="swiper-pagination"></div>
+        </div>
+        <div class="boutton">
+            <img class="btnSlide" (click)=" prev()" src="../assets/images/leftArrow.svg" alt="">
+            <img class="btnSlide" (click)=" next()" src="../assets/images/rightArrow.svg" alt="">
+            <div class="patterns">
+                <svg width="100%" height="100%">
+                    <defs>
+                        <pattern id="polka-dots" x="0" y="0" width="10" height="10" patternUnits="userSpaceOnUse">
+                            <circle fill="#bee9e8" cx="5" cy="5" r="1" />
+                        </pattern>
+                    </defs>
+                    <rect x="0" y="0" width="100%" height="100%" fill="url(#polka-dots)" />
+                </svg>
+            </div>
+        </div>
+        <div class="bt">
+            <p style="display: flex;justify-content: space-between;">tous
+                les articles
+                <span style="color: white;font: 800;">&rarr;</span>
+            </p>
+            <div class="progress">
+                <div class="bar"></div>
+            </div>
+        </div>
+    </div>
+    <div class="ariclesItem">
+        <swiper [config]="config" #usefulSwiper>
+            <div class="swiper-wrapper">
+                <div class="swiper-slide" *ngFor="let article of articles">
+                    <div class="hautArticle">
+                        <img class="articleIcon" src="../assets/images/searchReference(1).svg" alt="">
+                        <div class="auteurPhoto">
+                            <p class="auteur">auteur<br><span style="color: white;">{{article.auteur}}</span></p>
+                            <div class="photo"></div>
+                        </div>
+                    </div>
+                    <div class="basArticle">
+                        <p>{{article.titre}}</p>
+                    </div>
+                </div>
+            </div>
+            <!-- Add Pagination -->
+            <!-- <div class="swiper-pagination"></div> -->
+            <!-- Add Arrows -->
+            <!-- <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div> -->
+        </swiper>
+    </div>
+</div>

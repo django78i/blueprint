@@ -1,67 +1,70 @@
- <div class="carousel">
+<div class="panneau">
+    <div class="icon" *ngFor="let icon of iconsTab; let i=index" (click)="changeSlide(i)">
+        <img [src]="icon.url" alt="">
+        <p>{{icon.name}}</p>
+    </div>
+</div>
+<div class="carousel">
     <div class="gauche">
         <div class="textBoutton">
-            <div [@fadeBoutton]='state2' *ngIf='slides==1' class="textInnerDroit">
-                <h1 >P5</h1>
-                <p style="font-weight: 700;color: white;"><strong>Prism</strong></p>
-                <div style="height: 2px;background:#EB5A50; width: 20px;"></div>
-                <p style="color: white;text-align: right;">Identité visuelle</p>
+            <div class="point">
+                <svg width="100%" height="100%">
+                    <defs>
+                        <pattern id="polka-dots" x="0" y="0" width="10" height="10" patternUnits="userSpaceOnUse">
+                            <circle fill="#bee9e8" cx="5" cy="5" r="1" />
+                        </pattern>
+                    </defs>
+                    <rect x="0" y="0" width="100%" height="100%" fill="url(#polka-dots)" />
+                </svg>
             </div>
-            <div [@fadeBoutton]='state2' *ngIf='slides==2' class="textInnerDroit">
-                <h1 >07</h1>
-                <p style="font-weight: 700;color: white;"><strong>Outsider Mob</strong></p>
-                <div style="height: 2px;background:#EB5A50; width: 20px;"></div>
-                <p style="color: white;text-align: right;">Identité visuelle</p>
-            </div>
-            <div [@fadeBoutton]='state2' *ngIf='slides==3' class="textInnerDroit">
-                <h1 >Y4</h1>
-                <p style="font-weight: 700;color: white;"><strong>Yvel Fluides</strong></p>
-                <div style="height: 2px;background:#EB5A50; width: 20px;"></div>
-                <p style="color: white;text-align: right;">DXP</p>
+            <div *ngFor="let item of slidesItemGauche; let i=index" class="textInnerDroit">
+                <div [@fadeBoutton]='state2' class="Inner" *ngIf="slides == item.id">
+                    <h1 class="numberTitle">{{item.initial}}</h1>
+                    <p class="projetName"><strong>{{item.nom}}</strong></p>
+                    <div class="trait"></div>
+                    <p class="description">{{item.description}}</p>
+                </div>
             </div>
         </div>
-        <div class="left" (click)="gauche()">
-            <span class="material-icons" style=" font-size: 48px;">
-                arrow_left
-            </span>
+        <div class="slideSvg">
+            <img class="btnSlide" id="gauche" src="../assets/images/leftArrow.svg" (click)="gauche()" alt="">
+            <div class="patterns">
+                <svg width="100%" height="100%">
+                    <defs>
+                        <pattern id="polka-dots" x="0" y="0" width="10" height="10" patternUnits="userSpaceOnUse">
+                            <circle fill="#bee9e8" cx="5" cy="5" r="1" />
+                        </pattern>
+                    </defs>
+                    <rect x="0" y="0" width="100%" height="100%" fill="url(#polka-dots)" />
+                </svg>
+            </div>
         </div>
     </div>
     <div class="slider">
         <div class="slide">
             <div class="image">
-                <img [@fadeIn]='state' class="photo" *ngIf='slides==1' src="../assets/images/flag_outsider.png" alt="">
-                <img [@fadeIn]='state' class="photo" *ngIf='slides==2' src="../assets/images/flag_outsider.png" alt="">
-                <img [@fadeIn]='state' class="photo" *ngIf='slides==3' src="../assets/images/flag_outsider.png" alt="">
+                <div [@fade]='state' class="photo" *ngIf='slides==1'
+                    [ngStyle]="{'background-image': 'url(' + photo[0] + ')'}"></div>
+                <div [@fade]='state' class="photo" *ngIf='slides==2'
+                    [ngStyle]="{'background-image': 'url(' + photo[1] + ')'}"></div>
+                <div [@fade]='state' class="photo" *ngIf='slides==3'
+                    [ngStyle]="{'background-image': 'url(' + photo[2] + ')'}"></div>
             </div>
             <div class="text">
-                <div [@fade]='state' *ngIf='slides==1' class="textInner">
-                    <div class="init">
-                        <h1>07</h1>
-                    </div>
-                    <div class="textuelle">
-                        <p style="font-weight: 700;color: white;"><strong>Outsider Mob</strong></p>
-                        <div style="height: 2px;background:#EB5A50; width: 20px;"></div>
-                        <p style="color: white;text-align: right;">Identité visuelle</p>
-                    </div>
-                </div>
-                <div [@fade]='state' *ngIf='slides==2' class="textInner">
-                    <div class="init">
-                        <h1>Y4</h1>
-                    </div>
-                    <div class="textuelle">
-                        <p style="font-weight: 700;color: white;"><strong>Yvel Fluides</strong></p>
-                        <div style="height: 2px;background:#EB5A50; width: 20px;"></div>
-                        <p style="color: white;text-align: right;">DXP</p>
-                    </div>
-                </div>
-                <div [@fade]='state' *ngIf='slides==3' class="textInner">
-                    <div class="init">
-                        <h1>P5</h1>
-                    </div>
-                    <div class="textuelle">
-                        <p style="font-weight: 700;color: white;"><strong>Prism</strong></p>
-                        <div style="height: 2px;background:#EB5A50; width: 20px;"></div>
-                        <p style="color: white;text-align: right;">Identité visuelle</p>
+                <div class="textBoutton">
+                    <div *ngFor="let item of slidesItemcentre; let i=index" class="textInner">
+                        <div [@fadeBoutton]='state' class="innerCenter" *ngIf="slides == item.id">
+                            <div class="centerContent">
+                                <div class="init">
+                                    <h1 class="numberTitle">{{item.initial}}</h1>
+                                </div>
+                                <div class="textuelle">
+                                    <p class="projetName"><strong>{{item.nom}}</strong></p>
+                                    <div class="trait"></div>
+                                    <p class="description">{{item.description}}</p>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
                 <div class="bt">
@@ -77,32 +80,37 @@
     </div>
     <div class="droite">
         <div class="textBoutton">
-            <div [@fadeBoutton]='state2' *ngIf='slides==1' class="textInnerDroit">
-                <h1>Y4</h1>
-                <p style="font-weight: 700;color: white;"><strong>Yvel Fluides</strong></p>
-                <div style="height: 2px;background:#EB5A50; width: 20px;"></div>
-                <p style="color: white;text-align: right;">DXP</p>
+            <div class="point">
+                <svg width="100%" height="100%">
+                    <defs>
+                        <pattern id="polka-dots" x="0" y="0" width="10" height="10" patternUnits="userSpaceOnUse">
+                            <circle fill="#bee9e8" cx="5" cy="5" r="1" />
+                        </pattern>
+                    </defs>
+                    <rect x="0" y="0" width="100%" height="100%" fill="url(#polka-dots)" />
+                </svg>
             </div>
-            <div [@fadeBoutton]='state2' *ngIf='slides==2' class="textInnerDroit">
-                <h1>P5</h1>
-                <p style="font-weight: 700;color: white;"><strong>Prism</strong></p>
-                <div style="height: 2px;background:#EB5A50; width: 20px;"></div>
-                <p style="color: white;text-align: right;">Identité visuelle</p>
-            </div>
-            <div [@fadeBoutton]='state2' *ngIf='slides==3' class="textInnerDroit">
-                <h1>07</h1>
-                <p style="font-weight: 700;color: white;"><strong>Outsider Mob</strong></p>
-                <div style="height: 2px;background:#EB5A50; width: 20px;"></div>
-                <p style="color: white;text-align: right; display: block;">Identité visuelle</p>
+            <div *ngFor="let item of slidesItemDroit; let i=index" class="textInnerDroit">
+                <div [@fadeBoutton]='state2' class="Inner" *ngIf="slides == item.id">
+                    <h1 class="numberTitle">{{item.initial}}</h1>
+                    <p class="projetName"><strong>{{item.nom}}</strong></p>
+                    <div class="trait"></div>
+                    <p class="description">{{item.description}}</p>
+                </div>
             </div>
         </div>
-        <div class="right" (click)="droite()">
-            <span class="material-icons" style=" font-size: 48px;">
-                arrow_right
-            </span>
+        <div class="slideSvg">
+            <div class="patterns">
+                <svg width="100%" height="100%">
+                    <defs>
+                        <pattern id="polka-dots" x="0" y="0" width="10" height="10" patternUnits="userSpaceOnUse">
+                            <circle fill="#bee9e8" cx="5" cy="5" r="1" />
+                        </pattern>
+                    </defs>
+                    <rect x="0" y="0" width="100%" height="100%" fill="url(#polka-dots)" />
+                </svg>
+            </div>
+            <img class="btnSlide" src="../assets/images/rightArrow.svg" (click)="droite()" alt="">
         </div>
     </div>
 </div>
-
-
- 

@@ -1,0 +1,139 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.title{
+    margin-bottom: 30px;
+}
+
+section.listPage{
+    width: 100%;
+    margin: 0;
+    overflow: hidden;
+    background: #0E0E34;
+    position: relative;
+    z-index: 1;
+}
+
+section.listPage .menu{
+    position: absolute;
+    margin-top: 250px;
+    text-align: center;
+    transform: rotate(270deg);
+    margin-left: -84px;
+    display: flex;
+    justify-content: space-between;
+    color: white;
+    z-index: 4;
+}
+
+.menu .enCours{
+    color: blue;
+    margin-left: 20px;
+}
+
+.menu .prec{
+    margin-left: 20px;
+}
+.menu .texPrec{
+    cursor: pointer;
+}
+
+.fond{
+    z-index: 2;
+    background: #0E0E34;
+    width: 100%;
+    position: absolute;
+    transform: translateY(-100px);
+}
+.fondBorder{
+    border-right: 2px solid rgba(243, 238, 238, 0.24);
+    // height: 3100px;
+}    
+
+.fond .row {
+    margin: 0px;
+}
+
+.fond .row:first-child{
+    border-left: 2px solid rgba(243, 238, 238, 0.24);
+}
+
+.titre{
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    z-index: 3;
+
+     .titleContent{
+        display: flex;
+    }
+    .right, .left{
+        flex: 1;
+    }
+
+    .left{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+}
+
+.ContainorProjet{
+    display:flex;
+    flex-wrap: wrap;
+}
+
+.contenu{
+    display: flex;
+    justify-content: center;
+    position: relative;
+    z-index: 3;
+}
+
+.contenu .container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around flex-start;
+    margin-bottom: 100px;
+}
+
+.ligne{
+    margin-top: 180px;
+    height: 30px;
+    width: 4px;
+    background: blue;
+    position: absolute;
+    margin-left: -3.5px;
+}
+
+
+app-best-portfolios{
+    min-width: 300px;
+    max-width: 350px;
+    height: 350px;
+    flex: 1;
+    border: 1px solid rgba(255, 255, 255, 0.349);
+    transition: 0.3s ease all;
+    margin-top: 20px;
+    margin-right: 20px;
+
+    &:hover{
+        transform: scale(1.2);
+    }
+}
+
+
+@media screen and (max-width: 560px) {
+    .contenu .container{
+        justify-content: center;
+    }
+
+    app-best-portfolios{
+        margin-right: 0px !important;
+
+    }
+}

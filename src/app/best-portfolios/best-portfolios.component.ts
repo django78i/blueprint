@@ -11,17 +11,19 @@ import { Router } from '@angular/router';
 })
 export class BestPortfoliosComponent implements OnInit {
 
-   @Input() titre: string;
-   @Input() sousTitre: string;
-   @Input() id: string;
-   @Input() imageBanniere: string;
-   @Input() imageMiniature: string;
-   @Input() categories: [];
+  //  @Input() titre: string;
+  //  @Input() sousTitre: string;
+  //  @Input() id: string;
+  //  @Input() imageBanniere: string;
+  //  @Input() imageMiniature: string;
+  //  @Input() categories: [];
+   @Input() projet: any;
 
   constructor(private portfolioService: PortfolioService, private router: Router) { }
 
   ngOnInit(): void {
-    console.log(this.imageMiniature);
+    // console.log(this.imageMiniature);
+    console.log(this.projet);
 
   }
 

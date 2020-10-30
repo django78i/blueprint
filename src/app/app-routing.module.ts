@@ -5,14 +5,16 @@ import { PortfolioViewComponent } from './portfolio-view/portfolio-view.componen
 import { WorkflowComponent } from './workflow/workflow.component';
 import { GetInTouchComponent } from './get-in-touch/get-in-touch.component';
 import { ProjectPageComponent } from './project-page/project-page.component';
+import { ProjectListPageComponent } from './project-list-page/project-list-page.component';
 
 const routes: Routes = [
   { path: 'home', component: PortfolioViewComponent },
   { path: 'workflow',  component: WorkflowComponent },
   { path: 'getInTouch',  component: GetInTouchComponent },
-  { path: 'projets',  component: ProjectPageComponent },
+  { path: 'projets',  component: ProjectListPageComponent },
   { path: 'projet/:id',  component: ProjectPageComponent },
   { path: 'services',  component: ServicesPageComponent },
+  { path: 'listProjet',  component: ProjectListPageComponent },
   { path: '', component: PortfolioViewComponent }
 ];
 

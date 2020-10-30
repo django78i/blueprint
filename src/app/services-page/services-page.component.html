@@ -3,110 +3,52 @@
         <div class="row">
             <div class="col-md-3 col-xs-3 fondBorder2"></div>
             <div class="col-md-3 col-xs-3 fondBorder2">
-                <div appParallax [ratio]="-1" class="ligne"></div>
+                <div @fadeIn appParallax [ratio]="-1" class="ligne"></div>
             </div>
             <div class="col-md-3 col-xs-3 fondBorder2">
-                <div appParallax [ratio]="-1.3" class="ligne"></div>
+                <div @fadeIn appParallax [ratio]="-1.3" class="ligne"></div>
             </div>
             <div class="col-md-3 col-xs-3 fondBorder2">
-                <div appParallax [ratio]="-1.2" class="ligne"></div>
+                <div @fadeIn appParallax [ratio]="-1.2" class="ligne"></div>
             </div>
         </div>
     </div>
+    <div appParallax [ratio]="-1" class="menu" >
+        <p class="texPrec" routerLink="/home">home<span class="prec" >></span></p>
+        <p><strong class="enCours">O2.</strong> nos services</p>
+    </div>
+
     <div class="container">
-        <div class="title">
-            <div class="titlecontent">
-                <h1 style="width: 120px;">nos solutions</h1>
-                <p style="color: #7E7F95;">Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-                    Lorem Ipsum has been the
-                    industry’s standard dummy. Text ever since the 1500s, when an unknown
-                    printer took a galley of type and scrambled it to make a type specimen book.</p>
+        <div class="titre">
+            <div class="titleZone">
+                <div class="titlecontent">
+                    <h1 class="title animate__animated animate__fadeInDown" >nos<br> solutions</h1>
+                    <p class="animate__animated animate__fadeIn animate__delay-1s" style="color: #7E7F95;">Lorem Ipsum is simply dummy text of the printing and typesetting
+                        industry.
+                        Lorem Ipsum has been the
+                    </p>
+                </div>
+                <div class="iconTitle">
+                    <ng-lottie [options]="options" (animationCreated)="animationCreated($event)">
+                    </ng-lottie>
+                </div>
             </div>
             <div class="panneau">
-                <div class="icon">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="33.887" height="28.172" viewBox="0 0 33.887 28.172">
-                        <defs>
-                            <style>
-                                .a {
-                                    fill: #eff1f7;
-                                }
-                            </style>
-                        </defs>
-                        <g transform="translate(0.113 -5.97)">
-                            <path class="a"
-                                d="M33.351,14.874,24.9,6.423a1.362,1.362,0,0,0-1.972,0L16.87,12.48,10.813,6.423,10.6,6.211c-.07,0-.07-.07-.141-.07s-.07-.07-.141-.07-.07,0-.141-.07H9.4c-.07,0-.07,0-.141.07-.07,0-.07.07-.141.07s-.07.07-.141.07l-.211.211L.319,14.874a1.427,1.427,0,0,0-.07,1.972l15.495,16.9a1.532,1.532,0,0,0,2.113,0l15.495-16.9A1.361,1.361,0,0,0,33.351,14.874Zm-22.115-.916v-3.1l4.226,4.226V19.03Zm7.043,1.056L22.5,10.789v3.1l-4.226,5.071Zm-9.86-4.226v3.029L4.756,17.48,3.277,15.86ZM16.87,30.651,6.728,19.593l3.029-3.029,6.057,7.254.07.07.141.141.07.07c.07.07.07.07.141.07a.069.069,0,0,1,.07.07c.07,0,.141.07.211.07h.7c.07,0,.141-.07.211-.07a.069.069,0,0,0,.07-.07.246.246,0,0,0,.141-.07l.07-.07.141-.141.07-.07,6.057-7.254,3.029,3.029ZM28.984,17.48l-3.662-3.592V10.86l5.071,5.071Z"
-                                transform="translate(0 -0.03)" />
-                            <path class="a" d="M22.094,9.2a1.094,1.094,0,0,0,0,2.188h0a1.094,1.094,0,1,0,0-2.188Z"
-                                transform="translate(10.219 -3.143)" />
-                        </g>
-                    </svg>
-                    <p style="margin-top: 5px;">marketing</p>
+                <div class="icon" *ngFor="let icon of iconsTab; let i=index" (click)="changeSlide(i)">
+                    <img [src]="icon.url" alt="">
+                    <p>{{icon.name}}</p>
                 </div>
-                <div class="icon">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="39.675" height="24.797" viewBox="0 0 39.675 24.797">
-                        <defs>
-                            <style>
-                                .a {
-                                    fill: #edeff5;
-                                }
-                            </style>
-                        </defs>
-                        <path class="a"
-                            d="M2.48,6V22.97l-1.9,2.906v.039A3.309,3.309,0,0,0,0,27.7a3.1,3.1,0,0,0,3.1,3.1H37.2a2.387,2.387,0,0,0,2.48-2.48v-12.4a2.387,2.387,0,0,0-2.48-2.48H29.756V6Zm2.48,2.48H27.276v4.959H19.837a2.387,2.387,0,0,0-2.48,2.48v6.2H4.959Zm14.878,7.439H37.2v12.4H19.837ZM4.417,24.6H17.358v3.72H3.1a.751.751,0,0,1-.62-.62.712.712,0,0,1,.155-.426Zm21.62,0v2.48H31V24.6Z"
-                            transform="translate(0 -6)" />
-                    </svg>
-                    <p style="margin-top: 5px;">UI/UX</p>
 
-                </div>
-                <div class="icon">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="33.669" height="33.669" viewBox="0 0 33.669 33.669">
-                        <defs>
-                            <style>
-                                .a {
-                                    fill: #eff1f7;
-                                }
-                            </style>
-                        </defs>
-                        <g transform="translate(-6 -6)">
-                            <circle class="a" cx="3" cy="3" r="3" transform="translate(17 28.669)" />
-                            <circle class="a" cx="2" cy="2" r="2" transform="translate(23 24.669)" />
-                            <path class="a"
-                                d="M38.827,33.59l-10.381-14.5V9.741h1.87V6H15.352V9.741h1.87v9.352L6.842,33.59A3.592,3.592,0,0,0,6,35.928a3.752,3.752,0,0,0,3.741,3.741H35.928a3.752,3.752,0,0,0,3.741-3.741A3.592,3.592,0,0,0,38.827,33.59ZM24.7,9.741v7.482H20.964V9.741ZM9.741,35.928h0l.094-.094L20.5,20.964h4.676l10.662,14.87.094.094H9.741Z" />
-                        </g>
-                    </svg>
-                    <p style="margin-top: 5px;">gestion</p>
-
-                </div>
-                <div class="icon">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="33.887" height="28.172" viewBox="0 0 33.887 28.172">
-                        <defs>
-                            <style>
-                                .a {
-                                    fill: #eff1f7;
-                                }
-                            </style>
-                        </defs>
-                        <g transform="translate(0.113 -5.97)">
-                            <path class="a"
-                                d="M33.351,14.874,24.9,6.423a1.362,1.362,0,0,0-1.972,0L16.87,12.48,10.813,6.423,10.6,6.211c-.07,0-.07-.07-.141-.07s-.07-.07-.141-.07-.07,0-.141-.07H9.4c-.07,0-.07,0-.141.07-.07,0-.07.07-.141.07s-.07.07-.141.07l-.211.211L.319,14.874a1.427,1.427,0,0,0-.07,1.972l15.495,16.9a1.532,1.532,0,0,0,2.113,0l15.495-16.9A1.361,1.361,0,0,0,33.351,14.874Zm-22.115-.916v-3.1l4.226,4.226V19.03Zm7.043,1.056L22.5,10.789v3.1l-4.226,5.071Zm-9.86-4.226v3.029L4.756,17.48,3.277,15.86ZM16.87,30.651,6.728,19.593l3.029-3.029,6.057,7.254.07.07.141.141.07.07c.07.07.07.07.141.07a.069.069,0,0,1,.07.07c.07,0,.141.07.211.07h.7c.07,0,.141-.07.211-.07a.069.069,0,0,0,.07-.07.246.246,0,0,0,.141-.07l.07-.07.141-.141.07-.07,6.057-7.254,3.029,3.029ZM28.984,17.48l-3.662-3.592V10.86l5.071,5.071Z"
-                                transform="translate(0 -0.03)" />
-                            <path class="a" d="M22.094,9.2a1.094,1.094,0,0,0,0,2.188h0a1.094,1.094,0,1,0,0-2.188Z"
-                                transform="translate(10.219 -3.143)" />
-                        </g>
-                    </svg>
-                    <p style="margin-top: 5px;">design</p>
-
-                </div>
             </div>
         </div>
         <section class="contenu">
             <div class="service" id="service1">
                 <div class="numService">
-                    <p class="numero"> 01</p>
+                    <p class="numberText"> 01</p>
                 </div>
                 <div class="textService">
-                    <h4>Design</h4>
-                    <h2>améliorer l’expérience client</h2>
+                    <h4 class="textTitle">Design</h4>
+                    <h2 class="sousTitle">améliorer l’expérience client</h2>
                     <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been
                         the
                         industry’s standard dummy. text ever since the 1500s, when an unknown printer took a galley of
@@ -114,13 +56,13 @@
                         and scrambled it to make a type specimen book.</p>
                 </div>
             </div>
-            <div class="service" id="service2" >
+            <div class="service" id="service2">
                 <div class="numService">
-                    <p class="numero"> 02</p>
+                    <p class="numberText"> 02</p>
                 </div>
                 <div class="textService">
-                    <h4>UX/UI</h4>
-                    <h2>personalisez vos pages à votre guise</h2>
+                    <h4 class="textTitle">UX/UI</h4>
+                    <h2 class="sousTitle">personalisez vos pages à votre guise</h2>
                     <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been
                         the
                         industry’s standard dummy. text ever since the 1500s, when an unknown printer took a galley of
@@ -130,11 +72,11 @@
             </div>
             <div class="service" id="service3">
                 <div class="numService">
-                    <p class="numero"> 03</p>
+                    <p class="numberText"> 03</p>
                 </div>
                 <div class="textService">
-                    <h4>Marketing</h4>
-                    <h2>générez du traffic et convertissez-le</h2>
+                    <h4 class="textTitle">Marketing</h4>
+                    <h2 class="sousTitle">générez du traffic et convertissez-le</h2>
                     <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been
                         the
                         industry’s standard dummy. text ever since the 1500s, when an unknown printer took a galley of
@@ -144,11 +86,11 @@
             </div>
             <div class="service" id="service4">
                 <div class="numService">
-                    <p class="numero"> 04</p>
+                    <p class="numberText"> 04</p>
                 </div>
                 <div class="textService">
-                    <h4>Gestion</h4>
-                    <h2>gérez tout d’un seul click</h2>
+                    <h4 class="textTitle">Gestion</h4>
+                    <h2 class="sousTitle">gérez tout d’un seul click</h2>
                     <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been
                         the
                         industry’s standard dummy. text ever since the 1500s, when an unknown printer took a galley of

@@ -1,30 +1,22 @@
-.torsion{
-  //width: 150%;
-  height: 8vw;
-  transform: skew(0deg, -2deg);
-  z-index: 1 !important;
-  margin-bottom: -25px;
-  margin-top: 50px;
+section{
+  margin-bottom: 100px;
 }
 
-.torsionDown{
-  height: 12vw;
-  transform: skew(0deg, -2deg);
-  z-index: 1 !important;
-  margin-top: -50px;
+.container{
+  display: flex;
+  justify-content: center;
 }
 
-.wrapper{
-    align-content: center;
-    display: flex;
-    z-index: 5!important;
-  //  transform: skew(30deg);
-  }
-  
+.text-content{
+  flex: 1;
+  align-self: center;
+  color: white;
+}
+
 
 .media{
-  width: 50%;
-  // border: 1px solid black;
+  flex: 2;
+  padding: 43px;
 }
 
 #text{
@@ -34,15 +26,10 @@
 .image{
   display: flex;
   margin-top: 30px;
- // width: 100%;
 }
 
 .imagePos{
- margin: auto;
  min-width: 300px;
-//  max-width: 400px;
- overflow: hidden;
-  //flex: 1;
 }
 
 .contenuText{
@@ -51,19 +38,9 @@
   flex-direction: column;
 }
 
-.text-content{
-  margin: auto;
-}
 
 body *{
   font-family: 'Avenir';
-}
-
-.stats{
-  z-index: 5;
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 20px;
 }
 
 .statDesc{
@@ -72,4 +49,11 @@ body *{
   flex-direction: column;
   flex: 1;
   align-items: center;
+}
+
+section.texUnique .container{
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  color: white;
 }

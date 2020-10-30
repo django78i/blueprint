@@ -2,5 +2,14 @@
   "projects": {
     "default": "blueprint-a09f4",
     "bluePrintFront": "blueprint-a09f4"
+  },
+  "targets": {
+    "blueprint-a09f4": {
+      "hosting": {
+        "front": [
+          "blueprint-a09f4"
+        ]
+      }
+    }
   }
 }

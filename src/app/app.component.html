@@ -1,6 +1,10 @@
-
-
-<!-- <app-mat-nav-header></app-mat-nav-header>  -->
-            <router-outlet (activate)="onActivate($event)">
-                <app-navigation-header></app-navigation-header>
-            </router-outlet>
+<section @fade class="preloader" *ngIf = "preloader == true">
+    <ng-lottie [options]="options" (animationCreated)="animationCreated($event)" class="preloadInner">
+    </ng-lottie>
+</section>
+<app-navigation-header *ngIf = " preloader == false"></app-navigation-header>
+<section *ngIf="!this.menuService.opened && preloader == false">
+    <router-outlet id="site"  (activate)="onActivate($event)">
+    </router-outlet>
+</section>
+<app-footer *ngIf="!this.menuService.opened && preloader == false"></app-footer>
