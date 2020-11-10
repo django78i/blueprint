@@ -1,5 +1,5 @@
 <nav>
-    <div class="titre">
+    <div class="titre" >
         <ng-lottie [options]="options" (animationCreated)="animationCreated($event)" class="icon" (click)='navigation("home")' 
             (complete)="complete($event)" (mouseenter)="debut()" (mouseleave)="fin()">
         </ng-lottie>
@@ -15,11 +15,11 @@
 </nav>
 <div [@fade]="pages.length" class="menuOpen" *ngIf="!affiche">
     <div class="page" *ngFor="let page of pages ;let i=index" (mouseenter)="icon(page)" (mouseleave)="finMenu(page)"
-        (click)="navigation(page)">
-        <ng-lottie [options]="optionsMenu" id="{{page}}" class="menuIcon"
+        (click)="navigation(page.nom)">
+        <ng-lottie [options]="optionsMenu" id="{{page.nom}}" class="menuIcon"
             (animationCreated)="animationCreatedMenu($event)">
         </ng-lottie>
-        <p>{{page}}</p>
+        <p>{{page.nom}}</p>
     </div>
 </div>
 

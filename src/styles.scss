@@ -81,7 +81,8 @@ p {
 }
 
 .numberText{
-    text-shadow: 0px 10px 20px rgba(0, 0, 0, 0.4);
+    text-shadow: 30px 20px 80px #04041C;
+    // text-shadow: 0px 10px 20px rgba(0, 0, 0, 0.4);
     font-weight: 800;
     font-size: 405px;
     letter-spacing: -2px;
@@ -127,6 +128,12 @@ p {
     .container{
         padding: 16px;
     }
+
+    .numberText{
+        font-size: 284px;
+        letter-spacing: -2px;
+    }
+    
 }
 
 @import '~bootstrap/scss/bootstrap';

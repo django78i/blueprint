@@ -44,9 +44,7 @@ export class ProjectListPageComponent implements OnInit {
 
   ngOnInit(): void {
     var scroll = document.documentElement.scrollHeight;
-    console.log(scroll);
     scroll += 700;
-    console.log('scroll'+scroll);
     var fond = this.elem.nativeElement.querySelectorAll('.fondBorder') ;
     fond.forEach((element)=>{
         element.style.height =  scroll+'px';

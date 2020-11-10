@@ -1,0 +1,14 @@
+<div class="container">
+    <div class="contentText" >
+        <div class="text-content" [ngStyle]="{'order': textPos(rows.position)}">
+            <h1 >{{rows.textTitre1}}</h1>
+            <h1 class="sousTitle">{{rows.textTitre2}}</h1>
+            <h3>{{rows.textTitre3}}</h3>
+            <div id="text" [innerHTML]="rows.editor">
+            </div>
+        </div>
+    </div>
+    <div class="media" [ngStyle]="{'order': mediaPos(rows.position)}">
+        <img [src]="rows.imageUrl" style="width: 100%;">
+    </div>
+</div>

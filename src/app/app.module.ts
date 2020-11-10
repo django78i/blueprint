@@ -37,6 +37,7 @@ import { LottieModule } from 'ngx-lottie';
 import player from 'lottie-web';
 import { ParallaxScrollModule } from 'ng2-parallaxscroll';
 import { ParallaxDirective } from './parallax.directive';
+import { ParallaxDirectives } from './parallax.directive copy';
 import { AnimateOnScrollModule } from 'ng2-animate-on-scroll';
 import { AngularFireModule } from '@angular/fire';
 import { AngularFirestore, AngularFirestoreCollection , AngularFirestoreModule, } from '@angular/fire/firestore';
@@ -54,6 +55,11 @@ import { ArticlesliderComponent } from './articleslider/articleslider.component'
 import { NgxUsefulSwiperModule } from 'ngx-useful-swiper';
 import { FooterComponent } from './footer/footer.component';
 import { ProjectListPageComponent } from './project-list-page/project-list-page.component';
+import { RowMediaTextComponent } from './row-media-text/row-media-text.component';
+import { ParallaxTemplateComponent } from './parallax-template/parallax-template.component';
+import { MediaOnlyComponent } from './media-only/media-only.component';
+import { StatsRowComponent } from './stats-row/stats-row.component';
+import { TextsOnlyComponent } from './texts-only/texts-only.component';
 
 export function playerFactory() {
   return player;
@@ -73,12 +79,18 @@ export function playerFactory() {
     RowProjectContentComponent,
     MatNavHeaderComponent,
     ParallaxDirective,
+    ParallaxDirectives,
     WorkflowPageComponent,
     CarouselHomeComponent,
     ServicesPageComponent,
     ArticlesliderComponent,
     FooterComponent,
-    ProjectListPageComponent
+    ProjectListPageComponent,
+    RowMediaTextComponent,
+    ParallaxTemplateComponent,
+    MediaOnlyComponent,
+    StatsRowComponent,
+    TextsOnlyComponent
   ],
   imports: [
     BrowserModule,

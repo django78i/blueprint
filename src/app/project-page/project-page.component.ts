@@ -1,8 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy, ElementRef} from '@angular/core';
 import { PortfolioService } from '../services/portfolio.service';
 import { Subscription, Subject, Observable } from 'rxjs';
-import { Porfolio } from "../models/portfolio.models";
-import { Projet } from "../models/pages.models";
+import { Projet } from "../models/portfolio.models";
 import { ActivatedRoute, Router } from '@angular/router';
 import { AnimationItem } from 'lottie-web';
 import { AnimationOptions } from 'ngx-lottie';
@@ -14,7 +13,7 @@ import { AnimationOptions } from 'ngx-lottie';
 	templateUrl: './project-page.component.html',
 	styleUrls: ['./project-page.component.scss']
 })
-export class ProjectPageComponent implements OnInit {
+export class ProjectPageComponent implements OnInit, OnDestroy {
 
 	pages: any;
 	rows: any[];
@@ -33,30 +32,48 @@ export class ProjectPageComponent implements OnInit {
 	animationItem: any;
 
 
-	constructor(public portfolioService: PortfolioService, private router: Router, private route: ActivatedRoute) {
+	constructor( public portfolioService: PortfolioService, private router: Router, private route: ActivatedRoute) {
 
+		this.route.params.subscribe((params) => {
+			this.id = params.id
+		});
+		this.portfolioService.getPage(this.id);
 
 	}
 
 	ngOnInit(): void {
-		this.pageParam = this.route.params.subscribe((params) => {
-			this.id = params.id
-		});
-		this.PortfolioList = this.portfolioService.getPage(this.id);
-		//Projet Suivant
-		// var suivant = this.id +1;
-		// console.log(suivant);
-		// this.projetSuivant =  this.portfolioService.getPage(suivant);
+
+		
+		
+		this.portfolioSubscription = this.portfolioService.singlePageSubject.subscribe((projet) => {
+			
+			this.pages = projet;
+			this.projetSuivant = this.portfolioService.projetSuivant(this.pages);
+		})
+
+
 	}
+
 
 	animationCreated(animationItem: AnimationItem): void {
 		this.animationItem = animationItem;
 		this.animationItem.autoplay = true;
-		// this.animationItem.loop = false;
+
+	}
+
+	OnviewPage(projet: Observable<any>) {
+		projet.subscribe((projet) => {
+			this.router.navigate(['projet/', projet.id]);
+			window.scroll(0, 0);
+			this.portfolioService.emitSinglePage(projet);
+		})
 	}
 
 
 
+	ngOnDestroy(){
+		this.portfolioSubscription.unsubscribe();
+	}
 
 
 }

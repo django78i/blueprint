@@ -1,7 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import{ PortfolioService} from '../services/portfolio.service';
 import { Subscription } from 'rxjs';
-import { Porfolio } from "../models/portfolio.models";
+import { Projet } from "../models/portfolio.models";
 import { Router } from '@angular/router';
 
 @Component({

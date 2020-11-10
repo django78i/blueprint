@@ -37,7 +37,25 @@ export class NavigationHeaderComponent implements OnInit {
 	affiche: boolean = true;
 	count: number = 0;
 
-	pages = ['realisations', 'solutions', 'workflow', 'blog'];
+	pages = [
+		{
+		nom: 'projets',
+		url : '../assets/menuIconAnimation/blprntRealisations.json'
+	},
+		{
+		nom: 'services',
+		url : '../assets/menuIconAnimation/blprntSolutions.json'
+	},
+		{
+		nom: 'workflow',
+		url : '../assets/menuIconAnimation/blprntWorkflow.json'
+	},
+		{
+		nom: 'blog',
+		url : '../assets/menuIconAnimation/blprntArticles.json'
+	},
+	//  'services', 'workflow', 'blog'
+	];
 
 	//Lottie
 	options: AnimationOptions = {
@@ -45,7 +63,7 @@ export class NavigationHeaderComponent implements OnInit {
 	};
 
 	optionsMenu2: AnimationOptions = {
-		path: '../assets/menuIconAnimation/menuAnimation.json'		
+		path: '../assets/menuIconAnimation/menuAnimation.json'
 	};
 
 
@@ -67,11 +85,6 @@ export class NavigationHeaderComponent implements OnInit {
 
 	}
 
-	// onActivate($event) {
-	// 	window.scroll(0, 0);
-	// }
-
-
 
 	menu() {
 		console.log(this.menuS.opened);
@@ -84,14 +97,15 @@ export class NavigationHeaderComponent implements OnInit {
 			this.menuS.opened = false;
 			this.affiche = true;
 		}
+
 	}
 
-	menuZone(){
+	menuZone() {
 		if (!this.menuS.opened) {
 			this.menuBtn.classList.add('open');
 			this.affiche = false;
 			this.menuS.opened = true;
-		}else{
+		} else {
 			this.menuBtn.classList.remove('open');
 			this.menuS.opened = false;
 			this.affiche = true;
@@ -104,14 +118,15 @@ export class NavigationHeaderComponent implements OnInit {
 		// this.animationItem2  = this.animationItem;
 		animationItem2.autoplay = false;
 		animationItem2.loop = false;
+
 	}
 
 
-	burger(){
-		this.index ++
+	burger() {
+		this.index++
 		console.log(this.index);
 		this.animationItem2.play();
-		this.index%2? this.animationItem2.setDirection(1) : this.animationItem2.setDirection(-1);
+		this.index % 2 ? this.animationItem2.setDirection(1) : this.animationItem2.setDirection(-1);
 		// this.animationItem2.setDirection(-1)
 	}
 
@@ -150,40 +165,12 @@ export class NavigationHeaderComponent implements OnInit {
 	}
 
 	icon(page) {
-		this.anim = document.getElementById(page);
-		switch (page) {
-			case 'realisations':
-				this.optionsMenu = {
-					...this.optionsMenu, // In case you have other properties that you want to copy
-					path: '../assets/menuIconAnimation/blprntRealisations.json',
-				};
-				this.anim.style.display = 'block';
-				break;
-			case 'solutions':
-				this.optionsMenu = {
-					...this.optionsMenu, // In case you have other properties that you want to copy
-					path: '../assets/menuIconAnimation/blprntSolutions.json',
-				};
-				this.anim.style.display = 'block';
-				break;
-			case 'workflow':
-				this.optionsMenu = {
-					...this.optionsMenu, // In case you have other properties that you want to copy
-					path: '../assets/menuIconAnimation/blprntWorkflow.json',
-				};
-				this.anim.style.display = 'block';
-				break;
-			case 'blog':
-				this.optionsMenu = {
-					...this.optionsMenu, // In case you have other properties that you want to copy
-					path: '../assets/menuIconAnimation/blprntArticles.json',
-				};
-				this.anim.style.display = 'block';
-				break;
-			default:
-				this.anim.style.display = 'none';
+		this.anim = document.getElementById(page.nom);
+		this.optionsMenu = {
+			...this.optionsMenu,
+			path: `${page.url}`,
 		}
-
+		this.anim.style.display = 'block';
 	}
 
 	animationCreatedMenu(animationItem: AnimationItem): void {
@@ -191,45 +178,26 @@ export class NavigationHeaderComponent implements OnInit {
 	}
 
 	finMenu(page) {
-		this.anim = document.getElementById(page);
+		this.anim = document.getElementById(page.nom);
 		this.anim.style.display = 'none';
 	}
 
 	navigation(page) {
 		console.log(page);
-		switch (page) {
-			case 'realisations':
-				this.router.navigate(['projets']);
+
+		if (page == 'home') {
+			if(this.menuS.opened){
 				this.menuOpen = true;
 				this.menu();
 				this.burger()
-				break;
-			case 'solutions':
-				this.router.navigate(['services']);
-				this.menuOpen = true;
-				this.menu();
-				this.burger()
-				break;
-			case 'workflow':
-				this.router.navigate(['workflow']);
-				this.menuOpen = true;
-				this.menu();
-				this.burger()
-				break;
-			case 'blog':
-				this.router.navigate(['projets']);
-				this.menuOpen = true;
-				this.menu();
-				this.burger()
-				break;
-			case 'home':
-				if(this.menuS.opened){
-					this.menuOpen = true;
-					this.menu();
-					this.burger()
-				}
-				this.router.navigate(['home']);
-				break;
+			}
+			this.router.navigate(['']);
+		}else{
+			this.router.navigate([`${page}`]);
+			this.menuOpen = true;
+			this.menu();
+			this.burger();
 		}
+
 	}
 }

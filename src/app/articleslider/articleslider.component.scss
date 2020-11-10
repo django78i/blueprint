@@ -142,7 +142,7 @@ swiper {
 
     .articles{
         flex-direction: column;
-        height: 600px;
+        height: 800px;
     }
 
     swiper {
@@ -158,6 +158,19 @@ swiper {
 
     .patterns{
         display: none;
+    }
+
+    .boutton{
+        margin-top: 30px;
+    }
+
+    .bt{
+        margin-top: 30px;
+        width: 150px;
+    }
+
+    .ariclesItem{
+        margin-top: 30px;
     }
     
 }

@@ -114,6 +114,7 @@ export class PortfolioViewComponent implements OnInit, AfterViewInit {
     ngOnInit(): void {
 
         AOS.init();
+        var service = document.getElementById('servizer');
         this.initForm();
         setInterval(() => {
             this.textContent();
@@ -121,7 +122,6 @@ export class PortfolioViewComponent implements OnInit, AfterViewInit {
 
         var scroll = document.documentElement.scrollHeight;
         scroll += 200;
-        console.log(scroll);
         var fond = this.elem.nativeElement.querySelectorAll('.fondBorder');
         fond.forEach((element) => {
             element.style.height = scroll + 'px';
@@ -134,6 +134,10 @@ export class PortfolioViewComponent implements OnInit, AfterViewInit {
 
     }
 
+
+    // @HostListener('scroll') scrollHandler(event) {
+    //     console.log("Scroll Event");
+    // }
 
     initForm() {
         this.firstform = this.formBuilder.group({

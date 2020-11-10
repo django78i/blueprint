@@ -7,6 +7,18 @@
     margin-bottom: 30px;
 }
 
+section.parallax{
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    z-index: 2;
+}
+.template{
+  width: 100%;
+}
+
+
 section.listPage{
     width: 100%;
     margin: 0;
@@ -19,13 +31,17 @@ section.listPage{
 section.listPage .menu{
     position: absolute;
     margin-top: 250px;
+    z-index: 4;
+    transform-origin: bottom;
+}
+
+.contenuMenu{
     text-align: center;
     transform: rotate(270deg);
     margin-left: -84px;
     display: flex;
     justify-content: space-between;
     color: white;
-    z-index: 4;
 }
 
 .menu .enCours{
@@ -38,26 +54,6 @@ section.listPage .menu{
 }
 .menu .texPrec{
     cursor: pointer;
-}
-
-.fond{
-    z-index: 2;
-    background: #0E0E34;
-    width: 100%;
-    position: absolute;
-    transform: translateY(-100px);
-}
-.fondBorder{
-    border-right: 2px solid rgba(243, 238, 238, 0.24);
-    // height: 3100px;
-}    
-
-.fond .row {
-    margin: 0px;
-}
-
-.fond .row:first-child{
-    border-left: 2px solid rgba(243, 238, 238, 0.24);
 }
 
 .titre{
@@ -91,7 +87,7 @@ section.listPage .menu{
     display: flex;
     justify-content: center;
     position: relative;
-    z-index: 3;
+    z-index: 10;
 }
 
 .contenu .container{
@@ -99,15 +95,6 @@ section.listPage .menu{
     flex-wrap: wrap;
     justify-content: space-around flex-start;
     margin-bottom: 100px;
-}
-
-.ligne{
-    margin-top: 180px;
-    height: 30px;
-    width: 4px;
-    background: blue;
-    position: absolute;
-    margin-left: -3.5px;
 }
 
 
@@ -121,9 +108,9 @@ app-best-portfolios{
     margin-top: 20px;
     margin-right: 20px;
 
-    &:hover{
-        transform: scale(1.2);
-    }
+    // &:hover{
+    //     transform: scale(1.2);
+    // }
 }
 
 
@@ -135,5 +122,22 @@ app-best-portfolios{
     app-best-portfolios{
         margin-right: 0px !important;
 
+    }
+
+    section.titre .container{
+        padding: 0 16px;
+    }
+
+    .titleContent{
+        flex-direction: column;
+
+        .left{
+            order: 2;
+            text-align: center;
+        }
+    }
+
+    .menu{
+        display: none;
     }
 }

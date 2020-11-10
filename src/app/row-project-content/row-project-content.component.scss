@@ -1,18 +1,27 @@
 section{
   margin-bottom: 100px;
+  position: relative;
 }
 
+section.stats{
+  display: flex;
+  justify-content: center;
+}
 .container{
   display: flex;
   justify-content: center;
 }
 
 .text-content{
+position: absolute;}
+
+.contentText{
   flex: 1;
   align-self: center;
   color: white;
-}
+  position: relative;
 
+}
 
 .media{
   flex: 2;
@@ -26,11 +35,9 @@ section{
 .image{
   display: flex;
   margin-top: 30px;
+  justify-content: center;
 }
 
-.imagePos{
- min-width: 300px;
-}
 
 .contenuText{
   display: flex;
@@ -43,17 +50,4 @@ body *{
   font-family: 'Avenir';
 }
 
-.statDesc{
-  z-index: 6!important;
-  display: flex;
-  flex-direction: column;
-  flex: 1;
-  align-items: center;
-}
 
-section.texUnique .container{
-  display: flex;
-  flex-direction: column;
-  text-align: center;
-  color: white;
-}

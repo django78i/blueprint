@@ -6,8 +6,6 @@
 }
 
 nav{
-    // margin-bottom: -48px;
-    // position: absolute;
     z-index: 110;
     display: flex;
     justify-content: space-between;
@@ -39,10 +37,10 @@ nav{
   cursor: pointer;
 }
 
-#realisations{
+#projets{
   display: none;
 }
-#solutions{
+#services{
   display: none;
 }
 #workflow{
@@ -56,7 +54,7 @@ nav{
     width: 100%;
     height: 100vh;
     z-index: 100;
-    background: #09090AE0;
+    background: #0d0d0e;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -104,43 +102,16 @@ body{
     height: 20px;
     cursor: pointer;
     transition: all .5s ease-in-out;
-    /* border: 3px solid #fff; */
   }
-  // .menu-btn__burger {
-  //   width: 35px;
-  //   height: 3px;
-  //   background: #fff;
-  //   border-radius: 5px;
-  //   box-shadow: 0 2px 5px rgba(255,101,47,.2);
-  //   transition: all .5s ease-in-out;
-  // }
-  // .menu-btn__burger::before,
-  // .menu-btn__burger::after {
-  //   content: '';
-  //   position: absolute;
-  //   width: 35px;
-  //   height: 3px;
-  //   background: #fff;
-  //   border-radius: 5px;
-  //   box-shadow: 0 2px 5px rgba(255,101,47,.2);
-  //   transition: all .5s ease-in-out;
-  // }
-  // .menu-btn__burger::before {
-  //   transform: translateY(-16px);
-  // }
-  // .menu-btn__burger::after {
-  //   transform: translateY(16px);
-  // }
-  // /* ANIMATION */
-  // .menu-btn.open .menu-btn__burger {
-  //   transform: translateX(-50px);
-  //   background: transparent;
-  //   box-shadow: none;
-  // }
-  // .menu-btn.open .menu-btn__burger::before {
-  //   transform: rotate(45deg) translate(35px, -35px);
-  // }
-  // .menu-btn.open .menu-btn__burger::after {
-  //   transform: rotate(-45deg) translate(35px, 35px);
-  // }
 
+
+@media screen and(max-width: 560px){
+    .menuOpen{
+        flex-direction: column;
+    }
+
+    .page{
+        width: 100%;
+        border-bottom: 1px solid #5C647E;
+    }
+}

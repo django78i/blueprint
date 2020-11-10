@@ -1,0 +1,105 @@
+.example-chip-list {
+    width: 100%;
+}
+
+
+.bt{
+    width: 226px;
+    cursor: pointer;
+    height: 42px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: absolute;
+    top: 145px;
+    left: 570px;
+    z-index: 5;
+
+    & p{
+        font-weight: 700;
+
+    }
+
+    .btcontenu{
+        display: flex;
+        justify-content: space-between;
+    }
+
+
+    &:hover{
+        .progress .bar{
+            transition: 0.2s ease;
+            width: 100%;
+        }
+    
+    }
+}
+
+// .formBoutton{
+
+//     position: absolute;
+//     top: 145px;
+//     left: 570px;
+//     z-index: 5;
+// }
+
+.progress{
+    height: 2px;
+    width: 100%;
+    background: #3B6EF8 ;
+}
+
+.progress .bar{
+    height: 2px;
+    width: 10%;
+    background: #EB5A50;
+
+}
+
+::ng-deep .mat-form-field-appearance-legacy .mat-form-field-underline{
+    background-color: #484848;
+}
+
+
+mat-form-field{
+    margin-right: 10px;
+    color: white;
+}
+
+.mat-select{
+    background-color: black;
+    border: none;
+}
+
+::ng-deep  .mat-select-arrow,::ng-deep  .mat-select-arrow-wrapper {
+    background: white;
+}
+
+
+::ng-deep .mat-datepicker-toggle-default-icon {
+    color: white;
+}
+
+mat-label{
+    color: white;
+}
+
+
+
+@media screen and (max-width: 560px) { 
+    .bt{
+        position: absolute;
+        width: 124px;
+        cursor: pointer;
+        top: 263px !important;
+        right: 20px !important;
+        left: 208px;
+    }
+
+    // .formBoutton{
+    //     width: 124px;
+    //     top: 263px !important;
+    //     right: 20px !important;
+    // }
+
+}

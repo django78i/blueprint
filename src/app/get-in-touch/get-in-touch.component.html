@@ -6,9 +6,11 @@
             <h2 id="numberSub">0{{steps.length}}</h2>
         </header>
         <div [@fadeIn] class="contenu">
-            <p [@fadeIn] class="stepNumb textTitle" *ngIf="selectedIndex == 0">Commençons par le commencement</p>
-            <p [@fadeIn] class="stepNumb textTitle" *ngIf="selectedIndex == 1">Quel est votre besoin?</p>
-            <p [@fadeIn] class="stepNumb textTitle" *ngIf="selectedIndex == 2">Quelques informations pour finir?</p>
+            <div style="position: relative;height: 50px;">
+                <p [@fadeIn] class="stepNumb textTitle" *ngIf="selectedIndex == 0">Commençons par le commencement</p>
+                <p [@fadeIn] class="stepNumb textTitle" *ngIf="selectedIndex == 1">Quel est votre besoin?</p>
+                <p [@fadeIn] class="stepNumb textTitle" *ngIf="selectedIndex == 2">Quelques informations pour finir?</p>
+            </div>
             <div @fadeIn [style.display]="selected ? 'flex' : 'none'" class="formZone">
                 <ng-container @fadeIn [ngTemplateOutlet]="selected.content"></ng-container>
             </div>

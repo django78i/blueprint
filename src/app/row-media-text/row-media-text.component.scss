@@ -1,0 +1,48 @@
+.container{
+    display: flex;
+    justify-content: center;
+}
+
+.contentText{
+    flex: 1;
+    align-self: center;
+    color: white;
+    position: relative;
+    height: 500px;
+    display: flex;
+    align-items: center;
+  }
+
+  .text-content{
+    margin: auto;
+    flex: 1;
+    position: relative;
+}
+
+  .media{
+    flex: 2;
+    padding: 43px;
+  }
+
+@media screen and(max-width: 560px){
+  .container{
+    flex-direction: column;
+  }
+  .contentText{
+    width: 100%;
+    order: 2;
+    height: 250px;
+  }
+
+  .text-content{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+  }
+  .media{
+    flex: 1;
+  }
+
+}

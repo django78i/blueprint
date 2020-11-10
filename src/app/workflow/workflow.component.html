@@ -1,17 +1,7 @@
-<section style="position: relative; overflow: hidden;">
-    <div class="fond2">
-        <div class="row">
-            <div class="col-md-3 col-xs-3 fondBorder2"></div>
-            <div class="col-md-3 col-xs-3 fondBorder2">
-                <div appParallax [ratio]="-1" class="ligne2"></div>
-            </div>
-            <div class="col-md-3 col-xs-3 fondBorder2">
-            </div>
-            <div class="col-md-3 col-xs-3 fondBorder2">
-                <div appParallax [ratio]="-1.3" class="ligne2"></div>
-            </div>
-        </div>
-    </div>
+<section style="position: relative; overflow: hidden; background: #0E0E34;z-index: 0;">
+    <section class="parallax">
+        <app-parallax-template class="template"></app-parallax-template>
+    </section>
     <div appParallax [ratio]="-1" class="menu">
         <p routerLink="/home" class="texPrec">home<span class="prec">></span></p>
         <p><strong class="enCours">O2.</strong> workflow</p>
@@ -24,19 +14,12 @@
                     <h1 class="title animate__animated animate__fadeInDown">digital workflow</h1>
                 </div>
                 <div class="titleBoutton">
-                    <p class="animate__animated animate__fadeIn animate__delay-1s">Lorem Ipsum is simply dummy text of the printing and typesetting
+                    <p class="animate__animated animate__fadeIn animate__delay-1s">Lorem Ipsum is simply dummy text of
+                        the printing and typesetting
                         industry.
                         Lorem Ipsum has been the
                         industry’s standard dummy.
                     </p>
-                    <div class="bt">
-                        <p style="display: flex;justify-content: space-between;font-weight: 700;">télécharger le PDF
-                            <span class="material-icons">arrow_forward</span>
-                        </p>
-                        <div class="progress">
-                            <div class="bar"></div>
-                        </div>
-                    </div>
                 </div>
             </div>
             <div class="leftTitle">
@@ -54,7 +37,7 @@
                 <div class="droite">
                     <p class="numDroit">01</p>
                     <div class="cercleDroit"></div>
-                    <h1 class="titre"> Cadrage initial</h1>
+                    <h1 class="titre sousTitle"> Cadrage initial</h1>
                     <p class="sousTitre">Reponse au grief client Definitions des enjeux business, metiers technique</p>
                 </div>
             </div>
@@ -62,7 +45,7 @@
                 <div class="gauche">
                     <p class="numGauche">02</p>
                     <div class="cercleGauche"></div>
-                    <h1 class="titre">Conception</h1>
+                    <h1 class="titre sousTitle">Conception</h1>
                     <p class="sousTitre">Audit des contenus existants Identifications des nouveaux contenus Choix des
                         supports
                         technologiques</p>
@@ -74,7 +57,7 @@
                 <div class="droite">
                     <p class="numDroit">03</p>
                     <div class="cercleDroit"></div>
-                    <h1 class="titre">ui/ux</h1>
+                    <h1 class="titre sousTitle">ui/ux</h1>
                     <p class="sousTitre">Elaboration du parcours client Ergonomie</p>
                 </div>
             </div>
@@ -82,7 +65,7 @@
                 <div class="gauche">
                     <p class="numGauche">04</p>
                     <div class="cercleGauche"></div>
-                    <h1 class="titre">Maquettes</h1>
+                    <h1 class="titre sousTitle">Maquettes</h1>
                     <p class="sousTitre">Conception et validation de toutes les vues</p>
                 </div>
                 <div class="droite"></div>
@@ -92,7 +75,7 @@
                 <div class="droite" id="production">
                     <p class="numDroit">05</p>
                     <div class="cercleDroit"></div>
-                    <h1 class="titre">Productions</h1>
+                    <h1 class="titre sousTitle">Productions</h1>
                     <p class="sousTitre">Integration et Developpement</p>
                 </div>
             </div>
@@ -100,7 +83,7 @@
                 <div class="gauche">
                     <p class="numGauche">06</p>
                     <div class="cercleGauche"></div>
-                    <h1 class="titre">Phase de tests</h1>
+                    <h1 class="titre sousTitle">Phase de tests</h1>
                     <p class="sousTitre">Tests parcours client</p>
                 </div>
                 <div class="droite"> </div>
@@ -110,7 +93,7 @@
                 <div class="droite">
                     <p class="numDroit">07</p>
                     <div class="cercleDroit"></div>
-                    <h1 class="titre">Mise en ligne</h1>
+                    <h1 class="titre sousTitle">Mise en ligne</h1>
                     <p class="sousTitre">Mise en ligne</p>
                 </div>
             </div>
@@ -118,7 +101,7 @@
                 <div class="gauche" id="maintenance">
                     <p class="numGauche">08</p>
                     <div class="cercleGauche"></div>
-                    <h1 class="titre">Maintenance & SEO</h1>
+                    <h1 class="titre sousTitle">Maintenance & SEO</h1>
                     <p class="sousTitre">Maintenance Correction des bugs Optimisation des contenus, SEO</p>
                 </div>
                 <div class="droite"> </div>
@@ -128,7 +111,7 @@
                 <div class="droite">
                     <p class="numDroit">09</p>
                     <div class="cercleDroit"></div>
-                    <h1 class="titre">Evolution</h1>
+                    <h1 class="titre sousTitle">Evolution</h1>
                     <p class="sousTitre">Propositions de nouvelles fonctionnalites Passage en V2</p>
                 </div>
             </div>

@@ -1,23 +1,81 @@
 *{
   margin: 0;
 }  
-  
-
-  section.banniere .menu{
-    position: absolute;
-    margin-top: 250px;
-    text-align: center;
-    transform: rotate(270deg);
-    left: 10px;
-    margin-left: -185px;
-    align-self: start;
-    display: flex;
-    justify-content: space-between;
-    color: white;
-    z-index: 4;
+.contenuProjet{
+  position: relative;
+  z-index: 0;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  width: 100%;
 }
 
-  .menu .enCours{
+section.parallax{
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  z-index: 1;
+}
+
+.template{
+  width: 100%;
+}
+
+.lignes{
+  flex: 1;
+  border-right: 1px solid  rgba(243, 238, 238, 0.24);
+  position: relative;
+  height: 50000px;
+}
+
+section.parallax .container{
+  display: flex;
+}
+
+section.parallax .container:first-child{
+  border-left: 1px solid  rgba(243, 238, 238, 0.24);
+}
+
+
+
+.dot{
+  position: absolute;
+  right: 0px;
+  height: 30px;
+  width: 4px;
+  background: blue;
+  border-radius: 2px;
+}
+
+.dotG{
+  position: absolute;
+  left: 0px;
+  height: 30px;
+  width: 4px;
+  background: blue;
+  border-radius: 2px;
+}
+
+
+
+
+section.contenuProjet .menu{
+  position: absolute;
+  margin-top: 250px;
+  text-align: center;
+  transform: rotate(270deg);
+  // left: -144px;
+  // margin-left: -170px;
+  margin-left: -84px;
+  align-self: start;
+  display: flex;
+  justify-content: space-between;
+  color: white;
+  z-index: 20;
+}
+
+.menu .enCours{
     color: blue;
     margin-left: 20px;
 
@@ -32,10 +90,11 @@
 }
 
 
-  body{
+body{
     background-color: red;
-  }
-  .banniere{
+}
+.banniere{
+    z-index: 10;
     position: relative;
     display:flex;
     height: 100vh;
@@ -45,7 +104,30 @@
     align-items: center;
     color: #EDEFF5;
     padding-top: 10px;
-  }
+}
+
+.banniere2{
+  z-index: 10;
+  position: relative;
+  display:flex;
+  height: 100vh;
+  background-position: auto;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  color: #EDEFF5;
+  padding-top: 10px;
+}
+
+.suivant {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 10;
+  position: relative;
+}
+
+
 
 .titre{
   display: flex;
@@ -80,7 +162,7 @@
 .infos{
   display: flex;
   // max-width: 630px;
-  min-width: 300px;
+  min-width: 400px;
   justify-content: space-between;
 }
 
@@ -99,10 +181,35 @@
 
 }
 
+.contenuRow{
+  position: relative;
+  z-index: 5;
+}
+
+.suivante{
+  cursor: pointer;
+}
+
 .explore{
   display: flex;
   flex-direction: column;
   align-items: center;
   color: white;
   margin-top: 200px;
+}
+
+
+@media screen and(max-width: 560px){
+  .icones {
+    display: none;
+  }
+
+  .infos{
+    padding: 0 16px
+  }
+
+  .poids, .atouts, .role{
+    margin: 0;
+  }
+
 }

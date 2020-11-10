@@ -24,10 +24,16 @@
     flex:1;
 }
 
-a{
-    
+section.parallax{
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    z-index: 1;
 }
-
+.template{
+    width: 100%;
+}
 
 .menu{
     position: absolute;
@@ -117,6 +123,8 @@ a{
 .container {
     display: flex;
     flex-direction: column;
+    position: relative;
+    z-index: 3;
 }
 
 #content{
@@ -257,10 +265,16 @@ a{
 
     .titleHeader{
         margin: 30px;
+        flex-direction: column;
     }
 
     .titleBoutton{
         width: 100%;
+    }
+
+    .rightTitle{
+        order: 2;
+        text-align: center;
     }
 
     .ligne p, .ligne h1{

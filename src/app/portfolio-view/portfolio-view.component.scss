@@ -13,6 +13,15 @@
     z-index: 1;
 }
 
+section.parallax{
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+.template{
+  width: 100%;
+}
 
 section.titre {
     position: relative;
@@ -54,37 +63,6 @@ section.titre {
     margin-top: 100px;
 }
 
-.fond{
-    z-index: 2;
-    background: #0E0E34;
-    width: 100%;
-    position: absolute;
-    transform: translateY(-100px);
-}
-.fondBorder{
-    border-right: 2px solid rgba(243, 238, 238, 0.24);
-    // height: 3500px;
-}    
-
-.fond .row {
-    margin: 0px;
-
-}
-
-.fond .row:first-child{
-    border-left: 2px solid rgba(243, 238, 238, 0.24);
-}
-
-.ligne{
-    // margin-top: 180px;
-    top: 180px;
-    height: 30px;
-    width: 4px;
-    background: blue;
-    position: absolute;
-    margin-left: -3.5px;
-}
-
 
 section{
     position: relative;
@@ -96,10 +74,16 @@ section.titre .menu, section.domaines .menu, section .menu {
     position: absolute;
     margin-top: 150px;
     text-align: center;
-    transform: rotate(90deg);
+    transform: rotate(-90deg);
     margin-left: -47px;
     color: white;
 }
+
+.menu .enCours{
+    color: blue;
+
+}
+
 
 .domaines{
     padding-top: 50px;
@@ -405,9 +389,7 @@ section.domaines .container{
     justify-content: space-around;
 }
 
-// .secondForm{
-//     width: 70%;
-// }
+
 
 
 .example-chip-list {
@@ -445,9 +427,7 @@ section.domaines .container{
 
 
 .formBoutton{
-    // height: 31px;
-    // width: 150px;
-    // margin-left: 33px;
+  
     position: absolute;
     top: 116px;
     left: 570px;
@@ -462,9 +442,8 @@ section.domaines .container{
         padding: 0 16px;
     }
 
-    .bt{
-        width: 124px;
-        font-size: 0.8em
+    section.titre .container{
+        flex-direction: column;
     }
 
     .articles{
@@ -486,6 +465,13 @@ section.domaines .container{
 
     .droite{
         height: 400px !important;
+    }
+
+    .titleLeft{
+        order: 2;
+        .bt{
+            margin-top: 10px;
+        }
     }
 }
 
@@ -509,30 +495,3 @@ section.services, section.domaines, section.formulaire, section.articles{
 
 
 
-::ng-deep .mat-form-field-appearance-legacy .mat-form-field-underline{
-    background-color: #484848;
-}
-
-
-mat-form-field{
-    margin-right: 10px;
-    color: white;
-}
-
-.mat-select{
-    background-color: black;
-    border: none;
-}
-
-::ng-deep  .mat-select-arrow,::ng-deep  .mat-select-arrow-wrapper {
-    background: white;
-}
-
-
-::ng-deep .mat-datepicker-toggle-default-icon {
-    color: white;
-}
-
-mat-label{
-    color: white;
-}
