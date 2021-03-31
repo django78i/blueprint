@@ -1,6 +1,7 @@
 import { Component, OnInit, HostListener } from '@angular/core';
 import { AnimationItem } from 'lottie-web';
 import { AnimationOptions } from 'ngx-lottie';
+import AOS from 'aos';
 
 
 @Component({
@@ -13,7 +14,7 @@ export class WorkflowComponent implements OnInit {
 
 	    //Lottie
       options: AnimationOptions = {
-        path: '../assets/images/blprntLoaderV2.json',
+        path: '../assets/menuIconAnimation/blprntWorkflow.json',
       };
     
       animationItem: any;
@@ -22,6 +23,7 @@ export class WorkflowComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+    AOS.init();
 
   }
 
@@ -31,7 +33,8 @@ export class WorkflowComponent implements OnInit {
     var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
     var scrolling = window.pageYOffset;
     // var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-    var height = 1400; 
+    var height = 1900; 
+    console.log(height);
     var scrolled = ((winScroll -187)/ height) * 100;
       document.getElementById("myBar").style.height = scrolled + "%";
   }

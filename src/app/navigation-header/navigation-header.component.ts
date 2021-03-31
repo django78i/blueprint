@@ -1,10 +1,11 @@
+import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import { MenuService } from './../services/menu.service';
-import { Component, OnInit, NgZone, ChangeDetectionStrategy, ElementRef } from '@angular/core';
+import { Component, OnInit, NgZone, ChangeDetectionStrategy, ElementRef, HostListener, ViewChild, AfterViewInit } from '@angular/core';
 import { trigger, transition, style, animate, state, query, stagger } from '@angular/animations';
 import { AnimationItem, } from 'lottie-web';
 import { AnimationOptions } from 'ngx-lottie';
 import { Router } from '@angular/router';
-
+Breakpoints
 
 @Component({
 	selector: 'app-navigation-header',
@@ -28,10 +29,17 @@ import { Router } from '@angular/router';
 			])
 
 		]),
+		trigger('menu', [
+			transition(':enter', [
+				style({ opacity: '0', transform: 'translateY(300px)' }),
+				animate('1500ms ease')
+			])
+		])
+
 	]
 
 })
-export class NavigationHeaderComponent implements OnInit {
+export class NavigationHeaderComponent implements OnInit, AfterViewInit {
 
 	menuOpen: boolean = false;
 	affiche: boolean = true;
@@ -39,22 +47,22 @@ export class NavigationHeaderComponent implements OnInit {
 
 	pages = [
 		{
-		nom: 'projets',
-		url : '../assets/menuIconAnimation/blprntRealisations.json'
-	},
+			nom: 'projets',
+			url: '../assets/menuIconAnimation/blprntRealisations.json'
+		},
 		{
-		nom: 'services',
-		url : '../assets/menuIconAnimation/blprntSolutions.json'
-	},
+			nom: 'services',
+			url: '../assets/menuIconAnimation/blprntSolutions.json'
+		},
 		{
-		nom: 'workflow',
-		url : '../assets/menuIconAnimation/blprntWorkflow.json'
-	},
+			nom: 'workflow',
+			url: '../assets/menuIconAnimation/blprntWorkflow.json'
+		},
 		{
-		nom: 'blog',
-		url : '../assets/menuIconAnimation/blprntArticles.json'
-	},
-	//  'services', 'workflow', 'blog'
+			nom: 'blog',
+			url: '../assets/menuIconAnimation/blprntArticles.json'
+		},
+		//  'services', 'workflow', 'blog'
 	];
 
 	//Lottie
@@ -74,16 +82,43 @@ export class NavigationHeaderComponent implements OnInit {
 	animationItemMenu: any;
 	anim: any;
 	index = 0;
-
-	//boutton burger
+	lastScroll: number = 0;
 	menuBtn: any;
+	isSmallScreen: Boolean = false;
+	@ViewChild('menuAction') menuAction: ElementRef<HTMLInputElement>;
+	@ViewChild('pcAnimation') pcAnimation: ElementRef<HTMLInputElement>;
+	@ViewChild('phoneIcon') phoneIcon: ElementRef<HTMLInputElement>;
 
-	constructor(private ngZone: NgZone, private router: Router, private elem: ElementRef, private menuS: MenuService) { }
+	constructor(public breakpointObserver: BreakpointObserver, private router: Router, private elem: ElementRef, private menuS: MenuService) { }
 
 	ngOnInit(): void {
 		this.menuBtn = document.querySelector('.menu-btn');
+	}
+
+	ngAfterViewInit() {
+		this.isSmallScreen = this.breakpointObserver.isMatched('(max-width: 550px)');
+		if (this.isSmallScreen === true) {
+			this.pcAnimation.nativeElement.style.display = 'none';
+			this.phoneIcon.nativeElement.style.display = 'flex';
+			console.log('Enough room!');
+		} else {
+			this.pcAnimation.nativeElement.style.display = 'flex';
+			this.phoneIcon.nativeElement.style.display = 'none';
+		}
 
 	}
+
+	@HostListener("window:scroll", ["$event"])
+	onWindowScroll(event) {
+		let off = window.pageYOffset;
+		if (off > this.lastScroll) {
+			this.menuAction.nativeElement.style.display = "none";
+		} else {
+			this.menuAction.nativeElement.style.display = "flex";
+		}
+		this.lastScroll = off;
+	}
+
 
 
 	menu() {
@@ -109,13 +144,11 @@ export class NavigationHeaderComponent implements OnInit {
 			this.menuBtn.classList.remove('open');
 			this.menuS.opened = false;
 			this.affiche = true;
-			// window.location.reload();
 		}
 	}
 
 	animationCreatedBurger(animationItem2: AnimationItem): void {
 		this.animationItem2 = animationItem2;
-		// this.animationItem2  = this.animationItem;
 		animationItem2.autoplay = false;
 		animationItem2.loop = false;
 
@@ -127,7 +160,6 @@ export class NavigationHeaderComponent implements OnInit {
 		console.log(this.index);
 		this.animationItem2.play();
 		this.index % 2 ? this.animationItem2.setDirection(1) : this.animationItem2.setDirection(-1);
-		// this.animationItem2.setDirection(-1)
 	}
 
 	animationCreated(animationItem: AnimationItem): void {
@@ -186,13 +218,13 @@ export class NavigationHeaderComponent implements OnInit {
 		console.log(page);
 
 		if (page == 'home') {
-			if(this.menuS.opened){
+			if (this.menuS.opened) {
 				this.menuOpen = true;
 				this.menu();
 				this.burger()
 			}
 			this.router.navigate(['']);
-		}else{
+		} else {
 			this.router.navigate([`${page}`]);
 			this.menuOpen = true;
 			this.menu();

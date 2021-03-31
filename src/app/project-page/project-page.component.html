@@ -1,4 +1,4 @@
-<section class="contenuProjet" *ngIf="pages" >
+<section class="contenuProjet" *ngIf="pages">
     <section class="parallax" *ngIf="pages" [ngStyle]="{'background-color': pages.couleurProjet}">
         <div class="container">
             <div class="lignes">
@@ -16,11 +16,11 @@
                 <div class="dot" style="margin-top: 700px" appParallax [ratio]="-1.3"></div>
             </div>
         </div>
-    </section>    
+    </section>
     <div appParallax [ratio]="-1" class="menu ">
         <p class="texPrec" routerLink="/home">home<span class="prec">></span></p>
-        <p routerLink="/listProjet"><strong style="margin-left: 20px; cursor: pointer;">O2. nos
-                réalisation</strong><span class="prec">></span></p>
+        <p routerLink="/listProjet"><strong style="margin-left: 20px; cursor: pointer;">O2. 
+                réalisations</strong><span class="prec">></span></p>
         <p class="enCours">{{pages.titre}}</p>
     </div>
 
@@ -28,24 +28,24 @@
     <section class="banniere">
 
         <div class="animate__animated animate__fadeInUp titre" *ngIf="pages">
-            <h1 class="title" id="titreos">{{pages.titre}}</h1>
+            <h1 class="title">{{pages.titre}}</h1>
         </div>
-        <div class="animate__animated animate__fadeInUp infos" *ngIf="pages">
+        <div class="ansimate__animated animate__fadeInUp infos" *ngIf="pages">
             <div class="poids">
-                <h1 style="color: #4465D5;font-weight: 700;display: flex;">{{pages.taille}}<span
+                <h1>{{pages.taille}}<span
                         style="display: flex;align-items: flex-start;font-size: 20px;margin-left: 6px;">MB</span></h1>
             </div>
-            <img style="width: 1px;" src="../assets/images/verticalSep (1).svg" alt="">
+            <img clas="sep" src="../assets/images/verticalSep (1).svg" alt="">
             <div class="atouts">
                 <p>atout principal</p>
                 <p style="color: white;">{{pages.domaine}}</p>
             </div>
-            <img style="width: 1px;" src="../assets/images/verticalSep (1).svg" alt="">
+            <img clas="sep" src="../assets/images/verticalSep (1).svg" alt="">
             <div class="role">
                 <p>rôle joué</p>
                 <p style="color: white;">{{pages.role}}</p>
             </div>
-            <img style="width: 1px;" src="../assets/images/verticalSep (1).svg" alt="">
+            <img clas="sep" src="../assets/images/verticalSep (1).svg" alt="">
             <div class="icones">
                 <img src="../assets/images/icon_website.svg" alt="">
                 <img src="../assets/images/gestionIcon.svg" alt="">
@@ -60,45 +60,44 @@
         </div>
     </section>
     <!-- Contenu -->
-    <section class="contenuRow" *ngIf="pages" 
-        style="padding-top: 10px;padding-bottom: 50px;">
+    <section class="contenuRow" *ngIf="pages" style="padding-top: 10px;padding-bottom: 50px;">
         <app-row-project-content *ngFor="let row of pages.rows" [rows]="row"></app-row-project-content>
     </section>
     <!--Bas de Page : Projet suivant-->
-    <section class="banniere suivante" *ngIf="projetSuivant|async"
-         (click)="OnviewPage(projetSuivant)">
-            <div class="textTitle">Projet Suivant</div>
-            <div class="titre" *ngIf="this.portfolioService.projetSuivante">
-                <h1 class="title">{{ ( projetSuivant|async)?.titre}}</h1>
+    <section class="banniere suivante" *ngIf="projetSuivant|async" (click)="OnviewPage(projetSuivant)">
+        <div class="textTitle">Projet Suivant</div>
+        <div class="titre" *ngIf="this.portfolioService.projetSuivante">
+            <h1 class="title">{{ ( projetSuivant|async)?.titre}}</h1>
+        </div>
+        <div class="infos" *ngIf="this.portfolioService.projetSuivante">
+            <div class="poids">
+                <h1>
+                    {{( projetSuivant|async)?.taille}}<span
+                        style="display: flex;align-items: flex-start;font-size: 20px;margin-left: 6px;">MB</span>
+                </h1>
             </div>
-            <div class="infos" *ngIf="this.portfolioService.projetSuivante">
-                <div class="poids">
-                    <h1 style="color: #4465D5;font-weight: 700;display: flex;">
-                        {{( projetSuivant|async)?.taille}}<span>MB</span>
-                    </h1>
-                </div>
-                <img style="width: 1px;" src="../assets/images/verticalSep (1).svg" alt="">
-                <div class="atouts">
-                    <p>atout principal</p>
-                    <p style="color: white;">{{( projetSuivant|async)?.domaine}}</p>
-                </div>
-                <img style="width: 1px;" src="../assets/images/verticalSep (1).svg" alt="">
-                <div class="role">
-                    <p>rôle joué</p>
-                    <p style="color: white;">{{( projetSuivant|async)?.role}}</p>
-                </div>
-                <img style="width: 1px;" src="../assets/images/verticalSep (1).svg" alt="">
-                <div class="icones">
-                    <img src="../assets/images/icon_website.svg" alt="">
-                    <img src="../assets/images/gestionIcon.svg" alt="">
-                    <img src="../assets/images/searchReference(1).svg" alt="">
-                </div>
+            <img clas="sep" src="../assets/images/verticalSep (1).svg" alt="">
+            <div class="atouts">
+                <p>atout principal</p>
+                <p style="color: white;">{{( projetSuivant|async)?.domaine}}</p>
             </div>
-            <div class="explore">
-                <p>Cliquez pour voir le projet</p>
-                <ng-lottie class="lottie" [options]="options" (animationCreated)="animationCreated($event)"
-                    *ngIf="projetSuivant|async">
-                </ng-lottie>
+            <img clas="sep" src="../assets/images/verticalSep (1).svg" alt="">
+            <div class="role">
+                <p>rôle joué</p>
+                <p style="color: white;">{{( projetSuivant|async)?.role}}</p>
             </div>
+            <img clas="sep" src="../assets/images/verticalSep (1).svg" alt="">
+            <div class="icones">
+                <img src="../assets/images/icon_website.svg" alt="">
+                <img src="../assets/images/gestionIcon.svg" alt="">
+                <img src="../assets/images/searchReference(1).svg" alt="">
+            </div>
+        </div>
+        <div class="explore">
+            <p>Cliquez pour voir le projet</p>
+            <ng-lottie class="lottie" [options]="options" (animationCreated)="animationCreated($event)"
+                *ngIf="projetSuivant|async">
+            </ng-lottie>
+        </div>
     </section>
 </section>

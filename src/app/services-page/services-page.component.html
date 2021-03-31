@@ -1,4 +1,4 @@
-<section style="position: relative; overflow: hidden;background: #0E0E34;z-index: 0;">
+<section style="position: relative; overflow: hidden;z-index: 5; background: #000000;">
     <section class="parallax">
         <app-parallax-template class="template"></app-parallax-template>
     </section>
@@ -7,9 +7,13 @@
         <p><strong class="enCours">O2.</strong> nos services</p>
     </div>
 
-    <div class="container">
-        <div class="titre">
-            <div class="titleZone">
+    <section class="template">
+        <div class="container">
+            <div class="titre">
+                <div class="iconTitle">
+                    <ng-lottie [options]="options" (animationCreated)="animationCreated($event)">
+                    </ng-lottie>
+                </div>
                 <div class="titlecontent">
                     <h1 class="title animate__animated animate__fadeInDown">nos solutions</h1>
                     <p class="animate__animated animate__fadeIn animate__delay-1s" style="color: #7E7F95;">Lorem Ipsum
@@ -18,112 +22,92 @@
                         Lorem Ipsum has been the
                     </p>
                 </div>
-                <div class="iconTitle">
-                    <ng-lottie [options]="options" (animationCreated)="animationCreated($event)">
-                    </ng-lottie>
+                <div class="bottomTitle">
+                    <p>explore the flow</p>
+                    <span style="color: white;font: 800;margin-left: 20px;" data-aos="fade-up"
+                        data-aos-duration="1500">&darr;</span>
                 </div>
             </div>
-            <div class="panneau">
-                <div class="icon" *ngFor="let icon of iconsTab; let i=index" (click)="changeSlide(i)">
-                    <img [src]="icon.url" alt="">
-                    <p>{{icon.name}}</p>
-                </div>
-
-            </div>
-        </div>
-        <section class="contenu">
-            <div class="contenuDiv"  >
-                <div class="service"  data-aos="fade-right" data-aos-duration="1500">
-                    <div class="numService">
-                        <p class="numberText"> 01</p>
-                    </div>
-                    <div class="textService">
-                        <h4 class="textTitle">UI/UX</h4>
-                        <div class="trait"></div>
-                        <h2 class="sousTitle">améliorer l’expérience client</h2>
-                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has
-                            been
-                            the
-                            industry’s standard dummy. text ever since the 1500s, when an unknown printer took a galley
-                            of
-                            type
-                            and scrambled it to make a type specimen book.</p>
+            <section class="contenu">
+                <div class="panneau">
+                    <div class="icon" *ngFor="let icon of iconsTab; let i=index" (click)="changeSlide(i)">
+                        <img [src]="icon.url" alt="">
+                        <p>{{icon.name}}</p>
                     </div>
                 </div>
-                <div class="illustrations">
-                    <img src="../assets/solutions/solutionUX_icon.svg" alt="">
-                </div>
-            </div>
-            <div class="contenuDiv ">
-                <div class="illustrations">
-                    <img src="../assets/solutions/solutionDesign_icon.svg" alt="">
-                </div>
-                <div class="service"  data-aos="fade-left" data-aos-duration="1500" >
-                    <div class="numService">
-                        <p class="numberText"> 02</p>
+                <div class="contenuDiv anim">
+                    <div class="service" data-aos="fade-right" data-aos-duration="1500">
+                        <div class="textService">
+                            <h4 class="textTitle">UI/UX</h4>
+                            <h2 class="sousTitle">améliorer l’expérience client</h2>
+                            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum
+                                has
+                                been
+                                the
+                                industry’s standard dummy. text ever since the 1500s, when an unknown printer took a
+                                galley
+                                of
+                                type
+                                and scrambled it to make a type specimen book.</p>
+                        </div>
                     </div>
-                    <div class="textService">
-                        <h4 class="textTitle">Design</h4>
-                        <div class="trait"></div>
-                        <h2 class="sousTitle">personalisez vos pages à votre guise</h2>
-                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has
-                            been
-                            the
-                            industry’s standard dummy. text ever since the 1500s, when an unknown printer took a galley
-                            of
-                            type
-                            and scrambled it to make a type specimen book.</p>
+                    <div class="illustrations">
+                        <ng-lottie class="animation" [options]="optionsTab[0].options"
+                            (animationCreated)="animationCreated2($event,0)">
+                        </ng-lottie>
                     </div>
                 </div>
-            </div>
-            <div class="contenuDiv anim">
-                <div class="service" data-aos="fade-right" data-aos-duration="1500">
-                    <div class="numService">
+                <div class="contenuDiv anim">
+                    <div class="illustrations">
+                        <ng-lottie class="animation" [options]="optionsTab[1].options"
+                            (animationCreated)="animationCreated2($event,1)">
+                        </ng-lottie>
+                    </div>
+                    <div class="service" data-aos="fade-left" data-aos-duration="1500">
+                        <div class="textService">
+                            <h4 class="textTitle">Design</h4>
+                            <h2 class="sousTitle">personalisez vos pages à votre guise</h2>
+                            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum
+                                has
+                                been
+                                the
+                                industry’s standard dummy. text ever since the 1500s, when an unknown printer took a
+                                galley
+                                of
+                                type
+                                and scrambled it to make a type specimen book.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="contenuDiv anim">
+                    <div class="service" data-aos="fade-right" data-aos-duration="1500">
+                        <!-- <div class="numService">
                         <p class="numberText"> 03</p>
+                    </div> -->
+                        <div class="textService">
+                            <h4 class="textTitle">Marketing</h4>
+                            <h2 class="sousTitle">générez du traffic et convertissez-le</h2>
+                            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum
+                                has
+                                been
+                                the
+                                industry’s standard dummy. text ever since the 1500s, when an unknown printer took a
+                                galley
+                                of
+                                type
+                                and scrambled it to make a type specimen book.</p>
+                        </div>
                     </div>
-                    <div class="textService" >
-                        <h4 class="textTitle">Marketing</h4>
-                        <div class="trait"></div>
-                        <h2 class="sousTitle">générez du traffic et convertissez-le</h2>
-                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has
-                            been
-                            the
-                            industry’s standard dummy. text ever since the 1500s, when an unknown printer took a galley
-                            of
-                            type
-                            and scrambled it to make a type specimen book.</p>
-                    </div>
-                </div>
-                <div class="illustrations">
-                    <!-- <img src="../assets/solutions/solutionMarketing_Icon.svg" alt=""> -->
-                    <ng-lottie class= "animation" [options]="options2" (animationCreated)="animationCreated2($event)">
-                    </ng-lottie>
-                </div>
-            </div>
-            <div class="contenuDiv anim">
-                <div class="illustrations">
-                    <ng-lottie class= "animation" [options]="options3" (animationCreated)="animationCreated3($event)">
-                    </ng-lottie>
-                    <!-- <img src="../assets/solutions/solutionGestion_icon.svg" alt=""> -->
-                </div>
-                <div class="service" data-aos="fade-left" data-aos-duration="1500" >
-                    <div class="numService">
-                        <p class="numberText"> 04</p>
-                    </div>
-                    <div class="textService">
-                        <h4 class="textTitle">Gestion</h4>
-                        <div class="trait"></div>
-                        <h2 class="sousTitle">gérez tout d’un seul click</h2>
-                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has
-                            been
-                            the
-                            industry’s standard dummy. text ever since the 1500s, when an unknown printer took a galley
-                            of
-                            type
-                            and scrambled it to make a type specimen book.</p>
+                    <div class="illustrations">
+                        <ng-lottie class="animation" [options]="optionsTab[2].options"
+                            (animationCreated)="animationCreated2($event, 2)">
+                        </ng-lottie>
                     </div>
                 </div>
-            </div>
-        </section>
-    </div>
+            </section>
+        </div>
+    </section>
+    <section class="templateBas">
+
+    </section>
 </section>

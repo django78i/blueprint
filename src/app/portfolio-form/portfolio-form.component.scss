@@ -35,13 +35,11 @@
     }
 }
 
-// .formBoutton{
-
-//     position: absolute;
-//     top: 145px;
-//     left: 570px;
-//     z-index: 5;
-// }
+.boutonContenu{
+    display: flex;
+    justify-content: space-between;
+    color: white;
+}
 
 .progress{
     height: 2px;

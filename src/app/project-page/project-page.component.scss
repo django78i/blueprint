@@ -106,26 +106,17 @@ body{
     padding-top: 10px;
 }
 
-.banniere2{
-  z-index: 10;
-  position: relative;
-  display:flex;
-  height: 100vh;
-  background-position: auto;
-  justify-content: center;
-  flex-direction: column;
-  align-items: center;
-  color: #EDEFF5;
-  padding-top: 10px;
+.sep{
+  width: 1px;
 }
 
-.suivant {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  z-index: 10;
-  position: relative;
-}
+// .suivant {
+//   display: flex;
+//   flex-direction: column;
+//   align-items: center;
+//   z-index: 10;
+//   position: relative;
+// }
 
 
 
@@ -162,7 +153,7 @@ body{
 .infos{
   display: flex;
   // max-width: 630px;
-  min-width: 400px;
+  // width: 100%;
   justify-content: space-between;
 }
 
@@ -173,6 +164,11 @@ body{
 
 .poids{
   margin: 0px 15px 0px 5px;
+  h1{
+    color: #4465D5;
+    font-weight: 700;
+    display: flex;
+  }
 }
 
 .role{
@@ -188,28 +184,67 @@ body{
 
 .suivante{
   cursor: pointer;
+  &:hover{
+    .textTitle{
+      transform: translateY(-20px);
+    }
+    .explore{
+      transform: translateY(20px);
+      opacity: 1;
+    }
+  }
 }
 
 .explore{
   display: flex;
+  opacity: 0;
   flex-direction: column;
   align-items: center;
   color: white;
   margin-top: 200px;
+  transition: 0.3s ease-in-out;
 }
 
 
-@media screen and(max-width: 560px){
+@media screen and (max-width: 560px) { 
+
+  .banniere{
+    padding: 0 16px;
+  }
+
+  .titre{
+    width: 100%;
+  }
+
   .icones {
     display: none;
   }
 
-  .infos{
-    padding: 0 16px
+  .sep{
+    display: none;
   }
 
   .poids, .atouts, .role{
     margin: 0;
+    flex:1;
+  }
+
+  .poids{
+    display: flex;
+    align-items: center;
+    h1{
+      font-size: 30px !important;
+    }
+  }
+
+  .role{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  div.menu{
+    display: none !important;
   }
 
 }

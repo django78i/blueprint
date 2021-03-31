@@ -1,7 +1,6 @@
 <div class="container" data-aos="fade-right" data-aos-duration="1500">
 	<app-get-in-touch>
 		<cdk-step [@fadeIn]>
-			<!-- <div class="contenuFormulaire"> -->
 			<form [formGroup]="firstform">
 				<mat-form-field appearance="legacy">
 					<mat-label>Secteur d'activité</mat-label>
@@ -20,7 +19,6 @@
 					<input matInput formControlName="siteInternet" placeholder="Entrez un secteur">
 				</mat-form-field>
 			</form>
-			<!-- </div> -->
 		</cdk-step>
 		<cdk-step [@fadeIn]>
 			<form [formGroup]="secondform" class="secondForm">

@@ -1,8 +1,1 @@
-{
-   "bvX4PpTCW5oYCQv3FySIixdkmM+paN/l+o4e/8K1m3o=": {
-      "expiry": 1632403834.448804,
-      "mode": "force-https",
-      "sts_include_subdomains": true,
-      "sts_observed": 1600867834.448809
-   }
-}
+{"expect_ct":[],"sts":[{"expiry":1644957482.132204,"host":"QKmY3BmE7X/qivMvQdGV4i/aLZjqoCfyhHTMGDUI9zk=","mode":"force-https","sts_include_subdomains":false,"sts_observed":1613421482.13221},{"expiry":1644957482.228066,"host":"bvX4PpTCW5oYCQv3FySIixdkmM+paN/l+o4e/8K1m3o=","mode":"force-https","sts_include_subdomains":true,"sts_observed":1613421482.228074}],"version":2}

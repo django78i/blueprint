@@ -3,8 +3,6 @@ import { AnimationItem } from 'lottie-web';
 import { AnimationOptions } from 'ngx-lottie';
 import { trigger, transition, style, animate, state, query } from '@angular/animations';
 import AOS from 'aos';
-import { ConstantPool } from '@angular/compiler';
-import { Console } from 'console';
 
 
 
@@ -49,22 +47,51 @@ export class ServicesPageComponent implements OnInit {
 		path: '../assets/menuIconAnimation/blprntSolutions.json',
 	};
 
-	options2: AnimationOptions = {
-		path: '../assets/solutions/solutionMarketing_icon.json',
-	};
-	options3: AnimationOptions = {
-		path: '../assets/solutions/solutionGestion_icon.json',
-	};
+
+
+	optionsTab: Array<{ id: number, animationItem: any, play: boolean, options: AnimationOptions }> = [
+		{
+			animationItem: '',
+			id: 0,
+			play: true,
+			options: {
+				path: '../assets/solutions/newAnimHome.json'
+			}
+		},
+		{
+			id: 1,
+			animationItem: '',
+			play: true,
+			options: {
+				path: '../assets/solutions/2.json'
+			}
+		},
+		{
+			id: 2,
+			animationItem: '',
+			play: true,
+			options: {
+				path: '../assets/solutions/3.json'
+			}
+		},
+		// {
+		// 	id: 3,
+		// 	animationItem: '',
+		// 	play: true,
+		// 	options: {
+		// 		path: '../assets/solutions/solutionGestion_icon.json'
+		// 	}
+		// }
+
+	]
 
 	animationItem: any;
-	animationItem2: any;
-	animationItem3: any;
 	initialTop: any[];
 	zoneParallax: any[];
 	parallaxRatio: number = 0.2;
 
 
-	count: number = 2;
+	count: number = 3;
 
 	constructor(private elem: ElementRef) { }
 
@@ -96,48 +123,37 @@ export class ServicesPageComponent implements OnInit {
 		this.animationItem.autoplay = true;
 		this.animationItem.loop = false;
 	}
-	animationCreated2(animationItem: AnimationItem): void {
-		this.animationItem2 = animationItem;
-		this.animationItem2.autoplay = false;
+	animationCreated2(animationItem: AnimationItem, i): void {
+		this.optionsTab[i].animationItem = animationItem;
+		this.optionsTab[i].animationItem.autoplay = false;
+		this.optionsTab[i].animationItem.loop = false;
 	}
-	animationCreated3(animationItem: AnimationItem): void {
-		console.log("animation créé");
-		this.animationItem3 = animationItem;
-		this.animationItem3.autoplay = false;
-	}
-
 
 	animLaunch() {
 		const image = this.elem.nativeElement.querySelectorAll(".anim");
-		const observer = new IntersectionObserver((entries) => {
-			var data = entries;
-			var i;
+		var donnee: any = '';
+		var observer = new IntersectionObserver((entries) => {
 			entries.forEach((entry) => {
 				if (entry.isIntersecting == true) {
-					this.count += 1;
-					if (this.count == 1) {
-						console.log("ici:");
-						setTimeout(() => {
-							this.animationItem2.play();
-							this.animationItem2.loop = false;
-						}, 300)
-					} else if (this.count == 2) {
-						console.log("la: ");
-						setTimeout(() => {
-							this.animationItem3.play();
-							this.animationItem3.loop = false;
-						}, 300)
-
+					if (entry.boundingClientRect.top > 0) {
+						this.count += 1;
+						this.optionsTab[this.count - 1].animationItem.play();
+						this.optionsTab[this.count - 1].play = true;
+					} else {
+						donnee = this.optionsTab.filter(option => option.play === false && option.id < this.count - 1)
+						this.optionsTab[donnee[donnee.length - 1].id].animationItem.play();
+						this.optionsTab[donnee[donnee.length - 1].id].play = true;
 					}
-				} else if (entry.isIntersecting == false) {
-					this.count -= 1;
-					switch (this.count) {
-						case 0:
-							return this.animationItem2.stop();;
-						case 1:
-							return this.animationItem3.stop();;
+				} else {
+					if (entry.boundingClientRect.top < 0) {
+						donnee = this.optionsTab.find(option => option.play === true).id;
+						this.optionsTab[donnee].animationItem.stop();
+						this.optionsTab[donnee].play = false;
+					} else {
+						this.count -= 1;
+						this.optionsTab[this.count].animationItem.stop();
+						this.optionsTab[this.count].play = false;
 					}
-
 				}
 			})
 		});

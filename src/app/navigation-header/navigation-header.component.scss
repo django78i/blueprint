@@ -1,117 +1,115 @@
-
-*{
-    padding:0px;
-    box-sizing: border-box;
-    margin: 0;
+* {
+  padding: 0px;
+  box-sizing: border-box;
+  margin: 0;
 }
 
-nav{
-    z-index: 110;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-    padding: 10px;
-    position: fixed;
-    top: 0;
+nav {
+  z-index: 110;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 10px;
+  position: fixed;
+  top: 0;
+  transition: all 0.5s ease-in-out;
 }
 
-.title{
-    color: white;
+.title {
+  color: white;
 }
 
-.titre{
-    display: flex;
-    align-items: center;
+.titre {
+  display: flex;
+  align-items: center;
 
-    .icon{
-        height: 50px;
-        width: 184px;
-        cursor: pointer;
-    }
+  .icon {
+    height: 50px;
+    width: 184px;
+    cursor: pointer;
+  }
 }
 
-.menuIcon{
+.menuIcon {
   height: 150px;
   width: 184px;
   cursor: pointer;
 }
 
-#projets{
+#projets {
   display: none;
 }
-#services{
+#services {
   display: none;
 }
-#workflow{
+#workflow {
   display: none;
 }
-#blog{
+#blog {
   display: none;
 }
 
-.menuOpen{
-    width: 100%;
-    height: 100vh;
-    z-index: 100;
-    background: #0d0d0e;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    overflow-y: hidden; 
-    position: absolute;
+.menuOpen {
+  width: 100%;
+  height: 100vh;
+  z-index: 100;
+  background: #0d0d0e;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow-y: hidden;
+  position: absolute;
 }
 
-.page{
-    flex: 1;
-    height: 100%;
-    border-right: 1px solid #5C647E;
-    color: white;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    cursor: pointer;
+.page {
+  flex: 1;
+  height: 100%;
+  border-right: 1px solid #3d3d3d2b;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  cursor: pointer;
 
-    &:hover{
-        box-shadow: 0px 10px 20px 10px rgba(0, 0, 0, 0.4);
-    }
-    &:hover::before{
-        box-shadow: 0px 10px 20px 10px rgba(0, 0, 0, 0.4); 
-    }
+  &:hover {
+    box-shadow: 0px 10px 20px 10px rgba(0, 0, 0, 0.4);
+    border: none;
+  }
+  &:hover::before {
+    box-shadow: 0px 10px 20px 10px rgba(0, 0, 0, 0.4);
+  }
 }
 
-
-#site{
-    z-index: 1;
-    background-color: #0E0E34;
-
+#site {
+  z-index: 1;
+  background-color: #0e0e34;
 }
 
-body{
-    background: #0E0E34;
+body {
+  background: #0e0e34;
 }
 
 //burger
 .menu-btn {
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 20px;
-    height: 20px;
-    cursor: pointer;
-    transition: all .5s ease-in-out;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+  transition: all 0.5s ease-in-out;
+}
+
+@media screen and(max-width: 560px) {
+  .menuOpen {
+    flex-direction: column;
   }
 
-
-@media screen and(max-width: 560px){
-    .menuOpen{
-        flex-direction: column;
-    }
-
-    .page{
-        width: 100%;
-        border-bottom: 1px solid #5C647E;
-    }
+  .page {
+    width: 100%;
+    border-bottom: 1px solid #5c647e;
+  }
 }

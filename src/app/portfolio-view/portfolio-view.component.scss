@@ -1,497 +1,460 @@
-*{
-    box-sizing: border-box;
-    padding:0;
-    margin:0px;
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0px;
 }
 
-.wrapper{
-    width: 100%;
-    margin: 0;
-    overflow: hidden;
-    background: #0E0E34;
-    position: relative;
-    z-index: 1;
+.wrapper {
+  width: 100%;
+  margin: 0;
+  overflow: hidden;
+  background: #000000;
+  position: relative;
+  z-index: 1;
 }
 
-section.parallax{
-    position: absolute;
-    display: flex;
-    justify-content: center;
-    width: 100%;
+section.parallax {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  width: 100%;
 }
-.template{
+.template {
   width: 100%;
 }
 
 section.titre {
-    position: relative;
-    display: flex;
-    color: white;
-    height: 100vh;
-
+  position: relative;
+  display: flex;
+  color: white;
+  height: 100vh;
 }
 
-.titleLeft{
-    display: flex;
-    flex-direction: column;
-    flex:1.55;
+.titleLeft {
+  display: flex;
+  flex-direction: column;
+  flex: 1.55;
 }
 
-.titleRight{
-    flex: 1;
+.titleRight {
+  flex: 1;
 }
 
-.texChange{
-    position: relative;
-    overflow: hidden;
-    height: 85px;
-
+.texChange {
+  position: relative;
+  overflow: hidden;
+  height: 85px;
 }
 
-.texChange h1{
-    position: absolute;
-    color: #2B50B5;
+.texChange h1 {
+  position: absolute;
+  color: #2b50b5;
 }
 
-
-.titleMove{
-    position: absolute;
-    top: 0;
+.titleMove {
+  position: absolute;
+  top: 0;
 }
 
-.titleLeft .bt{
-    margin-top: 100px;
+.titleLeft .bt {
+  margin-top: 100px;
 }
 
-
-section{
-    position: relative;
-    padding-top: 290px;
+section {
+  position: relative;
+  padding-top: 290px;
 }
 
-
-section.titre .menu, section.domaines .menu, section .menu {
-    position: absolute;
-    margin-top: 150px;
-    text-align: center;
-    transform: rotate(-90deg);
-    margin-left: -47px;
-    color: white;
+section.titre .menu,
+section.domaines .menu,
+section .menu {
+  position: absolute;
+  margin-top: 150px;
+  text-align: center;
+  transform: rotate(-90deg);
+  margin-left: -47px;
+  color: white;
 }
 
-.menu .enCours{
-    color: blue;
-
+.menu .enCours {
+  color: blue;
 }
 
-
-.domaines{
-    padding-top: 50px;
+.domaines {
+  padding-top: 50px;
 }
 
-.bt{
-    width: 226px;
-    cursor: pointer;
-    height: 42px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+.bt {
+  width: 226px;
+  cursor: pointer;
+  height: 42px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 
-    & p{
-        font-weight: 700;
+  & p {
+    font-weight: 700;
+  }
 
-    }
-
-    .btcontenu{
-        display: flex;
-        justify-content: space-between;
-    }
-
-
-    &:hover{
-        .progress .bar{
-            transition: 0.2s ease;
-            width: 100%;
-        }
-    
-    }
-}
-
-
-.progress{
-    height: 2px;
-    width: 100%;
-    background: #3B6EF8 ;
-}
-
-.progress .bar{
-    height: 2px;
-    width: 10%;
-    background: #EB5A50;
-
-}
-
-
-.boutonContenu{
+  .btcontenu {
     display: flex;
     justify-content: space-between;
-    color: white;
+  }
+
+  &:hover {
+    .progress .bar {
+      transition: 0.2s ease;
+      width: 100%;
+    }
+  }
 }
 
-.wrapper .container{
-    z-index: 1;
+.progress {
+  height: 2px;
+  width: 100%;
+  background: #020343;
+}
+
+.progress .bar {
+  height: 2px;
+  width: 10%;
+  background: #3b6ef8;
+}
+
+.wrapper .container {
+  z-index: 1;
 }
 
 .container {
-    position: relative;
-    padding: 0px;
-    margin: auto;
+  position: relative;
+  padding: 0px;
+  margin: auto;
 }
 
-section.titre .container{
-    display: flex;
-    align-items: center;
+section.titre .container {
+  display: flex;
+  align-items: center;
 }
 
-.contact{
-    font-size: 120px; 
-    font-weight: 700; 
-    color: white;
-  }
-  
+.contact {
+  font-size: 120px;
+  font-weight: 700;
+  color: white;
+}
 
+section.domaines .container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 
-section.domaines .container{
+.tableau {
+  height: 600px;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+
+  .gauche {
+    flex: 1;
+    background: linear-gradient(134deg, #3b6ef8 0%, #1e377c 100%);
     display: flex;
     flex-direction: column;
-    align-items: center;
-}
-
-
-
-.tableau{
-    height: 600px;
-    width: 100%;
-    display: flex;
-    flex-wrap: wrap;
-
-    .gauche{
-        flex: 1;
-        background: linear-gradient(134deg, #3B6EF8 0%, #1E377C 100%);
-        display: flex;
-        flex-direction: column;
-        height: 100%;
-        justify-content: space-between;
-        color: white;
-        padding: 24px;
-        cursor: pointer;
-        transition: 1s ease all;
-        .posTabbas{
-            display: flex;
-            flex-direction: column;
-            // justify-content: space-between;
-            // height: 25%;
-        }
-        .basPost{
-            display: flex;
-            justify-content: space-between;
-            
-        }
-
-        .basPost .patterns{
-            width: 0px;
-            height: 64px;
-            opacity: 0.4;
-            align-self: flex-end;
-            transition: 0.3s ease all;
-        }
-        .sousTitre{
-            height: 0px;
-            opacity: 0;
-            transition: 0.3s ease all;
-        }
-
-        .postHautText p, span{
-            transition:0.3s ease all;
-        }
-        &:hover {
-            background: transparent linear-gradient(116deg, #16171A 0%, #171719 100%);
-            .postHautText p{
-                transform: translateX(-15px);
-                // transition:1000ms ease;
-            }
-            
-            span{
-                transform: translateX(-10px);
-                // transition:1000ms ease;
-            }
-            .basPost .patterns{
-                width: 66px;
-            }
-            .sousTitre{
-                height: 30px;
-                opacity: 1;
-            }
-        }
-    }
-    
-    .droite{
-        flex: 1;
-        display: flex;
-        flex-direction: column;
-        height: 100%;
-    }
-    
-    .haut{
-        color: white;
-        flex: 1;
-        background: linear-gradient(110deg, #202062 0%, #151548 100%);
-        display: flex;
-        flex-direction: column;
-        height: 50%;
-        justify-content: space-between;
-        padding: 24px;
-        cursor: pointer;
-
-        .posTabbas{
-            display: flex;
-            flex-direction: column;
-        }
-        .basPost{
-            display: flex;
-            justify-content: space-between;
-            
-        }
-
-        .basPost .patterns{
-            width: 0px;
-            height: 64px;
-            opacity: 0.4;
-            align-self: flex-end;
-            transition: 0.3s ease all;
-        }
-        .sousTitre{
-            height: 0px;
-            opacity: 0;
-            transition: 0.3s ease all;
-        }
-
-        .postHautText p, span{
-            transition:0.3s ease all;
-        }
-        &:hover {
-            background: transparent linear-gradient(116deg, #16171A 0%, #171719 100%);
-            .postHautText p{
-                transform: translateX(-15px);
-                // transition:1000ms ease;
-            }
-            
-            span{
-                transform: translateX(-10px);
-                // transition:1000ms ease;
-            }
-            .basPost .patterns{
-                width: 120px;
-            }
-            .sousTitre{
-                height: 30px;
-                opacity: 1;
-            }
-        }
-
-    }
-        
-    .bas{
-        color: white;
-        flex: 1;
-        background:linear-gradient(112deg, #0F1527 0%, #080B12 100%);
-        display: flex;
-        flex-direction: column;
-        height: 50%;
-        justify-content: space-between;
-        cursor: pointer;
-        padding: 24px;
-
-        .posTabbas{
-            display: flex;
-            flex-direction: column;
-        }
-        .basPost{
-            display: flex;
-            justify-content: space-between;
-            
-        }
-
-        .basPost .patterns{
-            width: 0px;
-            height: 64px;
-            opacity: 0.4;
-            align-self: flex-end;
-            transition: 0.3s ease all;
-        }
-        .sousTitre{
-            height: 0px;
-            opacity: 0;
-            transition: 0.3s ease all;
-        }
-
-        .postHautText p, span{
-            transition:0.3s ease all;
-        }
-        &:hover {
-            background: transparent linear-gradient(116deg, #16171A 0%, #171719 100%);
-            .postHautText p{
-                transform: translateX(-15px);
-                // transition:1000ms ease;
-            }
-            
-            span{
-                transform: translateX(-10px);
-                // transition:1000ms ease;
-            }
-            .basPost .patterns{
-                width: 170px;
-            }
-            .sousTitre{
-                height: 30px;
-                opacity: 1;
-            }
-        }
-
-    
-    }
-    
-    .posTabHaut{
-        align-self:flex-start ;
-        display: flex;
-        justify-content: flex-end;
-        width: 100%;
-        align-items: center;
-
-        .postHautText{
-            display: flex;
-            align-content: center;
-            color: white;
-        }
-    }
-
-    .sousTitre{
-        font-size: 14px;
-        color: #bebfc2;
-    }
-}
-
-
-.contenuFormulaire{
     height: 100%;
+    justify-content: space-between;
+    color: white;
+    padding: 24px;
+    cursor: pointer;
+    transition: 1s ease all;
+    .posTabbas {
+      display: flex;
+      flex-direction: column;
+      // justify-content: space-between;
+      // height: 25%;
+    }
+    .basPost {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .basPost .patterns {
+      width: 0px;
+      height: 64px;
+      opacity: 0.4;
+      align-self: flex-end;
+      transition: 0.3s ease all;
+    }
+    .sousTitre {
+      height: 0px;
+      opacity: 0;
+      transition: 0.3s ease all;
+    }
+
+    .postHautText p,
+    span {
+      transition: 0.3s ease all;
+    }
+    &:hover {
+      background: transparent linear-gradient(116deg, #16171a 0%, #171719 100%);
+      .postHautText p {
+        transform: translateX(-15px);
+        // transition:1000ms ease;
+      }
+
+      span {
+        transform: translateX(-10px);
+        // transition:1000ms ease;
+      }
+      .basPost .patterns {
+        width: 66px;
+      }
+      .sousTitre {
+        height: 30px;
+        opacity: 1;
+      }
+    }
+  }
+
+  .droite {
+    flex: 1;
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
+    height: 100%;
+  }
+
+  .haut {
+    color: white;
+    flex: 1;
+    background: linear-gradient(110deg, #202062 0%, #151548 100%);
+    display: flex;
+    flex-direction: column;
+    height: 50%;
+    justify-content: space-between;
+    padding: 24px;
+    cursor: pointer;
+
+    .posTabbas {
+      display: flex;
+      flex-direction: column;
+    }
+    .basPost {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .basPost .patterns {
+      width: 0px;
+      height: 64px;
+      opacity: 0.4;
+      align-self: flex-end;
+      transition: 0.3s ease all;
+    }
+    .sousTitre {
+      height: 0px;
+      opacity: 0;
+      transition: 0.3s ease all;
+    }
+
+    .postHautText p,
+    span {
+      transition: 0.3s ease all;
+    }
+    &:hover {
+      background: transparent linear-gradient(116deg, #16171a 0%, #171719 100%);
+      .postHautText p {
+        transform: translateX(-15px);
+        // transition:1000ms ease;
+      }
+
+      span {
+        transform: translateX(-10px);
+        // transition:1000ms ease;
+      }
+      .basPost .patterns {
+        width: 120px;
+      }
+      .sousTitre {
+        height: 30px;
+        opacity: 1;
+      }
+    }
+  }
+
+  .bas {
+    color: white;
+    flex: 1;
+    background: linear-gradient(112deg, #0f1527 0%, #080b12 100%);
+    display: flex;
+    flex-direction: column;
+    height: 50%;
+    justify-content: space-between;
+    cursor: pointer;
+    padding: 24px;
+
+    .posTabbas {
+      display: flex;
+      flex-direction: column;
+    }
+    .basPost {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .basPost .patterns {
+      width: 0px;
+      height: 64px;
+      opacity: 0.4;
+      align-self: flex-end;
+      transition: 0.3s ease all;
+    }
+    .sousTitre {
+      height: 0px;
+      opacity: 0;
+      transition: 0.3s ease all;
+    }
+
+    .postHautText p,
+    span {
+      transition: 0.3s ease all;
+    }
+    &:hover {
+      background: transparent linear-gradient(116deg, #16171a 0%, #171719 100%);
+      .postHautText p {
+        transform: translateX(-15px);
+        // transition:1000ms ease;
+      }
+
+      span {
+        transform: translateX(-10px);
+        // transition:1000ms ease;
+      }
+      .basPost .patterns {
+        width: 170px;
+      }
+      .sousTitre {
+        height: 30px;
+        opacity: 1;
+      }
+    }
+  }
+
+  .posTabHaut {
+    align-self: flex-start;
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+    align-items: center;
+
+    .postHautText {
+      display: flex;
+      align-content: center;
+      color: white;
+    }
+  }
+
+  .sousTitre {
+    font-size: 14px;
+    color: #bebfc2;
+  }
 }
 
-
-
+.contenuFormulaire {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
 
 .example-chip-list {
+  width: 100%;
+}
+
+@media screen and (max-width: 768px) {
+  .panneau {
+    height: 100px;
+    z-index: 3;
+    width: 100%;
+    display: flex;
+    color: white;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+  }
+
+  .tableau {
+    margin-top: 0px;
+    height: 80%;
     width: 100%;
   }
 
-
-
-@media screen and (max-width: 768px) {
-
-    .panneau{
-        height: 100px;
-        z-index: 3;
-        width: 100%;
-        display: flex;
-        color: white;
-        flex-wrap: nowrap;
-        justify-content: space-between;
-    }
-    
-
-    .tableau{
-        margin-top: 0px;
-        height: 80%;
-        width: 100%;
-    }
-
-    .bt{
-        width: 150px;
-        cursor: pointer;
-    }
-    
-
+  .bt {
+    width: 150px;
+    cursor: pointer;
+  }
 }
 
-
-.formBoutton{
-  
-    position: absolute;
-    top: 116px;
-    left: 570px;
-    z-index: 5;
+.formBoutton {
+  position: absolute;
+  top: 116px;
+  left: 570px;
+  z-index: 5;
 }
 
-@media screen and (max-width: 560px) { 
-    .menu{
-        display: none;
-    }
-    .container{
-        padding: 0 16px;
-    }
+@media screen and (max-width: 560px) {
+  .menu {
+    display: none;
+  }
+  .container {
+    padding: 0 16px;
+  }
 
-    section.titre .container{
-        flex-direction: column;
-    }
+  section.titre .container {
+    flex-direction: column;
+  }
 
-    .articles{
-        flex-direction: column;
-    }
+  .articles {
+    flex-direction: column;
+  }
 
-    .postHautText p{
-        font-size: 0.7rem;
-    }
+  .postHautText p {
+    font-size: 0.7rem;
+  }
 
-    .fond .row:first-child{
-        border-left: none;
-    }
-    
-    .gauche, .haut, .bas{
-        padding: 24px;
-        height: 200px !important;
-    }
+  .fond .row:first-child {
+    border-left: none;
+  }
 
-    .droite{
-        height: 400px !important;
-    }
+  .gauche,
+  .haut,
+  .bas {
+    padding: 24px;
+    height: 200px !important;
+  }
 
-    .titleLeft{
-        order: 2;
-        .bt{
-            margin-top: 10px;
-        }
+  .droite {
+    height: 400px !important;
+  }
+
+  .titleLeft {
+    order: 2;
+    .bt {
+      margin-top: 10px;
     }
+  }
 }
 
-
-section{
-    position: relative;
-    padding-top: 50px;
+section {
+  position: relative;
+  padding-top: 50px;
 }
 
-section.services, section.domaines, section.formulaire, section.articles{
-    margin-top: 100px;
+section.services,
+section.domaines,
+section.formulaire,
+section.articles {
+  margin-top: 100px;
 }
 
-
-.contenu{
-    position: relative;
-    z-index: 3;
-    margin-bottom: 100px;
+.contenu {
+  position: relative;
+  z-index: 3;
+  margin-bottom: 100px;
 }
-
-
-
-

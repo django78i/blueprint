@@ -1,297 +1,332 @@
-*{
-    padding:0;
-    box-sizing: border-box;
-    margin: 0;
+* {
+  padding: 0;
+  box-sizing: border-box;
+  margin: 0;
 }
 
-.titre{
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    color: white;
+.titre {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  color: white;
 }
 
-section.parallax{
-    position: absolute;
-    display: flex;
-    justify-content: center;
-    width: 100%;
-    z-index: 1;
-  }
-  
-  .template{
-    width: 100%;
-  }
-  
-
-
-.titlecontent{
-    color: white;
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    align-self: center;
+section.parallax {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  z-index: 3;
 }
 
-.titleZone{
-    align-self: center;
-    width: 100%;
-    display: flex;
+.template {
+  width: 100%;
+}
+h1 {
+  text-align: center;
 }
 
+.titlecontent {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
 
-.iconTitle{
-    flex:1;
+.bottomTitle {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.titleZone {
+  align-self: center;
+  width: 100%;
+  display: flex;
+}
+
+.iconTitle {
+  height: 50px;
 }
 
 .container {
-    display: flex;
-    flex-direction: column;
-    margin: auto;
-    position: relative;
-    z-index: 4;
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  position: relative;
+  z-index: 2;
 }
 
-.animation{
-    width: 100%;
+.templateBas {
+  height: 300px;
+  background: #0f1034;
+  // z-index:
 }
 
-#content{
-    display: flex;
-    flex-direction: column;
-    position: relative;
-    width: 75%;
+.template {
+  position: relative;
+  z-index: 10;
 }
-.fond{
-    z-index: 2;
-    background: #0E0E34;
-    width: 100%;
-    position: absolute;
-    transform: translateY(-100px);
+
+.animation {
+  width: 100%;
 }
-.fondBorder{
-    border-right: 2px solid rgba(243, 238, 238, 0.24);
-    height: 3100px;
-}    
+
+#content {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  width: 75%;
+}
+.fond {
+  z-index: 2;
+  background: #0e0e34;
+  width: 100%;
+  position: absolute;
+  transform: translateY(-100px);
+}
+.fondBorder {
+  border-right: 2px solid rgba(243, 238, 238, 0.24);
+  height: 3100px;
+}
 
 .fond .row {
-    margin: 0px;
+  margin: 0px;
 }
 
-.fond .row:first-child{
-    border-left: 2px solid rgba(243, 238, 238, 0.24);
+.fond .row:first-child {
+  border-left: 2px solid rgba(243, 238, 238, 0.24);
 }
 
-
-.fond2 .row{
-    height: 2904px;
-    margin: 0;
+.fond2 .row {
+  height: 2904px;
+  margin: 0;
 }
 
-.fond2{
-    z-index: -1;
-    background: #0E0E34;
-    width: 100%;
-    position: absolute;
+.fond2 {
+  z-index: -1;
+  background: #0e0e34;
+  width: 100%;
+  position: absolute;
 }
 
-.fondBorder2{
-    border-right: 1px solid rgba(243, 238, 238, 0.24);
-    padding: 0px;
+.fondBorder2 {
+  border-right: 1px solid rgba(243, 238, 238, 0.24);
+  padding: 0px;
 }
 
-.panneau{
-    height: 100px;
-    z-index: 3;
-    width: 100%;
-    display: flex;
-    color: white;
-    flex-wrap: nowrap;
-    justify-content: space-around;
-    margin-top: 80px;
+.panneau {
+  height: 100px;
+  z-index: 3;
+  width: 100%;
+  display: flex;
+  color: white;
+  flex-wrap: nowrap;
+  justify-content: space-around;
+  margin-top: 80px;
 
+  cursor: pointer;
+  .icon {
     cursor: pointer;
-    .icon{
-        cursor: pointer;
-        min-width: 69px !important;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: space-between;
-        text-align: center;
-    }
-    
-    .icon p{
-        margin-top: 10px;
-    
-    }
+    min-width: 69px !important;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    text-align: center;
+  }
+
+  .icon p {
+    margin-top: 10px;
+  }
 }
 
-
-.service{
-    position: relative;
-    min-width: 300px;
-    flex: 1;
-    // margin-bottom: 100px;
-    // margin-top: 200px;
-    height: 300px;
+.service {
+  position: relative;
+  min-width: 300px;
+  flex: 1;
+  // margin-bottom: 100px;
+  // margin-top: 200px;
+  height: 300px;
 }
 
-.numService{
-    position: absolute;
-    // font-size: 200px;
-    z-index: 1;
-    right: -13px;
-    top: -233px;
-    font-weight: 700;
-    color: #101039;
-
+.numService {
+  position: absolute;
+  // font-size: 200px;
+  z-index: 1;
+  right: -13px;
+  top: -233px;
+  font-weight: 700;
+  color: #101039;
 }
 
 div.illustrations img {
-    width: 100%;
+  width: 100%;
 }
 
-.textService{
-    position: relative;
-    width: 80%;
-    z-index: 2;
+.textService {
+  position: relative;
+  width: 80%;
+  z-index: 2;
 }
 
 .textService p {
-    color: #7E7F95;
+  color: #7e7f95;
 }
 
-.textService h2, .textService h4{
-    color: white;
+.textService h4 {
+  color: white;
+  padding-left: 33px !important;
 }
 
-
-.trait{
-    width: 50px;
-    height: 3px;
-    background: red;
-    margin-bottom: 20px !important;
+.trait {
+  width: 50px;
+  height: 3px;
+  background: red;
+  margin-bottom: 20px !important;
 }
 
-
-.contenu{
-    position: relative;
-    z-index: 10;
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    margin-top: 100px;
+.contenu {
+  position: relative;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin-top: 100px;
 }
 
-section.contenu .contenuDiv{
-    display: flex;
-    flex-direction: row;
-    margin-bottom: 100px;
-    align-items: center;
+section.contenu .contenuDiv {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 100px;
+  align-items: center;
 }
 
-.illustrations{
-    flex: 1;
-    display: flex;
-    justify-content: center;
-    height: 500px;
+.illustrations {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  height: 500px;
 }
 
-#service2{
-    align-self: center;
+#service2 {
+  align-self: center;
 }
-#service3{
-    align-self: flex-start;
+#service3 {
+  align-self: flex-start;
 }
-#service4{
-    align-self: flex-end;
-}
-
-.ligne{
-    margin-top: 100px;
-    height: 30px;
-    width: 4px;
-    background: blue;
-    position: absolute;
-    margin-left: -3.5px;
+#service4 {
+  align-self: flex-end;
 }
 
-.menu{
-    position: absolute;
-    margin-top: 250px;
-    text-align: center;
-    transform: rotate(270deg);
-    margin-left: -84px;
-    display: flex;
-    justify-content: space-between;
-    color: white;
-    z-index: 4;
+.ligne {
+  margin-top: 100px;
+  height: 30px;
+  width: 4px;
+  background: blue;
+  position: absolute;
+  margin-left: -3.5px;
 }
 
-.menu .enCours{
-    color: blue;
-    margin-left: 20px;
+.textTitle::before {
+  content: "";
+  position: absolute;
+  background: #3b6ef8;
+  height: 3px;
+  top: 8px;
+  left: 0;
+  width: 20px;
 }
 
-.menu .prec{
-    margin-left: 20px;
-}
-.menu .texPrec{
-    cursor: pointer;
+.menu {
+  position: absolute;
+  margin-top: 250px;
+  text-align: center;
+  transform: rotate(270deg);
+  margin-left: -84px;
+  display: flex;
+  justify-content: space-between;
+  color: white;
+  z-index: 4;
 }
 
+.menu .enCours {
+  color: blue;
+  margin-left: 20px;
+}
 
+.menu .prec {
+  margin-left: 20px;
+}
+.menu .texPrec {
+  cursor: pointer;
+}
 
 @media screen and (max-width: 560px) {
+  .menu {
+    display: none;
+  }
 
+  #content {
+    width: 100%;
+  }
 
-    #content{
-        width: 100%;
+  .service {
+    width: 100%;
+    left: 38px;
+  }
+
+  .contenu {
+    // align-self: center;
+    margin-top: 50px;
+  }
+
+  .panneau {
+    width: 100%;
+    padding: 0px 20px 0px 20px;
+    margin-top: 50px;
+  }
+
+  section.contenu .contenuDiv {
+    flex-direction: column;
+  }
+
+  #service1,
+  #service2,
+  #service3,
+  #service4 {
+    align-self: center;
+  }
+
+  .container {
+    padding: 16px;
+    background: #000000;
+  }
+
+  .icon p {
+    font-size: 0.7em;
+  }
+
+  .illustrations {
+    order: 1;
+  }
+
+  .service {
+    order: 2;
+  }
+
+  .numService {
+    right: 28px;
+    top: -178px;
+  }
+
+  .titleZone {
+    flex-direction: column;
+    .titlecontent {
+      order: 2;
+      text-align: center;
     }
-
-    .service{
-        width: 100%;
-        left: 38px;
-    }
-
-    .contenu{
-        align-self: center;
-        margin-top: 50px;
-    }
-
-    .panneau{
-        width: 100%;
-        padding: 0px 20px 0px 20px;
-        margin-top: 50px;
-    }
-
-
-    #service1,#service2,#service3,#service4{
-        align-self: center;
-    }
-
-    .container {
-        padding: 16px;
-    }
-
-    .icon p {
-        font-size: 0.7em;
-    }
-
-    .numService{
-        right: 28px;
-        top: -178px;  
-    }
-
-    .titleZone{
-        flex-direction: column;
-        .titlecontent{
-            order: 2;
-            text-align: center;
-        }
-    }
-
-
+  }
 }

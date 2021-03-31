@@ -70,80 +70,80 @@ export class CarouselHomeComponent implements OnInit {
 	//icones
 	iconsTab = [
 		{
-			name: 'Plateformes digitales',
-			url: '../assets/images/icon_website.svg'
+			name: 'Services',
+			// url: '../assets/images/icon_website.svg'
 		},
 		{
 			name: 'Identités Visuelles',
-			url: '../assets/images/icons8-diamond-heart.svg'
+			// url: '../assets/images/icons8-diamond-heart.svg'
 		},
 		{
-			name: 'Campagne marketing',
-			url: '../assets/images/marketingIcon (1).svg'
+			name: 'Web app',
+			// url: '../assets/images/marketingIcon (1).svg'
 		},
 	]
 
 	//slideItem
 	slidesItemGauche = [
 		{
-			id:1,
+			id: 1,
 			initial: 'P5',
 			nom: 'Prism',
-			description:'Identité visuelle'
+			description: 'Identité visuelle'
 		},
 		{
-			id:2,
+			id: 2,
 			initial: '07',
 			nom: 'Outsider Mob',
-			description:'Identité visuelle'
+			description: 'Identité visuelle'
 		},
 		{
-			id:3,
+			id: 3,
 			initial: 'Y4',
 			nom: 'Yvel Fluides',
-			description:'DXP'
+			description: 'DXP'
 		}
 	]
 
 	slidesItemDroit = [
 		{
-			id:2,
+			id: 2,
 			initial: 'P5',
 			nom: 'Prism',
-			description:'Identité visuelle'
+			description: 'Identité visuelle'
 		},
 		{
-			id:3,
+			id: 3,
 			initial: '07',
 			nom: 'Outsider Mob',
-			description:'Identité visuelle'
+			description: 'Identité visuelle'
 		},
 		{
-			id:1,
+			id: 1,
 			initial: 'Y4',
 			nom: 'Yvel Fluides',
-			description:'DXP'
+			description: 'DXP'
 		}
 	]
 
 	slidesItemcentre = [
 		{
-			id:3,
+			id: 3,
 			initial: 'P5',
 			nom: 'Prism',
-			description:'Identité visuelle'
+			description: 'Identité visuelle'
 		},
 		{
-			id:1,
+			id: 1,
 			initial: '07',
 			nom: 'Outsider Mob',
-			description:'Identité visuelle'
+			description: 'Identité visuelle'
 		},
 		{
-			id:2,
+			id: 2,
 			initial: 'Y4',
 			nom: 'Yvel Fluides',
-			description:'DXP'
+			description: 'DXP'
 		}
 	]
 
@@ -157,10 +157,10 @@ export class CarouselHomeComponent implements OnInit {
 	ngOnInit(): void {
 	}
 
-	ngAfterViewInit(){
-		var slide = this.elem.nativeElement.querySelector('.panneau .icon:nth-child('+1+')');
+	ngAfterViewInit() {
+		var slide = this.elem.nativeElement.querySelector('.panneau .icon:nth-child(' + 1 + ')');
 		slide.style.opacity = 1;
-
+		slide.style.color = '#3B6EF8';
 	}
 
 
@@ -210,17 +210,19 @@ export class CarouselHomeComponent implements OnInit {
 
 	}
 
-	boutonSlide(index){
+	boutonSlide(index) {
 		console.log(index);
 		console.log(index);
 		console.log(this.slides);
 		var slides = this.elem.nativeElement.querySelectorAll('.panneau .icon');
-		slides.forEach((element)=>{
-			element.style.opacity = 0.4; 
-		})	
-		var slide = this.elem.nativeElement.querySelector('.panneau .icon:nth-child('+index+')');
-		slide.style.opacity = 1;
+		slides.forEach((element) => {
+			element.style.opacity = 0.4;
+			element.style.color = '#FFFFFF';
 
+		})
+		var slide = this.elem.nativeElement.querySelector('.panneau .icon:nth-child(' + index + ')');
+		slide.style.opacity = 1;
+		slide.style.color = '#3B6EF8';
 	}
 
 }

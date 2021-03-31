@@ -1,285 +1,337 @@
-*{
-    padding:0;
-    box-sizing: border-box;
-    outline: none;
+* {
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
 }
 
-.titleHeader{
-    height: 100vh;
-    display: flex;
-    // flex-direction: column;
-    // justify-content: center;
-    color: white;
-    flex-wrap: wrap;
+.titleHeader {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  // flex-direction: column;
+  // justify-content: center;
+  color: white;
+  flex-wrap: wrap;
 }
 
-.rightTitle{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    flex: 1;
+.rightTitle {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
-.leftTitle{
-    flex:1;
+.leftTitle {
+  height: 50px;
 }
 
-section.parallax{
-    position: absolute;
-    display: flex;
-    justify-content: center;
-    width: 100%;
-    z-index: 1;
+section.parallax {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  z-index: 1;
 }
-.template{
-    width: 100%;
-}
-
-.menu{
-    position: absolute;
-    margin-top: 250px;
-    text-align: center;
-    transform: rotate(270deg);
-    margin-left: -84px;
-    display: flex;
-    justify-content: space-between;
-    color: white;
-    z-index: 4;
-    outline:none;
+.template {
+  width: 100%;
 }
 
-.menu .enCours{
-    color: blue;
-    margin-left: 20px;
+.menu {
+  position: absolute;
+  margin-top: 250px;
+  text-align: center;
+  transform: rotate(270deg);
+  margin-left: -60px;
+  display: flex;
+  justify-content: space-between;
+  color: white;
+  z-index: 4;
+  outline: none;
 }
 
-.menu .prec{
-    margin-left: 20px;
-}
-.menu .texPrec{
-    outline: none;
-    cursor: pointer;
+.menu .enCours {
+  color: blue;
+  margin-left: 20px;
 }
 
-
-
-.titlecontent{
-    color: white;
-    // width: 40%;
-    display: flex;
-    flex-direction: column;
-
+.menu .prec {
+  margin-left: 20px;
+}
+.menu .texPrec {
+  outline: none;
+  cursor: pointer;
 }
 
-.titleBoutton{
-    display: flex;
-    justify-content: space-around;
-    flex-direction: column;
+.titlecontent {
+  color: white;
+  // width: 40%;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
 }
 
-.boutton{
+.titleBoutton {
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+}
+.bottomTitle {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
 
-    padding: 10px 10px 10px 10px;
-    color: white;
-    border-radius: 10px;
+.boutton {
+  padding: 10px 10px 10px 10px;
+  color: white;
+  border-radius: 10px;
 }
 
 .progress-container {
-    position: absolute;
-    width: 3px;
-    height: 90%;
-    background: #ccc;
-    z-index: 1;
-   align-self: center;
-   overflow: hidden;
-  }
-  
-  .progress-bar {
-    height: 0%;
-    background: #180db1;
-    width: 3px;
-    position: relative;
-    z-index: 3;
-  }
-
-
-.ligne{
-    display: flex;
-    justify-content: space-between;
-    width: 100%;
+  position: absolute;
+  width: 3px;
+  height: 88.5%;
+  background: #ccc;
+  z-index: 1;
+  align-self: center;
+  overflow: hidden;
 }
 
-
-.ligne2{
-    margin-top: 100px;
-    height: 30px;
-    width: 4px;
-    background: blue;
-    position: absolute;
-    margin-left: -3.5px;
+.progress-bar {
+  height: 0%;
+  background: #180db1;
+  width: 3px;
+  position: relative;
+  z-index: 3;
 }
 
+.ligne {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.ligne2 {
+  margin-top: 100px;
+  height: 30px;
+  width: 4px;
+  background: blue;
+  position: absolute;
+  margin-left: -3.5px;
+}
 
 .container {
-    display: flex;
-    flex-direction: column;
-    position: relative;
-    z-index: 3;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  z-index: 3;
 }
 
-#content{
-    display: flex;
-    flex-direction: column;
-    position: relative;
-    align-items: center;
+#content {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  align-items: center;
+  width: 78%;
+  align-self: center;
+}
+
+.gauche,
+.droite {
+  flex: 1;
+  padding: 30px;
+  position: relative;
+  text-align: left;
+}
+
+// .gauche .point {
+//   right: 20px;
+// }
+
+.inner {
+  background: #180db1;
+  border-radius: 10px;
+  padding: 0 10px;
+  clip-path: circle(6% at 5% 15%);
+  transition: all 0.5s ease-in-out;
+  cursor: pointer;
+  &:hover {
+    clip-path: circle(75%);
+  }
+}
+
+.droite span {
+  font-size: 40px;
+  color: white;
+  font-weight: 800;
+  margin-left: 8px;
+  // float: left;
+}
+
+.cadrage {
+  color: #180db1;
+}
+
+.livrables {
+  display: flex;
+  align-items: center;
+
+  span {
+    width: 20px;
+    height: 3px;
+    background: #180db1;
+    margin-right: 10px;
+  }
+}
+
+.numDroit {
+  position: absolute;
+  top: 0;
+  left: 30px;
+  color: #eff1f7;
+}
+
+.numGauche {
+  position: absolute;
+  top: 0;
+  left: 0px;
+  color: #eff1f7;
+}
+
+.cercleDroit {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  border: 1px solid blue;
+  z-index: 3;
+  margin-left: -7px;
+  background: #0e0e34;
+}
+
+.cercleGauche {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  border: 1px solid blue;
+  z-index: 3;
+  margin-right: -7px;
+  background: #0e0e34;
+}
+
+.titre {
+  color: white;
+}
+
+.sousTitre {
+  color: #bebfc2;
+}
+
+.bt {
+  cursor: pointer;
+  width: 300px;
+}
+
+.progress {
+  height: 2px;
+  width: 100%;
+  background: #ccc;
+}
+
+.progress .bar {
+  height: 2px;
+  width: 10%;
+  background: #3b6ef8;
+}
+
+.bt:hover {
+  .progress .bar {
+    transition: 0.2s ease;
     width: 100%;
-    align-self: center;
+  }
 }
 
-.gauche, .droite{
-    flex: 1;
-    padding: 30px;
-    position: relative;
-    text-align: center;
+.fond2 .row {
+  height: 2904px;
+  margin: 0;
 }
 
-.numDroit{
-    position: absolute;
-    top:0;
-    left: 30px;
-    color: #EFF1F7;
-
+.fond2 {
+  z-index: -1;
+  background: #0e0e34;
+  width: 100%;
+  position: absolute;
 }
 
-.numGauche{
-    position: absolute;
-    top:0;
-    right: 30px;
-    color: #EFF1F7;
+.fondBorder2 {
+  border-right: 1px solid rgba(243, 238, 238, 0.24);
+  padding: 0px;
 }
 
-.cercleDroit{
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 14px;
-    height: 14px;
-    border-radius: 50%;
-    border: 1px solid blue;
-    z-index: 3;
-    margin-left: -7px;
-    background: #0E0E34;
+.point {
+  position: absolute;
+  width: 150px;
+  height: 123px;
+  top: 0px;
+  right: 29px;
+  z-index: 0;
+  opacity: 0.4;
 }
-
-.cercleGauche{
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: 14px;
-    height: 14px;
-    border-radius: 50%;
-    border: 1px solid blue;
-    z-index: 3;
-    margin-right: -7px;
-    background: #0E0E34;
-}
-
-
-
-.titre{
-    color: white;
-}
-
-.sousTitre{
-    color:#bebfc2;
-}
-
-.bt{
-    cursor: pointer;
-    width: 300px;
-}
-
-.progress{
-    height: 2px;
-    width: 100%;
-    background: #ccc;
-}
-
-.progress .bar{
-    height: 2px;
-    width: 10%;
-    background: #3B6EF8 ;
-}
-
-.bt:hover{
-    .progress .bar{
-        transition: 0.2s ease;
-        width: 100%;
-    }
-}
-
-.fond2 .row{
-    height: 2904px;
-    margin: 0;
-}
-
-.fond2{
-    z-index: -1;
-    background: #0E0E34;
-    width: 100%;
-    position: absolute;
-}
-
-.fondBorder2{
-    border-right: 1px solid rgba(243, 238, 238, 0.24);
-    padding: 0px;
-}
-
-
-
 
 @media screen and (max-width: 400px) {
+  #content {
+    width: 100%;
+  }
+  .ligne p,
+  .ligne h1 {
+    font-size: 0.8em;
+  }
 
-    #content{
-        width: 100%;
-    }
-    .ligne p, .ligne h1{
-        font-size: 0.8em;
-    }
-
-    .fin{
-        position: relative;
-        z-index: 2;
-        background: #0E0E34;
-    }
-    .titleBoutton{
-        flex-direction: column;
-    }
+  .titleBoutton {
+    flex-direction: column;
+  }
 }
 
 @media screen and (max-width: 560px) {
+  .progress-container {
+    height: 89%;
+  }
 
-    .progress-container {
-        height: 89%;
-    }
+  .titleHeader {
+    margin: 30px;
+    flex-direction: column;
+  }
 
-    .titleHeader{
-        margin: 30px;
-        flex-direction: column;
-    }
+  .titleBoutton {
+    width: 100%;
+  }
 
-    .titleBoutton{
-        width: 100%;
-    }
+  .rightTitle {
+    order: 2;
+    text-align: center;
+  }
 
-    .rightTitle{
-        order: 2;
-        text-align: center;
-    }
+  .ligne p,
+  .ligne h1 {
+    font-size: 0.8em;
+  }
 
-    .ligne p, .ligne h1{
-        font-size: 0.8em;
-    }
+  .numGauche {
+    left: 15px;
+  }
 
+  .menu {
+    display: none;
+  }
 
+  .sousTitle {
+    margin-bottom: 0px !important;
+  }
 }

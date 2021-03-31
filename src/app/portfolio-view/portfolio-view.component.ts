@@ -62,7 +62,7 @@ export class PortfolioViewComponent implements OnInit, AfterViewInit {
 
     //Lottie
     options: AnimationOptions = {
-        path: '../assets/images/blprntLoaderV2.json',
+        path: '../assets/solutions/newAnimHome.json',
     };
 
     animationItem: any;

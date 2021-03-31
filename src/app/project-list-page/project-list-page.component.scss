@@ -1,143 +1,150 @@
-*{
-    margin: 0;
-    padding: 0;
+* {
+  margin: 0;
+  padding: 0;
 }
 
-.title{
-    margin-bottom: 30px;
+.title {
+  margin-bottom: 30px;
 }
 
-section.parallax{
-    position: absolute;
-    display: flex;
-    justify-content: center;
-    width: 100%;
-    z-index: 2;
+section.parallax {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  z-index: 2;
 }
-.template{
+.template {
   width: 100%;
 }
 
-
-section.listPage{
-    width: 100%;
-    margin: 0;
-    overflow: hidden;
-    background: #0E0E34;
-    position: relative;
-    z-index: 1;
+section.listPage {
+  width: 100%;
+  margin: 0;
+  overflow: hidden;
+  background: #0e0e34;
+  position: relative;
+  z-index: 1;
 }
 
-section.listPage .menu{
-    position: absolute;
-    margin-top: 250px;
-    z-index: 4;
-    transform-origin: bottom;
+section.listPage .menu {
+  position: absolute;
+  margin-top: 250px;
+  z-index: 4;
+  transform-origin: bottom;
 }
 
-.contenuMenu{
-    text-align: center;
-    transform: rotate(270deg);
-    margin-left: -84px;
+.contenuMenu {
+  text-align: center;
+  transform: rotate(270deg);
+  margin-left: -84px;
+  display: flex;
+  justify-content: space-between;
+  color: white;
+}
+
+.menu .enCours {
+  color: blue;
+  margin-left: 20px;
+}
+
+.menu .prec {
+  margin-left: 20px;
+}
+.menu .texPrec {
+  cursor: pointer;
+}
+
+.titre {
+  //   height: 100vh;
+  display: flex;
+  position: relative;
+  z-index: 3;
+
+  .titleContent {
     display: flex;
-    justify-content: space-between;
-    color: white;
-}
-
-.menu .enCours{
-    color: blue;
-    margin-left: 20px;
-}
-
-.menu .prec{
-    margin-left: 20px;
-}
-.menu .texPrec{
-    cursor: pointer;
-}
-
-.titre{
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
     height: 100vh;
+  }
+
+  .bottomTitle {
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
-    position: relative;
-    z-index: 3;
+  }
+  
+  .right {
+    height: 50px;
+  }
 
-     .titleContent{
-        display: flex;
-    }
-    .right, .left{
-        flex: 1;
-    }
-
-    .left{
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-    }
-}
-
-.ContainorProjet{
-    display:flex;
-    flex-wrap: wrap;
-}
-
-.contenu{
+  .left {
     display: flex;
+    flex-direction: column;
     justify-content: center;
-    position: relative;
-    z-index: 10;
+    text-align: center;
+  }
 }
 
-.contenu .container{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around flex-start;
-    margin-bottom: 100px;
+.ContainorProjet {
+  display: flex;
+  flex-wrap: wrap;
 }
 
-
-app-best-portfolios{
-    min-width: 300px;
-    max-width: 350px;
-    height: 350px;
-    flex: 1;
-    border: 1px solid rgba(255, 255, 255, 0.349);
-    transition: 0.3s ease all;
-    margin-top: 20px;
-    margin-right: 20px;
-
-    // &:hover{
-    //     transform: scale(1.2);
-    // }
+.contenu {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  z-index: 10;
 }
 
+.contenu .container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around flex-start;
+  margin-bottom: 100px;
+}
+
+app-best-portfolios {
+  min-width: 300px;
+  max-width: 350px;
+  height: 350px;
+  flex: 1;
+  border: 1px solid rgba(255, 255, 255, 0.349);
+  transition: 0.3s ease all;
+  margin-top: 20px;
+  margin-right: 20px;
+
+  // &:hover{
+  //     transform: scale(1.2);
+  // }
+}
 
 @media screen and (max-width: 560px) {
-    .contenu .container{
-        justify-content: center;
+  .contenu .container {
+    justify-content: center;
+  }
+
+  app-best-portfolios {
+    margin-right: 0px !important;
+  }
+
+  section.titre .container {
+    padding: 0 16px;
+  }
+
+  .titleContent {
+    flex-direction: column;
+
+    .left {
+      order: 2;
+      text-align: center;
     }
+  }
 
-    app-best-portfolios{
-        margin-right: 0px !important;
-
-    }
-
-    section.titre .container{
-        padding: 0 16px;
-    }
-
-    .titleContent{
-        flex-direction: column;
-
-        .left{
-            order: 2;
-            text-align: center;
-        }
-    }
-
-    .menu{
-        display: none;
-    }
+  .menu {
+    display: none;
+  }
 }

@@ -5,6 +5,7 @@ import { PortfolioService } from '../services/portfolio.service';
 import { AnimationItem } from 'lottie-web';
 import { AnimationOptions } from 'ngx-lottie';
 import { trigger, transition, style, animate, state, query } from '@angular/animations';
+import AOS from 'aos';
 
 
 
@@ -14,19 +15,19 @@ import { trigger, transition, style, animate, state, query } from '@angular/anim
   templateUrl: './project-list-page.component.html',
   styleUrls: ['./project-list-page.component.scss'],
   animations: [
-		trigger('fadeIn', [
-            transition('*<=>void', [
-                style({ opacity: '0', transform:'translateY(300px)' }),
-                animate('1500ms ease')
-            ])
-        ])
+    trigger('fadeIn', [
+      transition('*<=>void', [
+        style({ opacity: '0', transform: 'translateY(300px)' }),
+        animate('1500ms ease')
+      ])
+    ])
 
-	]
+  ]
 
 })
 export class ProjectListPageComponent implements OnInit {
 
-  constructor(public portfolioService: PortfolioService, private elem: ElementRef) { 
+  constructor(public portfolioService: PortfolioService, private elem: ElementRef) {
 
   }
 
@@ -43,11 +44,12 @@ export class ProjectListPageComponent implements OnInit {
 
 
   ngOnInit(): void {
+    AOS.init();
     var scroll = document.documentElement.scrollHeight;
     scroll += 700;
-    var fond = this.elem.nativeElement.querySelectorAll('.fondBorder') ;
-    fond.forEach((element)=>{
-        element.style.height =  scroll+'px';
+    var fond = this.elem.nativeElement.querySelectorAll('.fondBorder');
+    fond.forEach((element) => {
+      element.style.height = scroll + 'px';
     })
 
   }
@@ -59,17 +61,17 @@ export class ProjectListPageComponent implements OnInit {
     this.animationItem.loop = false;
   }
 
-  best(projet, i){
-    var index = i+1;
+  best(projet, i) {
+    var index = i + 1;
     // var folioList = document.getElementById('folio');
-    var folioList = this.elem.nativeElement.querySelector(".folio:nth-child("+index+")");
+    var folioList = this.elem.nativeElement.querySelector(".folio:nth-child(" + index + ")");
     folioList.style.background = projet.couleurProjet;
 
   }
 
-  bestLeave(projet, i){
-    var index = i+1;
-    var folioList = this.elem.nativeElement.querySelector(".folio:nth-child("+index+")");
+  bestLeave(projet, i) {
+    var index = i + 1;
+    var folioList = this.elem.nativeElement.querySelector(".folio:nth-child(" + index + ")");
     folioList.style.background = 'none';
   }
 

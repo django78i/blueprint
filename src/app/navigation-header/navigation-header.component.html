@@ -1,14 +1,22 @@
-<nav>
-    <div class="titre" >
-        <ng-lottie [options]="options" (animationCreated)="animationCreated($event)" class="icon" (click)='navigation("home")' 
-            (complete)="complete($event)" (mouseenter)="debut()" (mouseleave)="fin()">
+<nav #menuAction>
+    <div class="titre" #pcAnimation>
+        <ng-lottie [options]="options" (animationCreated)="animationCreated($event)" class="icon"
+            (click)='navigation("home")' (complete)="complete($event)" (mouseenter)="debut()" (mouseleave)="fin()">
         </ng-lottie>
+        <div class="icon" #phoneIcon>
+
+        </div>
+    </div>
+    <div class="titre" #phoneIcon>
+        <div class="icon" style="background-image: url(../../assets/images/blprtIcon.svg);background-repeat: no-repeat;">
+
+        </div>
     </div>
     <div class="menu">
         <div class="menu-btn" (click)="menuZone()">
-            <!-- <div class="menu-btn__burger"></div> -->
-            <ng-lottie [options]="optionsMenu2" (animationCreated)="animationCreatedBurger($event)" class="icon" (click)="burger()">
-        </ng-lottie>
+            <ng-lottie [options]="optionsMenu2" (animationCreated)="animationCreatedBurger($event)" class="icon"
+                (click)="burger()">
+            </ng-lottie>
 
         </div>
     </div>
@@ -22,8 +30,3 @@
         <p>{{page.nom}}</p>
     </div>
 </div>
-
-<!-- <section *ngIf="affiche">
-    <router-outlet id="site"  (activate)="onActivate($event)">
-    </router-outlet>
-</section> -->
