@@ -1,7 +1,4 @@
 <section style="position: relative; overflow: hidden; background: #000000;z-index: 0;">
-    <!-- <section class="parallax">
-        <app-parallax-template class="template"></app-parallax-template>
-    </section> -->
     <div appParallax [ratio]="-1" class="menu">
         <p routerLink="/home" class="texPrec">home<span class="prec">></span></p>
         <p><strong class="enCours">O2.</strong> workflow</p>
@@ -18,7 +15,9 @@
                     <h1 class="title animate__animated animate__fadeInDown">digital workflow</h1>
                 </div>
                 <div class="titleBoutton">
-                    <p class="animate__animated animate__fadeIn animate__delay-1s">Lorem Ipsum is simply dummy text of
+                    <p class="animate__animated animate__fadeIn animate__delay-1s"
+                        style="max-width: 60ch;text-align: center;">Lorem Ipsum
+                        is simply dummy text of
                         the printing and typesetting
                         industry.
                         Lorem Ipsum has been the
@@ -27,20 +26,19 @@
                 </div>
             </div>
             <div class="bottomTitle">
-                <p>explore the flow</p>
-                <span style="color: white;font: 800;margin-left: 20px;" data-aos="fade-up"
-                    data-aos-duration="1500">&darr;</span>
+                <p>explore thse flow</p>
+                <span style="color: white;font: 800" data-aos="fade-up" data-aos-duration="1500">&darr;</span>
             </div>
         </div>
-        <div id="content">
-            <div class="progress-container">
-                <div class="progress-bar" id="myBar"></div>
+        <div id="content" #contenu>
+            <div class="progress-container" #slide>
+                <div class="progress-bar" id="myBar" #scroll></div>
             </div>
 
             <div class="ligne">
                 <div class="gauche"></div>
                 <div class="droite">
-                    <div class="point">
+                    <div class="point droitPoint">
                         <svg width="100%" height="100%">
                             <defs>
                                 <pattern id="polka-dots" x="0" y="0" width="10" height="10"
@@ -51,12 +49,16 @@
                             <rect x="0" y="0" width="100%" height="100%" fill="url(#polka-dots)" />
                         </svg>
                     </div>
-                    <p class="numDroit">01</p>
-                    <div class="cercleDroit"></div>
-                    <h1 class="titre sousTitle"> Cadrage initial</h1>
-                    <p class="sousTitre">Conception et validation de toutes les vues</p>
-                    <p class="livrables"><span></span>Livrables</p>
-                    <p class="cadrage">Note de cadrage</p>
+                    <div class="contourDroit">
+                        <div class="cercleDroit" #cercle></div>
+                    </div>
+                    <div class="contentText">
+                        <p class="numDroit">01</p>
+                        <h1 class="titre sousTitle"> Cadrage initial</h1>
+                        <p class="sousTitre">Conception et validation de toutes les vues</p>
+                        <p class="livrables"><span></span>Livrables</p>
+                        <p class="cadrage">Note de cadrage</p>
+                    </div>
                 </div>
             </div>
             <div class="ligne">
@@ -72,21 +74,26 @@
                             <rect x="0" y="0" width="100%" height="100%" fill="url(#polka-dots)" />
                         </svg>
                     </div>
-                    <p class="numGauche">02</p>
-                    <div class="cercleGauche"></div>
-                    <h1 class="titre sousTitle">Conception</h1>
-                    <p class="sousTitre">Audit des contenus existants Identifications des nouveaux contenus Choix des
-                        supports
-                        technologiques</p>
-                    <p class="livrables"><span></span>Livrables</p>
-                    <p class="cadrage">Note de cadrage</p>
+                    <div class="contour">
+                        <div class="cercleGauche" #cercle></div>
+                    </div>
+                    <div class="contentText">
+                        <p class="numGauche">02</p>
+                        <h1 class="titre sousTitle">Conception</h1>
+                        <p class="sousTitre">Audit des contenus existants Identifications des nouveaux contenus Choix
+                            des
+                            supports
+                            technologiques</p>
+                        <p class="livrables"><span></span>Livrables</p>
+                        <p class="cadrage">Note de cadrage</p>
+                    </div>
                 </div>
                 <div class="droite"></div>
             </div>
             <div class="ligne">
                 <div class="gauche"></div>
-                <div class="droite">
-                    <div class="point">
+                <div class="droite ">
+                    <div class="point droitPoint">
                         <svg width="100%" height="100%">
                             <defs>
                                 <pattern id="polka-dots" x="0" y="0" width="10" height="10"
@@ -97,12 +104,16 @@
                             <rect x="0" y="0" width="100%" height="100%" fill="url(#polka-dots)" />
                         </svg>
                     </div>
-                    <p class="numDroit">03</p>
-                    <div class="cercleDroit"></div>
-                    <h1 class="titre sousTitle">ui/ux</h1>
-                    <p class="sousTitre">Elaboration du parcours client Ergonomie</p>
-                    <p class="livrables"><span></span>Livrables</p>
-                    <p class="cadrage">Note de cadrage</p>
+                    <div class="contourDroit">
+                        <div class="cercleDroit" #cercle></div>
+                    </div>
+                    <div class="contentText">
+                        <p class="numDroit">03</p>
+                        <h1 class="titre sousTitle">ui/ux</h1>
+                        <p class="sousTitre">Elaboration du parcours client Ergonomie</p>
+                        <p class="livrables"><span></span>Livrables</p>
+                        <p class="cadrage">Note de cadrage</p>
+                    </div>
                 </div>
             </div>
             <div class="ligne">
@@ -118,19 +129,23 @@
                             <rect x="0" y="0" width="100%" height="100%" fill="url(#polka-dots)" />
                         </svg>
                     </div>
-                    <p class="numGauche">04</p>
-                    <div class="cercleGauche"></div>
-                    <h1 class="titre sousTitle">Maquettes</h1>
-                    <p class="sousTitre">Conception et validation de toutes les vues</p>
-                    <p class="livrables"><span></span>Livrables</p>
-                    <p class="cadrage">Note de cadrage</p>
+                    <div class="contour">
+                        <div class="cercleGauche"></div>
+                    </div>
+                    <div class="contentText">
+                        <p class="numGauche">04</p>
+                        <h1 class="titre sousTitle">Maquettes</h1>
+                        <p class="sousTitre">Conception et validation de toutes les vues</p>
+                        <p class="livrables"><span></span>Livrables</p>
+                        <p class="cadrage">Note de cadrage</p>
+                    </div>
                 </div>
                 <div class="droite"></div>
             </div>
             <div class="ligne">
                 <div class="gauche"> </div>
-                <div class="droite" id="production">
-                    <div class="point">
+                <div class="droite " id="production">
+                    <div class="point droitPoint">
                         <svg width="100%" height="100%">
                             <defs>
                                 <pattern id="polka-dots" x="0" y="0" width="10" height="10"
@@ -141,12 +156,16 @@
                             <rect x="0" y="0" width="100%" height="100%" fill="url(#polka-dots)" />
                         </svg>
                     </div>
-                    <p class="numDroit">05</p>
-                    <div class="cercleDroit"></div>
-                    <h1 class="titre sousTitle">Productions</h1>
-                    <p class="sousTitre">Integration et Developpement</p>
-                    <p class="livrables"><span></span>Livrables</p>
-                    <p class="cadrage">Note de cadrage</p>
+                    <div class="contourDroit">
+                        <div class="cercleDroit"></div>
+                    </div>
+                    <div class="contentText">
+                        <p class="numDroit">05</p>
+                        <h1 class="titre sousTitle">Productions</h1>
+                        <p class="sousTitre">Integration et Developpement</p>
+                        <p class="livrables"><span></span>Livrables</p>
+                        <p class="cadrage">Note de cadrage</p>
+                    </div>
                 </div>
             </div>
             <div class="ligne">
@@ -162,19 +181,23 @@
                             <rect x="0" y="0" width="100%" height="100%" fill="url(#polka-dots)" />
                         </svg>
                     </div>
-                    <p class="numGauche">06</p>
-                    <div class="cercleGauche"></div>
-                    <h1 class="titre sousTitle">Phase de tests</h1>
-                    <p class="sousTitre">Tests parcours client</p>
-                    <p class="livrables"><span></span>Livrables</p>
-                    <p class="cadrage">Note de cadrage</p>
+                    <div class="contour">
+                        <div class="cercleGauche"></div>
+                    </div>
+                    <div class="contentText">
+                        <p class="numGauche">06</p>
+                        <h1 class="titre sousTitle">Phase de tests</h1>
+                        <p class="sousTitre">Tests parcours client</p>
+                        <p class="livrables"><span></span>Livrables</p>
+                        <p class="cadrage">Note de cadrage</p>
+                    </div>
                 </div>
                 <div class="droite"> </div>
             </div>
             <div class="ligne">
                 <div class="gauche"> </div>
                 <div class="droite">
-                    <div class="point">
+                    <div class="point droitPoint">
                         <svg width="100%" height="100%">
                             <defs>
                                 <pattern id="polka-dots" x="0" y="0" width="10" height="10"
@@ -185,12 +208,16 @@
                             <rect x="0" y="0" width="100%" height="100%" fill="url(#polka-dots)" />
                         </svg>
                     </div>
-                    <p class="numDroit">07</p>
-                    <div class="cercleDroit"></div>
-                    <h1 class="titre sousTitle">Mise en ligne</h1>
-                    <p class="sousTitre">Mise en ligne</p>
-                    <p class="livrables"><span></span>Livrables</p>
-                    <p class="cadrage">Note de cadrage</p>
+                    <div class="contourDroit">
+                        <div class="cercleDroit"></div>
+                    </div>
+                    <div class="contentText">
+                        <p class="numDroit">07</p>
+                        <h1 class="titre sousTitle">Mise en ligne</h1>
+                        <p class="sousTitre">Mise en ligne</p>
+                        <p class="livrables"><span></span>Livrables</p>
+                        <p class="cadrage">Note de cadrage</p>
+                    </div>
                 </div>
             </div>
             <div class="ligne">
@@ -206,19 +233,23 @@
                             <rect x="0" y="0" width="100%" height="100%" fill="url(#polka-dots)" />
                         </svg>
                     </div>
-                    <p class="numGauche">08</p>
-                    <div class="cercleGauche"></div>
-                    <h1 class="titre sousTitle">Maintenance & SEO</h1>
-                    <p class="sousTitre">Maintenance Correction des bugs Optimisation des contenus, SEO</p>
-                    <p class="livrables"><span></span>Livrables</p>
-                    <p class="cadrage">Note de cadrage</p>
+                    <div class="contour">
+                        <div class="cercleGauche"></div>
+                    </div>
+                    <div class="contentText">
+                        <p class="numGauche">08</p>
+                        <h1 class="titre sousTitle">Maintenance & SEO</h1>
+                        <p class="sousTitre">Maintenance Correction des bugs Optimisation des contenus, SEO</p>
+                        <p class="livrables"><span></span>Livrables</p>
+                        <p class="cadrage">Note de cadrage</p>
+                    </div>
                 </div>
                 <div class="droite"> </div>
             </div>
             <div class="ligne ">
                 <div class="gauche"> </div>
                 <div class="droite">
-                    <div class="point">
+                    <div class="point droitPoint">
                         <svg width="100%" height="100%">
                             <defs>
                                 <pattern id="polka-dots" x="0" y="0" width="10" height="10"
@@ -229,12 +260,16 @@
                             <rect x="0" y="0" width="100%" height="100%" fill="url(#polka-dots)" />
                         </svg>
                     </div>
-                    <p class="numDroit">09</p>
-                    <div class="cercleDroit"></div>
-                    <h1 class="titre sousTitle">Evolution</h1>
-                    <p class="sousTitre">Propositions de nouvelles fonctionnalites Passage en V2</p>
-                    <p class="livrables"><span></span>Livrables</p>
-                    <p class="cadrage">Note de cadrage</p>
+                    <div class="contourDroit">
+                        <div class="cercleDroit"></div>
+                    </div>
+                    <div class="contentText">
+                        <p class="numDroit">09</p>
+                        <h1 class="titre sousTitle">Evolution</h1>
+                        <p class="sousTitre">Propositions de nouvelles fonctionnalites Passage en V2</p>
+                        <p class="livrables"><span></span>Livrables</p>
+                        <p class="cadrage">Note de cadrage</p>
+                    </div>
                 </div>
             </div>
         </div>

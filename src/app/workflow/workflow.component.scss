@@ -16,6 +16,10 @@
   flex-wrap: wrap;
 }
 
+.sousTitle {
+  line-height: 1;
+}
+
 .rightTitle {
   display: flex;
   flex-direction: column;
@@ -93,7 +97,7 @@ section.parallax {
   position: absolute;
   width: 3px;
   height: 88.5%;
-  background: #ccc;
+  background: #cccccc1c;
   z-index: 1;
   align-self: center;
   overflow: hidden;
@@ -101,7 +105,7 @@ section.parallax {
 
 .progress-bar {
   height: 0%;
-  background: #180db1;
+  background: #2b50b5;
   width: 3px;
   position: relative;
   z-index: 3;
@@ -141,7 +145,7 @@ section.parallax {
 .gauche,
 .droite {
   flex: 1;
-  padding: 30px;
+  padding: 0px 30px 0px 30px;
   position: relative;
   text-align: left;
 }
@@ -186,44 +190,72 @@ section.parallax {
   }
 }
 
+.contentText {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
 .numDroit {
-  position: absolute;
-  top: 0;
-  left: 30px;
+  // position: absolute;
+  // top: 0;
+  // left: 30px;
   color: #eff1f7;
 }
 
 .numGauche {
-  position: absolute;
-  top: 0;
-  left: 0px;
+  // position: absolute;
+  // top: 0;
+  // left: 30px;
   color: #eff1f7;
 }
 
 .cercleDroit {
-  position: absolute;
-  top: 0;
-  left: 0;
+  // position: absolute;
+  // top: 0;
+  // left: 0;
   width: 14px;
   height: 14px;
   border-radius: 50%;
-  border: 1px solid blue;
+  border: 3px solid;
   z-index: 3;
-  margin-left: -7px;
-  background: #0e0e34;
+  // margin-left: -7px;
+  background: #000000;
 }
 
 .cercleGauche {
-  position: absolute;
-  top: 0;
-  right: 0;
   width: 14px;
   height: 14px;
   border-radius: 50%;
-  border: 1px solid blue;
+  border: 3px solid;
   z-index: 3;
-  margin-right: -7px;
-  background: #0e0e34;
+  background: #000000;
+}
+
+.contour {
+  padding: 5px;
+  background: black;
+  position: absolute;
+  top: 0;
+  right: -12px;
+  background: #000000;
+  display: flex;
+  position: absolute;
+  justify-content: center;
+  z-index: 10;
+}
+
+.contourDroit {
+  padding: 5px;
+  background: black;
+  position: absolute;
+  top: 0;
+  left: -12px;
+  background: #000000;
+  display: flex;
+  position: absolute;
+  justify-content: center;
+  z-index: 10;
 }
 
 .titre {
@@ -301,7 +333,7 @@ section.parallax {
 
 @media screen and (max-width: 560px) {
   .progress-container {
-    height: 89%;
+    height: 88.5%;
   }
 
   .titleHeader {
@@ -332,6 +364,31 @@ section.parallax {
   }
 
   .sousTitle {
-    margin-bottom: 0px !important;
+    font-size: 19px !important;
+    letter-spacing: 0px;
+    margin: 10px 0px 10px 0px !important;
+  }
+
+  .container {
+    padding: 0px 15px 0px 15px;
+  }
+
+  .droite {
+    padding: 15px 0px 15px 15px;
+  }
+
+  .gauche {
+    padding: 15px 15px 15px 0px;
+  }
+
+  .numDroit {
+    left: 15px;
+  }
+  .numGauche {
+    left: 0;
+  }
+
+  .droitPoint {
+    left: 15px;
   }
 }

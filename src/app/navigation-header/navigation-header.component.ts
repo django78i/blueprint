@@ -102,6 +102,7 @@ export class NavigationHeaderComponent implements OnInit, AfterViewInit {
 			this.phoneIcon.nativeElement.style.display = 'flex';
 			console.log('Enough room!');
 		} else {
+			console.log('Not Enough room!');
 			this.pcAnimation.nativeElement.style.display = 'flex';
 			this.phoneIcon.nativeElement.style.display = 'none';
 		}
